@@ -1,0 +1,121 @@
+/* Residencial Mijoca Custom Styles */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --color-cibao: #111111;
+  --color-terracotta: #C87D4B;
+  --color-alabaster: #FAF7F2;
+  --color-sage: #F4F5F7;
+  --color-charcoal: #1C1E1D;
+  --color-slate-muted: #5A625E;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #1C1E1D;
+  background-color: #FAF7F2;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .font-display {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+  border-radius: 9999px;
+  border: 2px solid #FAF7F2;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #111111;
+}
+
+/* Glassmorphism */
+.glass-nav {
+  background: rgba(250, 247, 242, 0.90);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(230, 224, 214, 0.9);
+}
+
+.glass-card-dark {
+  background: rgba(17, 17, 17, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Image Zoom on hover */
+.img-zoom-container {
+  overflow: hidden;
+}
+.img-zoom {
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.img-zoom-container:hover .img-zoom {
+  transform: scale(1.05);
+}
+
+/* Subtle Shimmer for VIP perks */
+@keyframes subtle-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer-badge {
+  background: linear-gradient(90deg, rgba(200, 125, 75, 0.12) 0%, rgba(200, 125, 75, 0.28) 50%, rgba(200, 125, 75, 0.12) 100%);
+  background-size: 200% 100%;
+  animation: subtle-shimmer 4s infinite linear;
+}
+
+/* Modal Transition Helpers */
+[x-cloak] {
+  display: none !important;
+}
+
+/* Toast Notification Animation */
+@keyframes slideDownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.toast-enter {
+  animation: slideDownFade 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Print Styles for Digital Guidebook */
+@media print {
+  header, footer, .no-print, button, .tab-buttons {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+  }
+  .print-only {
+    display: block !important;
+  }
+}

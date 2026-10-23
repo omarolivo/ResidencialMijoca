@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Residencial Mijoca | Boutique 2BR/2BA Apartment in Santiago, DR · 24/7 Power</title>
+  <meta name="description" content="Brand-new boutique 2BR/2BA apartment in El Dorado II, Santiago de los Caballeros, Dominican Republic. 24/7 5 kW battery backup power, fast Wi-Fi, private balcony, reserved parking spot #2, and verified 5.0-star Airbnb reviews." />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  
+  <!-- Favicon icon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23111111'><path d='M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'/></svg>" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Residencial Mijoca | Boutique 2BR/2BA Apartment in Santiago, DR" />
+  <meta property="og:description" content="24/7 5 kW battery backup, blazing fast Wi-Fi, private balcony, 3 Smart TVs, and reserved parking in El Dorado II, Santiago." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="Images/Building.png" />
+
+  <!-- Google Fonts CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS Play CDN (Zero compilation) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cibao: {
+              DEFAULT: '#111111',
+              50: '#F7F7F8',
+              100: '#EAEAEA',
+              700: '#1F1F1F',
+              800: '#141414',
+              900: '#0A0A0A'
+            },
+            terracotta: {
+              DEFAULT: '#C87D4B',
+              hover: '#B56F3E',
+              50: '#FBF5F0',
+              100: '#F5E7DC',
+              500: '#C87D4B',
+              600: '#B56F3E'
+            },
+            alabaster: '#FAF7F2',
+            sage: '#F4F5F7',
+            charcoal: '#1C1E1D',
+            slateMuted: '#5A625E'
+          },
+          fontFamily: {
+            display: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Master Data & Controller Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+
+  <!-- Alpine.js v3 CDN -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+</head>
+
+<body class="bg-[#FAF7F2] text-[#1C1E1D] antialiased selection:bg-[#C87D4B] selection:text-white" x-data="mijocaApp()">
+
+  <!-- Toast Notification -->
+  <div x-show="toast.show" 
+       x-cloak 
+       x-transition:enter="transition ease-out duration-300"
+       x-transition:enter-start="opacity-0 -translate-y-4"
+       x-transition:enter-end="opacity-100 translate-y-0"
+       x-transition:leave="transition ease-in duration-200"
+       x-transition:leave-start="opacity-100 translate-y-0"
+       x-transition:leave-end="opacity-0 -translate-y-4"
+       class="fixed top-6 right-6 z-[100] max-w-sm flex items-center gap-3 bg-[#111111] text-white px-5 py-3.5 rounded-xl shadow-2xl border border-white/20">
+    <div class="w-8 h-8 rounded-full bg-[#C87D4B] flex items-center justify-center shrink-0">
+      <i data-lucide="check" class="w-4 h-4 text-white"></i>
+    </div>
+    <span class="text-sm font-medium" x-text="toast.message"></span>
+  </div>
+
+  <!-- STICKY NAVIGATION BAR -->
+  <header class="sticky top-0 z-40 glass-nav transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Brand Wordmark -->
+        <a href="#" class="flex flex-col group">
+          <div class="flex items-center gap-2">
+            <span class="font-display font-bold text-2xl sm:text-3xl tracking-tight text-[#111111] group-hover:text-[#C87D4B] transition-colors">Residencial Mijoca</span>
+          </div>
+          <div class="flex items-center gap-1.5 text-xs font-medium text-[#5A625E]">
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#C87D4B]"></span>
+            <span>El Dorado II · Santiago, RD</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-[#111111]">
+          <a href="#spaces" class="hover:text-[#C87D4B] transition-colors py-1" x-text="t('nav.apartment')"></a>
+          <a href="#power-tech" class="hover:text-[#C87D4B] transition-colors py-1 flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span x-text="t('nav.powerTech')"></span>
+          </a>
+          <a href="#video-tour" class="hover:text-[#C87D4B] transition-colors py-1 flex items-center gap-1.5">
+            <i data-lucide="play-circle" class="w-4 h-4 text-red-500"></i>
+            <span x-text="t('nav.videoTour')"></span>
+          </a>
+          <a href="#reviews" class="hover:text-[#C87D4B] transition-colors py-1 flex items-center gap-1">
+            <span x-text="t('nav.reviews')"></span>
+            <span class="text-xs bg-amber-100 text-amber-900 px-1.5 py-0.5 rounded-full font-bold">5.0★</span>
+          </a>
+          <a href="#local-guide" class="hover:text-[#C87D4B] transition-colors py-1" x-text="t('nav.vipGuide')"></a>
+          <a href="#faq" class="hover:text-[#C87D4B] transition-colors py-1" x-text="t('nav.rulesFaq')"></a>
+        </nav>
+
+        <!-- Right Controls & CTAs -->
+        <div class="hidden md:flex items-center gap-3">
+          
+          <!-- Bilingual Language Switcher -->
+          <div class="flex items-center bg-[#EAE4D9]/60 p-1 rounded-full border border-[#D9D0C3] text-xs font-bold">
+            <button @click="setLanguage('en')" 
+                    :class="lang === 'en' ? 'bg-[#111111] text-white shadow-sm' : 'text-[#5A625E] hover:text-[#111111]'" 
+                    class="px-2.5 py-1 rounded-full transition-all">EN</button>
+            <button @click="setLanguage('es')" 
+                    :class="lang === 'es' ? 'bg-[#111111] text-white shadow-sm' : 'text-[#5A625E] hover:text-[#111111]'" 
+                    class="px-2.5 py-1 rounded-full transition-all">ES</button>
+          </div>
+
+
+          <!-- Primary Airbnb CTA -->
+          <a :href="data.property.airbnbUrl" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-lg bg-[#111111] text-white hover:bg-[#C87D4B] transition-all shadow-md">
+            <i data-lucide="calendar-check" class="w-3.5 h-3.5"></i>
+            <span x-text="t('nav.bookAirbnb')"></span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu & Language Button -->
+        <div class="flex items-center gap-2 md:hidden">
+          <div class="flex items-center bg-[#EAE4D9]/60 p-0.5 rounded-full border border-[#D9D0C3] text-xs font-bold">
+            <button @click="setLanguage('en')" :class="lang === 'en' ? 'bg-[#111111] text-white' : 'text-[#5A625E]'" class="px-2 py-0.5 rounded-full">EN</button>
+            <button @click="setLanguage('es')" :class="lang === 'es' ? 'bg-[#111111] text-white' : 'text-[#5A625E]'" class="px-2 py-0.5 rounded-full">ES</button>
+          </div>
+
+          <button @click="mobileMenuOpen = !mobileMenuOpen" class="p-2 text-[#111111] rounded-lg hover:bg-black/5" aria-label="Toggle Navigation Menu">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div x-show="mobileMenuOpen" 
+           x-cloak 
+           @click.away="mobileMenuOpen = false"
+           class="md:hidden py-4 border-t border-[#111111]/10 space-y-3">
+        <a href="#spaces" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-lg font-medium hover:bg-black/5" x-text="t('nav.apartment')"></a>
+        <a href="#power-tech" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-lg font-medium hover:bg-black/5" x-text="t('nav.powerTech')"></a>
+        <a href="#video-tour" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-lg font-medium hover:bg-black/5 flex items-center gap-2">
+          <i data-lucide="play-circle" class="w-4 h-4 text-red-500"></i>
+          <span x-text="t('nav.videoTour')"></span>
+        </a>
+        <a href="#reviews" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-lg font-medium hover:bg-black/5" x-text="t('nav.reviews')"></a>
+        <a href="#local-guide" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-lg font-medium hover:bg-black/5" x-text="t('nav.vipGuide')"></a>
+        <a href="#faq" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-lg font-medium hover:bg-black/5" x-text="t('nav.rulesFaq')"></a>
+        <div class="pt-3 border-t border-[#111111]/10 flex flex-col gap-2">
+          <a :href="data.property.airbnbUrl" target="_blank" class="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-bold rounded-lg bg-[#111111] text-white">
+            <i data-lucide="calendar-check" class="w-4 h-4"></i>
+            <span x-text="t('nav.bookAirbnb')"></span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- HERO SECTION & TRUST BADGES -->
+  <section class="relative pt-8 pb-16 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Trust Badges Bar (Airbnb Verified Metrics) -->
+      <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2.5 sm:gap-3 mb-6">
+        
+        <!-- Airbnb Guest Favorite Badge -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#111111] text-white text-xs font-semibold shadow-sm">
+          <i data-lucide="award" class="w-3.5 h-3.5 text-[#C87D4B]"></i>
+          <span x-text="t('hero.badgeGuestFavorite')"></span>
+        </div>
+
+        <!-- 5.0 Star Rating Badge -->
+        <a href="#reviews" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-900 text-xs font-bold hover:bg-amber-100 transition-colors">
+          <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-500 text-amber-500"></i>
+          <span x-text="t('hero.badgeRating')"></span>
+        </a>
+
+        <!-- 100% Location Badge -->
+        <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs font-semibold">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-600"></i>
+          <span x-text="t('hero.badgeLocation')"></span>
+        </div>
+
+        <!-- 24/7 Power Badge -->
+        <a href="#power-tech" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-sky-50 border border-sky-200 text-sky-900 text-xs font-semibold hover:bg-sky-100 transition-colors">
+          <i data-lucide="zap" class="w-3.5 h-3.5 text-sky-600"></i>
+          <span x-text="t('hero.badgePower')"></span>
+        </a>
+
+      </div>
+
+      <!-- Hero Headline & Description -->
+      <div class="max-w-4xl mb-8">
+        <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#111111] leading-[1.15]" x-text="t('hero.title')"></h1>
+        <p class="mt-4 text-base sm:text-lg text-[#5A625E] leading-relaxed max-w-3xl" x-text="t('hero.subtitle')"></p>
+        
+        <!-- Quick Specs Row -->
+        <div class="mt-5 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/90 border border-[#E6E0D6] text-xs sm:text-sm font-medium text-[#111111] shadow-sm">
+          <i data-lucide="check-circle-2" class="w-4 h-4 text-[#C87D4B] shrink-0"></i>
+          <span x-text="t('hero.quickSpecs')"></span>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-wrap items-center gap-3 sm:gap-4 mb-10">
+        <a :href="data.property.airbnbUrl" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#111111] text-white font-semibold text-sm hover:bg-[#C87D4B] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+          <i data-lucide="calendar" class="w-4 h-4 text-[#C87D4B]"></i>
+          <span x-text="t('hero.ctaAirbnb')"></span>
+        </a>
+
+        <a :href="whatsAppInquiryUrl" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#25D366] text-white font-semibold text-sm hover:bg-[#1EBE5D] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+          <i data-lucide="message-circle" class="w-4 h-4 text-white"></i>
+          <span x-text="t('hero.ctaWhatsApp')"></span>
+        </a>
+
+        <button @click="openVideoModal()" 
+                class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-semibold text-sm transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+          <i data-lucide="play" class="w-4 h-4 fill-white text-white"></i>
+          <span x-text="t('hero.watchVideo')"></span>
+        </button>
+
+        <button @click="openLightbox(0)" 
+                class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-white text-[#111111] border border-[#D9D0C3] font-semibold text-sm hover:border-[#111111] transition-all shadow-sm">
+          <i data-lucide="images" class="w-4 h-4 text-[#5A625E]"></i>
+          <span x-text="t('hero.viewAllPhotos')"></span>
+        </button>
+      </div>
+
+      <!-- HERO BENTO PHOTO MOSAIC (Real Property Photos) -->
+      <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-[#E6E0D6] bg-white">
+        <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-2 p-2">
+          
+          <!-- Big Featured Photo (Building Exterior) -->
+          <div @click="openLightbox(0)" 
+               class="md:col-span-2 md:row-span-2 relative h-72 sm:h-96 md:h-[500px] cursor-pointer group overflow-hidden rounded-xl">
+            <img src="Images/Building.png" alt="Residencial Mijoca Building Exterior" class="w-full h-full object-cover img-zoom group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4 text-white">
+              <span class="inline-block px-2.5 py-1 rounded bg-[#111111]/90 backdrop-blur text-[11px] font-bold tracking-wide uppercase text-amber-200 mb-1.5">3-Unit Boutique Property</span>
+              <h3 class="font-display text-xl sm:text-2xl font-bold">Residencial Mijoca · El Dorado II</h3>
+              <p class="text-xs text-white/80">3rd-Floor Private Apartment with Glass Balcony & Spot #2 Parking</p>
+            </div>
+          </div>
+
+          <!-- Top Right Photo 1: Living Room -->
+          <div @click="openLightbox(1)" 
+               class="relative h-48 md:h-[244px] cursor-pointer group overflow-hidden rounded-xl">
+            <img src="Images/7Z6A7584 (Custom).JPG" alt="Living and Dining Room" class="w-full h-full object-cover img-zoom group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
+            <div class="absolute bottom-2.5 left-2.5 px-2 py-1 rounded bg-black/60 backdrop-blur text-white text-xs font-semibold">Living & Dining</div>
+          </div>
+
+          <!-- Top Right Photo 2: Private Balcony -->
+          <div @click="openLightbox(2)" 
+               class="relative h-48 md:h-[244px] cursor-pointer group overflow-hidden rounded-xl">
+            <img src="Images/7Z6A7579 (Custom).JPG" alt="Private Balcony with Palms" class="w-full h-full object-cover img-zoom group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
+            <div class="absolute bottom-2.5 left-2.5 px-2 py-1 rounded bg-black/60 backdrop-blur text-white text-xs font-semibold">Breezy Balcony</div>
+          </div>
+
+          <!-- Bottom Right Photo 1: Kitchen -->
+          <div @click="openLightbox(14)" 
+               class="relative h-48 md:h-[244px] cursor-pointer group overflow-hidden rounded-xl">
+            <img src="Images/7Z6A7592 (Custom).JPG" alt="Fully Equipped Modern Kitchen" class="w-full h-full object-cover img-zoom group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
+            <div class="absolute bottom-2.5 left-2.5 px-2 py-1 rounded bg-black/60 backdrop-blur text-white text-xs font-semibold">Modern Kitchen</div>
+          </div>
+
+          <!-- Bottom Right Photo 2: Master Ensuite Bathroom -->
+          <div @click="openLightbox(8)" 
+               class="relative h-48 md:h-[244px] cursor-pointer group overflow-hidden rounded-xl">
+            <img src="Images/7Z6A7607 (Custom).JPG" alt="Master Ensuite Bathroom with Backlit LED Mirror" class="w-full h-full object-cover img-zoom group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
+            <div class="absolute bottom-2.5 left-2.5 px-2 py-1 rounded bg-black/60 backdrop-blur text-white text-xs font-semibold">Ensuite Bath</div>
+          </div>
+
+        </div>
+
+        <!-- Floating Gallery & Video Counter Buttons -->
+        <div class="absolute bottom-5 right-5 flex flex-wrap items-center gap-2.5">
+          <button @click="openVideoModal()" 
+                  class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white text-xs font-bold shadow-xl transition-all hover:scale-105">
+            <i data-lucide="play" class="w-4 h-4 fill-white text-white"></i>
+            <span x-text="t('hero.watchVideo')"></span>
+          </button>
+          
+          <button @click="openLightbox(0)" 
+                  class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/95 backdrop-blur text-[#111111] text-xs font-bold shadow-xl border border-[#D9D0C3] hover:bg-[#111111] hover:text-white transition-all">
+            <i data-lucide="grid" class="w-4 h-4"></i>
+            <span x-text="t('hero.viewAllPhotos')"></span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: THE "UNINTERRUPTED COMFORT" SPOTLIGHT (Core Differentiator) -->
+  <section id="power-tech" class="py-20 bg-[#F4F5F7] border-y border-[#E5E7EB]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Title -->
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="inline-block text-xs font-bold tracking-widest text-[#C87D4B] uppercase" x-text="t('powerTech.tag')"></span>
+        <h2 class="mt-2 font-display text-3xl sm:text-4xl font-bold text-[#111111]" x-text="t('powerTech.title')"></h2>
+        <p class="mt-3 text-[#5A625E] text-base" x-text="t('powerTech.subtitle')"></p>
+      </div>
+
+      <!-- 4-Card Bento Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Card 1: 5 kW Battery Backup System (Large 2-Column Card with Real System Photo) -->
+        <div class="md:col-span-2 glass-card rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-[#E5E7EB] flex flex-col lg:flex-row">
+          <div class="lg:w-1/2 p-7 sm:p-9 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2.5 text-xs font-bold text-[#C87D4B] mb-2 uppercase tracking-wide">
+                <i data-lucide="zap" class="w-4 h-4"></i>
+                <span>Engineered Reliability</span>
+              </div>
+              <h3 class="font-display text-2xl font-bold text-[#111111] leading-tight" x-text="t('powerTech.card1Title')"></h3>
+              <p class="mt-4 text-sm text-[#5A625E] leading-relaxed" x-text="t('powerTech.card1Desc')"></p>
+              
+              <!-- Powered Circuits Pills -->
+              <div class="mt-5 grid grid-cols-2 gap-2 text-xs font-medium text-[#111111]">
+                <div class="flex items-center gap-1.5 p-2 rounded-lg bg-white border border-[#E6E0D6]">
+                  <i data-lucide="wifi" class="w-3.5 h-3.5 text-emerald-600"></i>
+                  <span>Wi-Fi & Router</span>
+                </div>
+                <div class="flex items-center gap-1.5 p-2 rounded-lg bg-white border border-[#E6E0D6]">
+                  <i data-lucide="tv" class="w-3.5 h-3.5 text-emerald-600"></i>
+                  <span>3 Smart TVs</span>
+                </div>
+                <div class="flex items-center gap-1.5 p-2 rounded-lg bg-white border border-[#E6E0D6]">
+                  <i data-lucide="snowflake" class="w-3.5 h-3.5 text-emerald-600"></i>
+                  <span>Refrigerator</span>
+                </div>
+                <div class="flex items-center gap-1.5 p-2 rounded-lg bg-white border border-[#E6E0D6]">
+                  <i data-lucide="lightbulb" class="w-3.5 h-3.5 text-emerald-600"></i>
+                  <span>Lights & Outlets</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Transparency notice -->
+            <p class="mt-5 text-xs text-[#5A625E] italic border-t border-[#E5E7EB] pt-3" x-text="t('powerTech.card1Note')"></p>
+          </div>
+
+          <!-- Real Photo of the Battery & Inverter System -->
+          <div class="lg:w-1/2 relative bg-slate-900 group cursor-pointer" @click="openLightbox(19)">
+            <img src="Images/7Z6A7622 (Custom).JPG" alt="SunGoldPower Inverter & ION Lithium Battery System" class="w-full h-full object-cover img-zoom group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4 text-white">
+              <span class="inline-block px-2 py-0.5 rounded bg-emerald-700 text-[10px] font-bold uppercase tracking-wider mb-1">Installed Property Photo</span>
+              <p class="text-sm font-semibold">SunGoldPower 5 kW Inverter + ION 5.12 kWh Lithium Battery</p>
+              <p class="text-xs text-white/70">Seamless zero-lag automated transfer</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: IT-Curated Fast Wi-Fi -->
+        <div class="glass-card rounded-2xl p-7 sm:p-9 shadow-sm hover:shadow-md transition-shadow border border-[#E5E7EB] flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-[#111111] text-white flex items-center justify-center mb-6">
+              <i data-lucide="wifi" class="w-6 h-6 text-[#C87D4B]"></i>
+            </div>
+            <h3 class="font-display text-xl font-bold text-[#111111]" x-text="t('powerTech.card2Title')"></h3>
+            <p class="mt-3 text-sm text-[#5A625E] leading-relaxed" x-text="t('powerTech.card2Desc')"></p>
+          </div>
+
+          <div class="mt-6 pt-5 border-t border-[#E5E7EB] flex items-center justify-between text-xs font-semibold text-[#111111]">
+            <span>Dedicated Workspaces</span>
+            <span class="text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full font-bold">Zoom Ready</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Boutique 3-Unit Privacy & 3rd Floor Natural Light -->
+        <div class="glass-card rounded-2xl p-7 sm:p-9 shadow-sm hover:shadow-md transition-shadow border border-[#E5E7EB] flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-[#111111] text-white flex items-center justify-center mb-6">
+              <i data-lucide="building-2" class="w-6 h-6 text-[#C87D4B]"></i>
+            </div>
+            <h3 class="font-display text-xl font-bold text-[#111111]" x-text="t('powerTech.card3Title')"></h3>
+            <p class="mt-3 text-sm text-[#5A625E] leading-relaxed" x-text="t('powerTech.card3Desc')"></p>
+            
+            <div class="mt-4 p-3 rounded-xl bg-amber-50/80 border border-amber-200 text-xs text-amber-900 leading-normal flex items-start gap-2">
+              <i data-lucide="baggage-claim" class="w-4 h-4 text-[#C87D4B] shrink-0 mt-0.5"></i>
+              <span x-text="t('powerTech.card3Luggage')"></span>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-5 border-t border-[#E5E7EB] flex items-center justify-between text-xs font-semibold text-[#111111]">
+            <span>Low Density</span>
+            <span class="text-amber-800 bg-amber-100 px-2 py-0.5 rounded-full font-bold">Cul-de-sac Street</span>
+          </div>
+        </div>
+
+        <!-- Card 4: Reserved Parking & Smart Security (2 Columns) -->
+        <div class="md:col-span-2 glass-card rounded-2xl p-7 sm:p-9 shadow-sm hover:shadow-md transition-shadow border border-[#E5E7EB] flex flex-col justify-between">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-xl bg-[#111111] text-white flex items-center justify-center shrink-0">
+                <i data-lucide="shield-check" class="w-6 h-6 text-[#C87D4B]"></i>
+              </div>
+              <div>
+                <h3 class="font-display text-xl font-bold text-[#111111]" x-text="t('powerTech.card4Title')"></h3>
+                <span class="text-xs text-[#5A625E]">El Dorado II · Quiet Residential Sector</span>
+              </div>
+            </div>
+
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs font-bold">
+              <i data-lucide="car" class="w-3.5 h-3.5 text-emerald-600"></i>
+              <span>Spot #2 Guaranteed</span>
+            </div>
+          </div>
+
+          <p class="text-sm text-[#5A625E] leading-relaxed" x-text="t('powerTech.card4Desc')"></p>
+
+          <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-semibold text-[#111111]">
+            <div class="p-3 rounded-xl bg-white border border-[#E6E0D6] flex items-center gap-2">
+              <i data-lucide="video" class="w-4 h-4 text-[#C87D4B]"></i>
+              <span>6 Exterior Cameras</span>
+            </div>
+            <div class="p-3 rounded-xl bg-white border border-[#E6E0D6] flex items-center gap-2">
+              <i data-lucide="droplet" class="w-4 h-4 text-sky-600"></i>
+              <span>Smart Leak Sensors</span>
+            </div>
+            <div class="p-3 rounded-xl bg-white border border-[#E6E0D6] flex items-center gap-2">
+              <i data-lucide="lock" class="w-4 h-4 text-emerald-600"></i>
+              <span>Keyless Smart Lock</span>
+            </div>
+            <div class="p-3 rounded-xl bg-white border border-[#E6E0D6] flex items-center gap-2">
+              <i data-lucide="eye-off" class="w-4 h-4 text-purple-600"></i>
+              <span>Zero Indoor Cameras</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: SPACES & INTERACTIVE PHOTO GALLERY -->
+  <section id="spaces" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Title & Tabs -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+        <div>
+          <span class="inline-block text-xs font-bold tracking-widest text-[#C87D4B] uppercase" x-text="t('space.tag')"></span>
+          <h2 class="mt-2 font-display text-3xl sm:text-4xl font-bold text-[#111111]" x-text="t('space.title')"></h2>
+          <p class="mt-2 text-[#5A625E] text-base max-w-2xl" x-text="t('space.subtitle')"></p>
+        </div>
+
+        <button @click="openLightbox(0)" 
+                class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#D9D0C3] bg-white text-xs font-bold text-[#111111] hover:border-[#111111] transition-colors self-start md:self-auto shadow-sm">
+          <i data-lucide="maximize" class="w-4 h-4 text-[#C87D4B]"></i>
+          <span x-text="t('hero.viewAllPhotos')"></span>
+        </button>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar">
+        <button @click="activeRoomTab = 'all'" 
+                :class="activeRoomTab === 'all' ? 'bg-[#111111] text-white shadow-sm' : 'bg-white text-[#5A625E] hover:text-[#111111] border border-[#E6E0D6]'" 
+                class="px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all" 
+                x-text="t('space.tabs.all')"></button>
+        <button @click="activeRoomTab = 'living'" 
+                :class="activeRoomTab === 'living' ? 'bg-[#111111] text-white shadow-sm' : 'bg-white text-[#5A625E] hover:text-[#111111] border border-[#E6E0D6]'" 
+                class="px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all" 
+                x-text="t('space.tabs.living')"></button>
+        <button @click="activeRoomTab = 'bedroom1'" 
+                :class="activeRoomTab === 'bedroom1' ? 'bg-[#111111] text-white shadow-sm' : 'bg-white text-[#5A625E] hover:text-[#111111] border border-[#E6E0D6]'" 
+                class="px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all" 
+                x-text="t('space.tabs.bedroom1')"></button>
+        <button @click="activeRoomTab = 'bedroom2'" 
+                :class="activeRoomTab === 'bedroom2' ? 'bg-[#111111] text-white shadow-sm' : 'bg-white text-[#5A625E] hover:text-[#111111] border border-[#E6E0D6]'" 
+                class="px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all" 
+                x-text="t('space.tabs.bedroom2')"></button>
+        <button @click="activeRoomTab = 'kitchen'" 
+                :class="activeRoomTab === 'kitchen' ? 'bg-[#111111] text-white shadow-sm' : 'bg-white text-[#5A625E] hover:text-[#111111] border border-[#E6E0D6]'" 
+                class="px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all" 
+                x-text="t('space.tabs.kitchen')"></button>
+        <button @click="activeRoomTab = 'bathrooms'" 
+                :class="activeRoomTab === 'bathrooms' ? 'bg-[#111111] text-white shadow-sm' : 'bg-white text-[#5A625E] hover:text-[#111111] border border-[#E6E0D6]'" 
+                class="px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all" 
+                x-text="t('space.tabs.bathrooms')"></button>
+        <button @click="activeRoomTab = 'building'" 
+                :class="activeRoomTab === 'building' ? 'bg-[#111111] text-white shadow-sm' : 'bg-white text-[#5A625E] hover:text-[#111111] border border-[#E6E0D6]'" 
+                class="px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all" 
+                x-text="t('space.tabs.building')"></button>
+      </div>
+
+      <!-- Filtered Photo Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <template x-for="(item, index) in filteredGallery" :key="index">
+          <div @click="openLightbox(index)" 
+               class="glass-card rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all group cursor-pointer border border-[#E6E0D6]">
+            <div class="relative h-64 overflow-hidden">
+              <img :src="item.src" :alt="lang === 'es' ? item.titleEs : item.titleEn" class="w-full h-full object-cover img-zoom group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+              
+              <div class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/80 backdrop-blur flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <i data-lucide="zoom-in" class="w-4 h-4 text-[#111111]"></i>
+              </div>
+            </div>
+
+            <div class="p-5">
+              <h4 class="font-display text-lg font-bold text-[#111111]" x-text="lang === 'es' ? item.titleEs : item.titleEn"></h4>
+              <p class="mt-1.5 text-xs text-[#5A625E] line-clamp-2" x-text="lang === 'es' ? item.descEs : item.descEn"></p>
+            </div>
+          </div>
+        </template>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: 4K VIDEO WALKTHROUGH TOUR -->
+  <section id="video-tour" class="py-20 bg-[#111111] text-white relative overflow-hidden">
+    <!-- Ambient background glow -->
+    <div class="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-[#C87D4B]/15 blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-[#C87D4B] text-xs font-bold tracking-wider uppercase border border-white/10 mb-3">
+          <i data-lucide="video" class="w-3.5 h-3.5 text-[#C87D4B]"></i>
+          <span x-text="t('videoTour.tag')"></span>
+        </div>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white" x-text="t('videoTour.title')"></h2>
+        <p class="mt-4 text-white/70 text-sm sm:text-base leading-relaxed" x-text="t('videoTour.subtitle')"></p>
+      </div>
+
+      <!-- Video Player Frame -->
+      <div class="max-w-5xl mx-auto">
+        <div class="relative rounded-3xl overflow-hidden border border-white/15 bg-black/60 shadow-2xl">
+          
+          <!-- Responsive 16:9 YouTube Container -->
+          <div class="relative w-full aspect-video">
+            <iframe 
+              src="https://www.youtube.com/embed/8Lw9ZF0jpzo?enablejsapi=1&rel=0&modestbranding=1" 
+              title="Residencial Mijoca Property Walkthrough" 
+              class="w-full h-full"
+              frameborder="0" 
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+            </iframe>
+          </div>
+
+        </div>
+
+        <!-- Player Quick Controls Bar -->
+        <div class="mt-4 flex flex-wrap items-center justify-between gap-3 px-1">
+          <div class="text-xs text-white/60 flex items-center gap-2">
+            <i data-lucide="badge-check" class="w-4 h-4 text-emerald-400"></i>
+            <span x-text="t('videoTour.badge')"></span>
+          </div>
+
+          <div class="flex items-center gap-2.5">
+            <button @click="openVideoModal()" 
+                    class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xs font-semibold transition-all">
+              <i data-lucide="maximize" class="w-3.5 h-3.5"></i>
+              <span x-text="t('videoTour.openFullscreen')"></span>
+            </button>
+            <a :href="data.property.youtubeUrl" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-red-600 hover:bg-red-700 text-white text-xs font-bold transition-all shadow-sm">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              <span x-text="t('videoTour.watchOnYouTube')"></span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Video Feature Badges -->
+        <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+          <div class="p-3.5 rounded-xl bg-white/5 border border-white/10 text-center hover:bg-white/10 transition-colors">
+            <i data-lucide="tv" class="w-4 h-4 text-[#C87D4B] mx-auto mb-1.5"></i>
+            <span class="text-xs font-semibold text-white/90 block" x-text="t('videoTour.livingPoint')"></span>
+          </div>
+          <div class="p-3.5 rounded-xl bg-white/5 border border-white/10 text-center hover:bg-white/10 transition-colors">
+            <i data-lucide="sun" class="w-4 h-4 text-amber-300 mx-auto mb-1.5"></i>
+            <span class="text-xs font-semibold text-white/90 block" x-text="t('videoTour.balconyPoint')"></span>
+          </div>
+          <div class="p-3.5 rounded-xl bg-white/5 border border-white/10 text-center hover:bg-white/10 transition-colors">
+            <i data-lucide="coffee" class="w-4 h-4 text-amber-400 mx-auto mb-1.5"></i>
+            <span class="text-xs font-semibold text-white/90 block" x-text="t('videoTour.kitchenPoint')"></span>
+          </div>
+          <div class="p-3.5 rounded-xl bg-white/5 border border-white/10 text-center hover:bg-white/10 transition-colors">
+            <i data-lucide="zap" class="w-4 h-4 text-emerald-400 mx-auto mb-1.5"></i>
+            <span class="text-xs font-semibold text-white/90 block" x-text="t('videoTour.powerPoint')"></span>
+          </div>
+          <div class="p-3.5 rounded-xl bg-white/5 border border-white/10 text-center hover:bg-white/10 transition-colors">
+            <i data-lucide="bed-double" class="w-4 h-4 text-[#C87D4B] mx-auto mb-1.5"></i>
+            <span class="text-xs font-semibold text-white/90 block" x-text="t('videoTour.bedroomsPoint')"></span>
+          </div>
+          <div class="p-3.5 rounded-xl bg-white/5 border border-white/10 text-center hover:bg-white/10 transition-colors">
+            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400 mx-auto mb-1.5"></i>
+            <span class="text-xs font-semibold text-white/90 block" x-text="t('videoTour.parkingPoint')"></span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: VERIFIED AIRBNB GUEST REVIEWS (5.0 ★ GUEST FAVORITE) -->
+  <section id="reviews" class="py-20 bg-white border-y border-[#E6E0D6]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Reviews Header -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="inline-block text-xs font-bold tracking-widest text-[#C87D4B] uppercase" x-text="t('reviews.tag')"></span>
+            <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-bold">Top 10% on Airbnb</span>
+          </div>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-[#111111]" x-text="t('reviews.title')"></h2>
+          <p class="mt-2 text-[#5A625E] text-base max-w-2xl" x-text="t('reviews.subtitle')"></p>
+        </div>
+
+        <!-- Rating Highlight Score Card -->
+        <div class="flex items-center gap-4 p-4 rounded-2xl bg-[#FAF7F2] border border-[#E6E0D6]">
+          <div class="text-3xl font-display font-bold text-[#111111]">5.0</div>
+          <div class="flex flex-col">
+            <div class="flex items-center gap-0.5 text-amber-500">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+            </div>
+            <span class="text-xs font-semibold text-[#5A625E]">10 Verified Airbnb Reviews</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar">
+        <button @click="reviewFilter = 'all'" 
+                :class="reviewFilter === 'all' ? 'bg-[#111111] text-white' : 'bg-[#FAF7F2] text-[#5A625E] hover:text-[#111111] border border-[#E6E0D6]'" 
+                class="px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all" 
+                x-text="t('reviews.filterAll')"></button>
+        <button @click="reviewFilter = 'business'" 
+                :class="reviewFilter === 'business' ? 'bg-[#111111] text-white' : 'bg-[#FAF7F2] text-[#5A625E] hover:text-[#111111] border border-[#E6E0D6]'" 
+                class="px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all" 
+                x-text="t('reviews.filterBusiness')"></button>
+        <button @click="reviewFilter = 'hospitality'" 
+                :class="reviewFilter === 'hospitality' ? 'bg-[#111111] text-white' : 'bg-[#FAF7F2] text-[#5A625E] hover:text-[#111111] border border-[#E6E0D6]'" 
+                class="px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all" 
+                x-text="t('reviews.filterHospitality')"></button>
+        <button @click="reviewFilter = 'location'" 
+                :class="reviewFilter === 'location' ? 'bg-[#111111] text-white' : 'bg-[#FAF7F2] text-[#5A625E] hover:text-[#111111] border border-[#E6E0D6]'" 
+                class="px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all" 
+                x-text="t('reviews.filterLocation')"></button>
+        <button @click="reviewFilter = 'amenities'" 
+                :class="reviewFilter === 'amenities' ? 'bg-[#111111] text-white' : 'bg-[#FAF7F2] text-[#5A625E] hover:text-[#111111] border border-[#E6E0D6]'" 
+                class="px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all" 
+                x-text="t('reviews.filterAmenities')"></button>
+      </div>
+
+      <!-- Reviews Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <template x-for="review in filteredReviews" :key="review.id">
+          <div class="p-6 rounded-2xl bg-[#FAF7F2] border border-[#E6E0D6] flex flex-col justify-between hover:border-[#111111]/40 transition-colors relative">
+            
+            <div>
+              <!-- Rating Stars & Airbnb Tag -->
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-1 text-amber-500">
+                  <template x-for="i in review.rating">
+                    <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                  </template>
+                </div>
+                <span class="text-[11px] font-semibold text-[#5A625E] bg-white px-2 py-0.5 rounded-full border border-[#E6E0D6]" x-text="t('reviews.verifiedBadge')"></span>
+              </div>
+
+              <!-- Review Quote -->
+              <p class="text-sm text-[#1C1E1D] leading-relaxed italic" x-text="lang === 'es' ? review.quoteEs : review.quote"></p>
+              
+              <!-- Host Maintenance Guarantee Badge for Carlos's Review -->
+              <template x-if="review.isCarlosGuarantee">
+                <div class="mt-4 p-3 rounded-xl bg-amber-50 border border-amber-200 text-xs text-amber-900 leading-normal flex items-start gap-2 not-italic">
+                  <i data-lucide="wrench" class="w-4 h-4 text-[#C87D4B] shrink-0 mt-0.5"></i>
+                  <span x-text="t('reviews.maintenanceGuarantee')"></span>
+                </div>
+              </template>
+            </div>
+
+            <!-- Reviewer Meta -->
+            <div class="mt-6 pt-4 border-t border-[#E6E0D6]/80 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-[#111111] text-white flex items-center justify-center font-bold text-sm shrink-0" x-text="review.guestName.charAt(0)"></div>
+              <div>
+                <h4 class="font-bold text-sm text-[#111111]" x-text="review.guestName"></h4>
+                <p class="text-xs text-[#5A625E]" x-text="lang === 'es' ? review.tenureEs : review.tenure"></p>
+              </div>
+            </div>
+
+          </div>
+        </template>
+      </div>
+
+      <!-- Expand/Collapse Button for 10 Reviews -->
+      <div class="mt-10 text-center" x-show="reviewFilter === 'all'">
+        <button @click="showAllReviews = !showAllReviews; $nextTick(() => renderIcons())" 
+                class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-[#111111] text-xs font-bold text-[#111111] hover:bg-[#111111] hover:text-white transition-all shadow-sm">
+          <i :data-lucide="showAllReviews ? 'chevron-up' : 'chevron-down'" class="w-4 h-4"></i>
+          <span x-text="showAllReviews ? t('reviews.showLess') : t('reviews.showMore')"></span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: MEET YOUR HOST (OMAR) -->
+  <section class="py-16 bg-[#F4F5F7] border-b border-[#E5E7EB]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="glass-card rounded-3xl p-8 sm:p-12 shadow-sm border border-[#E5E7EB] flex flex-col md:flex-row items-center md:items-start gap-8">
+        
+        <!-- Host Avatar & Stats -->
+        <div class="flex flex-col items-center text-center shrink-0">
+          <div class="w-28 h-28 rounded-full bg-[#111111] text-white p-1 shadow-xl relative overflow-visible">
+            <img src="Images/Omar.jpg" 
+                 alt="Host Omar" 
+                 class="w-full h-full object-cover rounded-full border-2 border-white/80" />
+            <div class="absolute bottom-1 right-1 w-7 h-7 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center" title="Online Host">
+              <i data-lucide="check" class="w-4 h-4 text-white"></i>
+            </div>
+          </div>
+          
+          <h3 class="mt-3 font-display text-xl font-bold text-[#111111]">Omar</h3>
+          <span class="text-xs text-[#5A625E]">Superhost Standards · IT Specialist</span>
+
+          <!-- Host Quick Stats -->
+          <div class="mt-4 flex flex-col gap-1.5 text-xs text-[#111111] font-semibold w-full">
+            <div class="px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-900 flex items-center justify-center gap-1">
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-500 text-amber-500"></i>
+              <span x-text="t('host.badgeRating')"></span>
+            </div>
+            <div class="px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-900 flex items-center justify-center gap-1">
+              <i data-lucide="clock" class="w-3.5 h-3.5 text-emerald-600"></i>
+              <span x-text="t('host.badgeTime')"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Host Bio & Direct Message -->
+        <div class="flex-1 text-center md:text-left">
+          <span class="inline-block text-xs font-bold tracking-widest text-[#C87D4B] uppercase" x-text="t('host.tag')"></span>
+          <h2 class="mt-1 font-display text-2xl sm:text-3xl font-bold text-[#111111]" x-text="t('host.title')"></h2>
+          <p class="mt-4 text-sm sm:text-base text-[#5A625E] leading-relaxed" x-text="t('host.bio')"></p>
+
+          <div class="mt-6 flex flex-wrap items-center justify-center md:justify-start gap-4">
+            <a :href="whatsAppInquiryUrl" 
+               target="_blank" 
+               class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#25D366] text-white text-xs font-bold hover:bg-[#1EBE5D] transition-all shadow-md">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span x-text="t('host.messageHost')"></span>
+            </a>
+
+            <div class="text-xs text-[#5A625E] flex items-center gap-1.5 font-medium">
+              <i data-lucide="shield" class="w-4 h-4 text-emerald-600"></i>
+              <span>Fluent in English & Spanish</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: SANTIAGO LOCAL VIP GUIDE & EXCLUSIVE PERKS -->
+  <section id="local-guide" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="inline-block text-xs font-bold tracking-widest text-[#C87D4B] uppercase" x-text="t('guide.tag')"></span>
+        <h2 class="mt-2 font-display text-3xl sm:text-4xl font-bold text-[#111111]" x-text="t('guide.title')"></h2>
+        <p class="mt-3 text-[#5A625E] text-base" x-text="t('guide.subtitle')"></p>
+        
+        <!-- VIP notice banner -->
+        <div class="mt-5 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-50 border border-amber-200 text-xs font-semibold text-amber-900">
+          <i data-lucide="crown" class="w-4 h-4 text-[#C87D4B]"></i>
+          <span x-text="t('guide.vipNotice')"></span>
+        </div>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="flex items-center justify-center flex-wrap gap-2 mb-10">
+        <button @click="guideFilter = 'all'" 
+                :class="guideFilter === 'all' ? 'bg-[#111111] text-white' : 'bg-white text-[#5A625E] hover:text-[#111111] border border-[#E6E0D6]'" 
+                class="px-4 py-1.5 rounded-full text-xs font-bold transition-all" 
+                x-text="t('guide.filterAll')"></button>
+        <button @click="guideFilter = 'vip'" 
+                :class="guideFilter === 'vip' ? 'bg-[#C87D4B] text-white shadow-md' : 'bg-amber-100 text-amber-900 hover:bg-amber-200 border border-amber-300'" 
+                class="px-4 py-1.5 rounded-full text-xs font-bold transition-all" 
+                x-text="t('guide.filterVip')"></button>
+        <button @click="guideFilter = 'groceries'" 
+                :class="guideFilter === 'groceries' ? 'bg-[#111111] text-white' : 'bg-white text-[#5A625E] hover:text-[#111111] border border-[#E6E0D6]'" 
+                class="px-4 py-1.5 rounded-full text-xs font-bold transition-all" 
+                x-text="t('guide.filterGroceries')"></button>
+        <button @click="guideFilter = 'coffee'" 
+                :class="guideFilter === 'coffee' ? 'bg-[#111111] text-white' : 'bg-white text-[#5A625E] hover:text-[#111111] border border-[#E6E0D6]'" 
+                class="px-4 py-1.5 rounded-full text-xs font-bold transition-all" 
+                x-text="t('guide.filterCoffee')"></button>
+        <button @click="guideFilter = 'dining'" 
+                :class="guideFilter === 'dining' ? 'bg-[#111111] text-white' : 'bg-white text-[#5A625E] hover:text-[#111111] border border-[#E6E0D6]'" 
+                class="px-4 py-1.5 rounded-full text-xs font-bold transition-all" 
+                x-text="t('guide.filterDining')"></button>
+        <button @click="guideFilter = 'fine'" 
+                :class="guideFilter === 'fine' ? 'bg-[#111111] text-white' : 'bg-white text-[#5A625E] hover:text-[#111111] border border-[#E6E0D6]'" 
+                class="px-4 py-1.5 rounded-full text-xs font-bold transition-all" 
+                x-text="t('guide.filterFine')"></button>
+        <button @click="guideFilter = 'nightlife'" 
+                :class="guideFilter === 'nightlife' ? 'bg-[#111111] text-white' : 'bg-white text-[#5A625E] hover:text-[#111111] border border-[#E6E0D6]'" 
+                class="px-4 py-1.5 rounded-full text-xs font-bold transition-all" 
+                x-text="t('guide.filterNightlife')"></button>
+        <button @click="guideFilter = 'trips'" 
+                :class="guideFilter === 'trips' ? 'bg-[#111111] text-white' : 'bg-white text-[#5A625E] hover:text-[#111111] border border-[#E6E0D6]'" 
+                class="px-4 py-1.5 rounded-full text-xs font-bold transition-all" 
+                x-text="t('guide.filterTrips')"></button>
+      </div>
+
+      <!-- Local Spots Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <template x-for="spot in filteredGuide" :key="spot.id">
+          <div :class="spot.isVip ? 'border-[#C87D4B] ring-1 ring-[#C87D4B]/30' : 'border-[#E6E0D6]'" 
+               class="glass-card rounded-2xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+            
+            <div>
+              <!-- Header with distance and VIP tag -->
+              <div class="flex items-start justify-between gap-2 mb-3">
+                <span :class="spot.isVip ? 'bg-amber-500 text-white font-bold' : 'bg-emerald-100 text-emerald-800 font-semibold'" 
+                      class="text-[11px] px-2.5 py-0.5 rounded-full" 
+                      x-text="spot.distance"></span>
+                
+                <template x-if="spot.isVip">
+                  <span class="flex items-center gap-1 text-[11px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200">
+                    <i data-lucide="crown" class="w-3 h-3 text-[#C87D4B]"></i>
+                    <span>VIP Perk</span>
+                  </span>
+                </template>
+              </div>
+
+              <!-- Venue Name -->
+              <h3 class="font-display text-xl font-bold text-[#111111]" x-text="spot.name"></h3>
+
+              <!-- Badge Hint -->
+              <div class="mt-2 inline-block px-2.5 py-1 rounded-lg text-xs font-medium" 
+                   :class="spot.isVip ? 'bg-amber-100/90 text-amber-950 font-semibold border border-amber-300' : 'bg-[#FAF7F2] text-[#5A625E] border border-[#E6E0D6]'" 
+                   x-text="lang === 'es' ? spot.badgeEs : spot.badgeEn"></div>
+
+              <!-- Description -->
+              <p class="mt-3 text-xs sm:text-sm text-[#5A625E] leading-relaxed" x-text="lang === 'es' ? spot.descEs : spot.descEn"></p>
+            </div>
+
+            <!-- Google Maps Link Button -->
+            <div class="mt-6 pt-4 border-t border-[#E6E0D6] flex items-center justify-between">
+              <a :href="spot.mapsUrl" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 class="inline-flex items-center gap-1.5 text-xs font-bold text-[#111111] hover:text-[#C87D4B] transition-colors">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#C87D4B]"></i>
+                <span x-text="t('guide.openMaps')"></span>
+                <i data-lucide="external-link" class="w-3 h-3 text-[#5A625E]"></i>
+              </a>
+
+              <template x-if="spot.isVip">
+                <a :href="whatsAppInquiryUrl" target="_blank" class="text-[11px] font-bold text-[#C87D4B] hover:underline">
+                  Contact Omar
+                </a>
+              </template>
+            </div>
+
+          </div>
+        </template>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: DIGITAL GUEST GUIDEBOOK & HOUSE RULES ("GUEST MODE") -->
+  <section class="py-20 bg-white border-y border-[#E6E0D6]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Title -->
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="inline-block text-xs font-bold tracking-widest text-[#C87D4B] uppercase" x-text="t('guestPortal.tag')"></span>
+        <h2 class="mt-2 font-display text-3xl sm:text-4xl font-bold text-[#111111]" x-text="t('guestPortal.title')"></h2>
+        <p class="mt-3 text-[#5A625E] text-base" x-text="t('guestPortal.subtitle')"></p>
+      </div>
+
+      <!-- Pocket Handbook Bento Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Address & Directions Card -->
+        <div class="p-6 rounded-2xl bg-[#FAF7F2] border border-[#E6E0D6] flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-[#111111] text-white flex items-center justify-center mb-4">
+              <i data-lucide="map-pin" class="w-5 h-5 text-[#C87D4B]"></i>
+            </div>
+            <h3 class="font-display text-lg font-bold text-[#111111]" x-text="t('guestPortal.addressTitle')"></h3>
+            <p class="mt-2 text-xs sm:text-sm text-[#1C1E1D] font-medium leading-relaxed" x-text="data.property.address"></p>
+            <p class="mt-2 text-xs text-[#5A625E]">Dead-end street in El Dorado II. Gated 3-unit building.</p>
+          </div>
+
+          <div class="mt-6 flex flex-col gap-2">
+            <button @click="copyToClipboard(data.property.address, 'Address copied!')" 
+                    class="w-full flex items-center justify-center gap-2 py-2 rounded-xl bg-white border border-[#D9D0C3] text-xs font-bold text-[#111111] hover:border-[#111111] transition-all">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span>Copy Address</span>
+            </button>
+            <a :href="data.property.googleMapsUrl" target="_blank" 
+               class="w-full flex items-center justify-center gap-2 py-2 rounded-xl bg-emerald-600 text-white text-xs font-bold hover:bg-emerald-700 transition-all">
+              <i data-lucide="navigation" class="w-3.5 h-3.5"></i>
+              <span>Open in Google Maps</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Parking Spot #2 Card -->
+        <div class="p-6 rounded-2xl bg-[#FAF7F2] border border-[#E6E0D6] flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-[#111111] text-white flex items-center justify-center mb-4">
+              <i data-lucide="car" class="w-5 h-5 text-[#C87D4B]"></i>
+            </div>
+            <h3 class="font-display text-lg font-bold text-[#111111]" x-text="t('guestPortal.parkingTitle')"></h3>
+            <div class="mt-2 p-2.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 font-bold text-sm inline-block" x-text="data.property.parkingSpot"></div>
+            <p class="mt-3 text-xs text-[#5A625E] leading-relaxed" x-text="t('guestPortal.parkingDesc')"></p>
+          </div>
+
+          <div class="mt-6 p-3 rounded-xl bg-white border border-[#E6E0D6] text-xs text-[#5A625E]">
+            <span class="font-bold text-[#111111]">Note:</span> Spot is reserved exclusively for apartment #3.
+          </div>
+        </div>
+
+        <!-- Check-In / Check-Out & Concierge -->
+        <div class="p-6 rounded-2xl bg-[#FAF7F2] border border-[#E6E0D6] flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-[#111111] text-white flex items-center justify-center mb-4">
+              <i data-lucide="clock" class="w-5 h-5 text-[#C87D4B]"></i>
+            </div>
+            <h3 class="font-display text-lg font-bold text-[#111111]" x-text="t('guestPortal.checkInTitle')"></h3>
+            <div class="mt-3 space-y-2 text-xs">
+              <div class="flex items-center justify-between p-2 rounded-lg bg-white border border-[#E6E0D6]">
+                <span class="text-[#5A625E]">Check-In:</span>
+                <span class="font-bold text-[#111111]" x-text="data.property.checkInTime"></span>
+              </div>
+              <div class="flex items-center justify-between p-2 rounded-lg bg-white border border-[#E6E0D6]">
+                <span class="text-[#5A625E]">Check-Out:</span>
+                <span class="font-bold text-[#111111]" x-text="data.property.checkOutTime"></span>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="window.print()" 
+                  class="mt-6 w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-white border border-[#111111] text-xs font-bold text-[#111111] hover:bg-[#111111] hover:text-white transition-all shadow-sm">
+            <i data-lucide="printer" class="w-4 h-4"></i>
+            <span x-text="t('guestPortal.printGuide')"></span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- 4 Essential House Rules Banner -->
+      <div class="mt-10 p-8 rounded-3xl bg-[#FAF7F2] border border-[#E6E0D6]">
+        <div class="flex items-center gap-2 mb-6">
+          <i data-lucide="alert-circle" class="w-5 h-5 text-[#C87D4B]"></i>
+          <h3 class="font-display text-xl font-bold text-[#111111]" x-text="t('guestPortal.rulesTitle')"></h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs sm:text-sm text-[#1C1E1D]">
+          <div class="p-4 rounded-xl bg-white border border-[#E6E0D6] flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-[#111111] text-white flex items-center justify-center font-bold text-xs shrink-0">1</span>
+            <p x-text="t('guestPortal.rule1')"></p>
+          </div>
+          <div class="p-4 rounded-xl bg-white border border-[#E6E0D6] flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-[#111111] text-white flex items-center justify-center font-bold text-xs shrink-0">2</span>
+            <p x-text="t('guestPortal.rule2')"></p>
+          </div>
+          <div class="p-4 rounded-xl bg-white border border-[#E6E0D6] flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-[#111111] text-white flex items-center justify-center font-bold text-xs shrink-0">3</span>
+            <p x-text="t('guestPortal.rule3')"></p>
+          </div>
+          <div class="p-4 rounded-xl bg-white border border-[#E6E0D6] flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-[#111111] text-white flex items-center justify-center font-bold text-xs shrink-0">4</span>
+            <p x-text="t('guestPortal.rule4')"></p>
+          </div>
+        </div>
+
+        <!-- Eco & Safety Notice -->
+        <div class="mt-6 pt-6 border-t border-[#E6E0D6] flex flex-wrap items-center gap-6 text-xs text-[#5A625E]">
+          <div class="flex items-center gap-2">
+            <i data-lucide="power" class="w-4 h-4 text-emerald-600"></i>
+            <span x-text="t('guestPortal.etiquette1')"></span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="trash-2" class="w-4 h-4 text-amber-600"></i>
+            <span x-text="t('guestPortal.etiquette2')"></span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="lock" class="w-4 h-4 text-sky-600"></i>
+            <span x-text="t('guestPortal.etiquette3')"></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: DIRECT BOOKING INQUIRY WIDGET & FAQ HUB -->
+  <section id="faq" class="py-20 bg-[#F4F5F7]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Left: Direct WhatsApp Inquiry Card (5 Columns) -->
+        <div class="lg:col-span-5 glass-card rounded-3xl p-8 sm:p-9 shadow-xl border border-[#E5E7EB] sticky top-28">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+            <span class="text-xs font-bold uppercase tracking-wider text-[#C87D4B]" x-text="t('booking.tag')"></span>
+          </div>
+          <h2 class="font-display text-2xl sm:text-3xl font-bold text-[#111111]" x-text="t('booking.title')"></h2>
+          <p class="mt-2 text-xs sm:text-sm text-[#5A625E]" x-text="t('booking.subtitle')"></p>
+
+          <!-- Interactive Form Inputs -->
+          <div class="mt-6 space-y-4">
+            
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs font-bold text-[#111111] mb-1" x-text="t('booking.checkInLabel')"></label>
+                <input type="date" x-model="bookingForm.checkIn" class="w-full text-xs font-medium px-3 py-2.5 rounded-xl border border-[#D9D0C3] bg-white focus:outline-none focus:ring-2 focus:ring-[#111111]" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-[#111111] mb-1" x-text="t('booking.checkOutLabel')"></label>
+                <input type="date" x-model="bookingForm.checkOut" class="w-full text-xs font-medium px-3 py-2.5 rounded-xl border border-[#D9D0C3] bg-white focus:outline-none focus:ring-2 focus:ring-[#111111]" />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-[#111111] mb-1" x-text="t('booking.guestsLabel')"></label>
+              <select x-model.number="bookingForm.guests" class="w-full text-xs font-medium px-3 py-2.5 rounded-xl border border-[#D9D0C3] bg-white focus:outline-none focus:ring-2 focus:ring-[#111111]">
+                <option value="1">1 Guest</option>
+                <option value="2">2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests (Max Capacity)</option>
+              </select>
+            </div>
+
+            <!-- Notes -->
+            <div>
+              <label class="block text-xs font-bold text-[#111111] mb-1" x-text="t('booking.notesLabel')"></label>
+              <textarea x-model="bookingForm.notes" rows="2" :placeholder="t('booking.notesPlaceholder')" class="w-full text-xs font-medium px-3 py-2 rounded-xl border border-[#D9D0C3] bg-white focus:outline-none focus:ring-2 focus:ring-[#111111]"></textarea>
+            </div>
+
+            <!-- Nights preview calculation -->
+            <div class="flex items-center justify-between text-xs font-semibold px-2 py-1 text-[#5A625E]">
+              <span x-text="t('booking.nightsCount')"></span>
+              <span class="font-bold text-[#111111] text-sm" x-text="calculatedNights + ' night' + (calculatedNights === 1 ? '' : 's')"></span>
+            </div>
+
+            <!-- Send WhatsApp Button -->
+            <a :href="whatsAppInquiryUrl" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="w-full flex items-center justify-center gap-2.5 py-3.5 rounded-xl bg-[#25D366] text-white font-bold text-sm hover:bg-[#1EBE5D] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+              <i data-lucide="message-circle" class="w-4 h-4 text-white"></i>
+              <span x-text="t('booking.sendWhatsApp')"></span>
+            </a>
+
+            <!-- Or Airbnb Button -->
+            <a :href="data.property.airbnbUrl" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-[#111111] text-white font-bold text-xs hover:bg-[#C87D4B] transition-all shadow-md">
+              <i data-lucide="calendar" class="w-4 h-4 text-[#C87D4B]"></i>
+              <span x-text="t('booking.orBookAirbnb')"></span>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Right: FAQ Accordion / Cards (7 Columns) -->
+        <div class="lg:col-span-7">
+          <div class="mb-8">
+            <span class="inline-block text-xs font-bold tracking-widest text-[#C87D4B] uppercase">ANSWERS & ASSURANCES</span>
+            <h2 class="mt-1 font-display text-2xl sm:text-3xl font-bold text-[#111111]" x-text="t('booking.faqTitle')"></h2>
+          </div>
+
+          <div class="space-y-4">
+            
+            <!-- FAQ 1: Power Backup -->
+            <div class="glass-card rounded-2xl p-6 shadow-sm border border-[#E5E7EB]">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5">
+                  <i data-lucide="zap" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h3 class="font-display text-lg font-bold text-[#111111]" x-text="t('booking.faq1Q')"></h3>
+                  <p class="mt-2 text-sm text-[#5A625E] leading-relaxed" x-text="t('booking.faq1A')"></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 2: Parking -->
+            <div class="glass-card rounded-2xl p-6 shadow-sm border border-[#E5E7EB]">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center shrink-0 mt-0.5">
+                  <i data-lucide="car" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h3 class="font-display text-lg font-bold text-[#111111]" x-text="t('booking.faq2Q')"></h3>
+                  <p class="mt-2 text-sm text-[#5A625E] leading-relaxed" x-text="t('booking.faq2A')"></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 3: Distance & STI Airport -->
+            <div class="glass-card rounded-2xl p-6 shadow-sm border border-[#E5E7EB]">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg bg-sky-100 text-sky-800 flex items-center justify-center shrink-0 mt-0.5">
+                  <i data-lucide="plane" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h3 class="font-display text-lg font-bold text-[#111111]" x-text="t('booking.faq3Q')"></h3>
+                  <p class="mt-2 text-sm text-[#5A625E] leading-relaxed" x-text="t('booking.faq3A')"></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 4: Luggage Help -->
+            <div class="glass-card rounded-2xl p-6 shadow-sm border border-[#E5E7EB]">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center shrink-0 mt-0.5">
+                  <i data-lucide="baggage-claim" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h3 class="font-display text-lg font-bold text-[#111111]" x-text="t('booking.faq4Q')"></h3>
+                  <p class="mt-2 text-sm text-[#5A625E] leading-relaxed" x-text="t('booking.faq4A')"></p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#111111] text-white py-14 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-10 border-b border-white/10">
+        <div>
+          <span class="font-display text-2xl font-bold tracking-tight">Residencial Mijoca</span>
+          <p class="text-xs text-white/70 mt-1">Calle 4 #27, El Dorado II · Santiago de los Caballeros, Dominican Republic</p>
+          <p class="text-xs text-amber-300 mt-0.5" x-text="t('footer.curatedBy')"></p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-4 text-xs font-semibold">
+          <a :href="data.property.airbnbUrl" target="_blank" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 transition-colors flex items-center gap-2">
+            <i data-lucide="external-link" class="w-3.5 h-3.5 text-amber-400"></i>
+            <span x-text="t('footer.airbnbDirect')"></span>
+          </a>
+          <a :href="whatsAppInquiryUrl" target="_blank" class="px-4 py-2 rounded-xl bg-[#25D366] text-white hover:bg-[#1EBE5D] transition-colors flex items-center gap-2">
+            <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+            <span>WhatsApp (+1 646 209 0270)</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/60 gap-4">
+        <p x-text="t('footer.rights')"></p>
+        <div class="flex items-center gap-4">
+          <a href="#power-tech" class="hover:text-white transition-colors" x-text="t('nav.powerTech')"></a>
+          <span>·</span>
+          <a href="#reviews" class="hover:text-white transition-colors" x-text="t('nav.reviews')"></a>
+          <span>·</span>
+          <a href="#faq" class="hover:text-white transition-colors" x-text="t('nav.rulesFaq')"></a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- FULLSCREEN PHOTO LIGHTBOX MODAL -->
+  <div x-show="isLightboxOpen" 
+       x-cloak 
+       x-transition:enter="transition ease-out duration-300"
+       x-transition:enter-start="opacity-0"
+       x-transition:enter-end="opacity-100"
+       x-transition:leave="transition ease-in duration-200"
+       x-transition:leave-start="opacity-100"
+       x-transition:leave-end="opacity-0"
+       class="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex flex-col items-center justify-between p-4 sm:p-6">
+    
+    <!-- Top Bar with index and close -->
+    <div class="w-full max-w-6xl flex items-center justify-between text-white py-2">
+      <div class="flex items-center gap-3">
+        <span class="text-xs font-mono font-bold bg-white/20 px-2.5 py-1 rounded-full" 
+              x-text="(activeLightboxIndex + 1) + ' / ' + filteredGallery.length"></span>
+        <span class="font-display text-sm sm:text-base font-semibold" 
+              x-text="lang === 'es' ? filteredGallery[activeLightboxIndex]?.titleEs : filteredGallery[activeLightboxIndex]?.titleEn"></span>
+      </div>
+
+      <button @click="closeLightbox()" class="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors" aria-label="Close Lightbox">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Center Image with Navigation Arrows -->
+    <div class="relative w-full max-w-6xl flex-1 flex items-center justify-center my-2">
+      
+      <!-- Previous Arrow -->
+      <button @click="prevPhoto()" 
+              class="absolute left-2 sm:left-4 z-10 p-3 rounded-full bg-black/50 hover:bg-black/80 text-white transition-all backdrop-blur" 
+              aria-label="Previous Photo">
+        <i data-lucide="chevron-left" class="w-6 h-6"></i>
+      </button>
+
+      <!-- Active Image -->
+      <div class="relative max-h-[75vh] max-w-full flex items-center justify-center">
+        <img :src="filteredGallery[activeLightboxIndex]?.src" 
+             :alt="lang === 'es' ? filteredGallery[activeLightboxIndex]?.titleEs : filteredGallery[activeLightboxIndex]?.titleEn" 
+             class="max-h-[75vh] max-w-full object-contain rounded-lg shadow-2xl transition-all duration-200" />
+      </div>
+
+      <!-- Next Arrow -->
+      <button @click="nextPhoto()" 
+              class="absolute right-2 sm:right-4 z-10 p-3 rounded-full bg-black/50 hover:bg-black/80 text-white transition-all backdrop-blur" 
+              aria-label="Next Photo">
+        <i data-lucide="chevron-right" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Bottom Caption Bar -->
+    <div class="w-full max-w-3xl text-center text-white/80 text-xs sm:text-sm py-2">
+      <p x-text="lang === 'es' ? filteredGallery[activeLightboxIndex]?.descEs : filteredGallery[activeLightboxIndex]?.descEn"></p>
+    </div>
+
+  </div>
+
+  <!-- FULLSCREEN VIDEO MODAL -->
+  <div x-show="isVideoModalOpen" 
+       x-cloak 
+       x-transition:enter="transition ease-out duration-300"
+       x-transition:enter-start="opacity-0"
+       x-transition:enter-end="opacity-100"
+       x-transition:leave="transition ease-in duration-200"
+       x-transition:leave-start="opacity-100"
+       x-transition:leave-end="opacity-0"
+       class="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex flex-col items-center justify-center p-4 sm:p-6">
+    
+    <div class="w-full max-w-5xl flex items-center justify-between text-white pb-3">
+      <div class="flex items-center gap-2.5">
+        <span class="w-2.5 h-2.5 rounded-full bg-red-600 animate-pulse"></span>
+        <span class="font-display font-bold text-sm sm:text-base">Residencial Mijoca · Video Walkthrough</span>
+      </div>
+
+      <button @click="closeVideoModal()" class="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors" aria-label="Close Video">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <div class="w-full max-w-5xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/15">
+      <template x-if="isVideoModalOpen">
+        <iframe 
+          id="modal-youtube-iframe"
+          :src="'https://www.youtube.com/embed/' + data.property.youtubeId + '?autoplay=1&enablejsapi=1&rel=0&modestbranding=1'" 
+          title="Residencial Mijoca Video Walkthrough" 
+          class="w-full h-full"
+          frameborder="0" 
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen>
+        </iframe>
+      </template>
+    </div>
+
+    <!-- Fallback link inside modal -->
+    <div class="mt-3 flex items-center justify-between w-full max-w-5xl text-xs text-white/70">
+      <span>Having trouble playing in browser?</span>
+      <a :href="data.property.youtubeUrl" target="_blank" rel="noopener noreferrer" class="text-red-400 hover:text-red-300 font-bold flex items-center gap-1">
+        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        <span x-text="t('videoTour.watchOnYouTube')"></span>
+      </a>
+    </div>
+
+  </div>
+
+</body>
+</html>
