@@ -199,6 +199,25 @@ document.addEventListener('alpine:init', () => {
       return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     },
 
+    // Dynamic Airbnb Checkout URL with pre-filled dates and guests
+    get airbnbBookingUrl() {
+      const baseUrl = this.data.property.airbnbUrl;
+      const params = new URLSearchParams();
+      
+      if (this.bookingForm.checkIn) {
+        params.append('check_in', this.bookingForm.checkIn);
+      }
+      if (this.bookingForm.checkOut) {
+        params.append('check_out', this.bookingForm.checkOut);
+      }
+      if (this.bookingForm.guests) {
+        params.append('adults', this.bookingForm.guests);
+      }
+
+      const qs = params.toString();
+      return qs ? `${baseUrl}?${qs}` : baseUrl;
+    },
+
     // Clipboard Copy Helper with Toast
     copyToClipboard(text, customMessage) {
       if (navigator.clipboard && window.isSecureContext) {
