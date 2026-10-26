@@ -150,11 +150,10 @@ Provide a dedicated **"Current Guest Check-In Guide"** section/modal so checked-
   * Turn off bedroom inverter A/C units when leaving the apartment for the day.
   * Place tied trash bags in the main exterior bin near the property front exit.
   * Lock balcony doors and exterior windows securely whenever leaving the unit.
-* **4 Core House Rules:**
+* **3 Core House Rules:**
   1. **Quiet Hours (10:00 PM – 8:00 AM):** Located on a quiet residential dead-end street; please respect neighbors.
   2. **No Smoking:** Strictly prohibited inside the apartment and on the balcony.
   3. **Strict 4-Guest Maximum & No Parties:** Only registered reservation guests are permitted on the property unless pre-approved by the host.
-  4. **Keyless Self Check-In:** Digital smart lock for seamless keyless arrival anytime after 4:00 PM.
 
 ### Section 9: Direct Booking / Inquiry Footer & Contact Hub
 
