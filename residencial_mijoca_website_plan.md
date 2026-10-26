@@ -59,7 +59,10 @@ A warm, tropical-modern architectural palette that feels upscale, sunlit, trustw
   * **24/7 5 kW Backup Power**
 * **Hero CTAs:**
   1. **Check Availability on Airbnb** → Links directly to [`https://www.airbnb.com/rooms/1758998339922997720`](https://www.airbnb.com/rooms/1758998339922997720)
-  2. **Inquire via WhatsApp (Direct Rate)** → Links to `https://wa.me/16462090270?text=Hola%20Omar,%20I%20would%20like%20to%20check%20availability%20at%20Residencial%20Mijoca`
+  2. **Inquire via WhatsApp (Direct Rate)** → Opens dynamic WhatsApp inquiry modal with dates and guest count.
+  3. **Watch Video Tour** → Opens YouTube walkthrough modal.
+  4. **Share with Travel Crew** → 1-Click native Web Share API & WhatsApp invite modal to share with group chats.
+  5. **Progressive Web App (PWA)** → `manifest.json` and `sw.js` offline caching for 1-tap "Save Guide to Phone" home screen install.
 
 ### Section 3: The "Uninterrupted Comfort" Spotlight (Core Differentiator)
 

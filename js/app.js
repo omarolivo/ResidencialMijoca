@@ -15,6 +15,11 @@ document.addEventListener('alpine:init', () => {
     activeLightboxIndex: 0,
     isVideoModalOpen: false,
     mobileMenuOpen: false,
+    isShareModalOpen: false,
+    isPwaModalOpen: false,
+    deferredPrompt: null,
+    isAppInstalled: false,
+    isIos: false,
     
     // Toast Notification
     toast: {
@@ -31,6 +36,37 @@ document.addEventListener('alpine:init', () => {
     },
 
     init() {
+      // Detect iOS device
+      this.isIos = /iphone|ipad|ipod/.test(window.navigator.userAgent.toLowerCase());
+
+      // Check if running as installed standalone PWA
+      if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true) {
+        this.isAppInstalled = true;
+      }
+
+      // Register PWA Service Worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js').then((reg) => {
+            console.log('Mijoca Service Worker registered:', reg.scope);
+          }).catch((err) => {
+            console.log('Service Worker registration note:', err);
+          });
+        });
+      }
+
+      // Capture Android / Chromium PWA install prompt
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        this.deferredPrompt = e;
+      });
+
+      window.addEventListener('appinstalled', () => {
+        this.isAppInstalled = true;
+        this.deferredPrompt = null;
+        this.triggerToast(this.lang === 'es' ? '¡Guía guardada en tu pantalla de inicio!' : 'Guide saved to your home screen!');
+      });
+
       // Set default dates (tomorrow and 3 days later)
       const today = new Date();
       const checkInDate = new Date(today);
@@ -47,6 +83,8 @@ document.addEventListener('alpine:init', () => {
           this.isLightboxOpen = false;
           this.isVideoModalOpen = false;
           this.mobileMenuOpen = false;
+          this.isShareModalOpen = false;
+          this.isPwaModalOpen = false;
         } else if (this.isLightboxOpen) {
           if (e.key === 'ArrowRight') this.nextPhoto();
           if (e.key === 'ArrowLeft') this.prevPhoto();
@@ -239,6 +277,72 @@ document.addEventListener('alpine:init', () => {
         const src = iframe.src;
         iframe.src = src; // Resets / stops audio playback
       }
+    },
+
+    // Share with Travel Crew helpers
+    getShareText() {
+      const url = window.location.origin + window.location.pathname;
+      if (this.lang === 'es') {
+        return `🌴 Residencial Mijoca · Apartamento Boutique en Santiago, RD\n⭐ Favorito de Huéspedes Airbnb (5.0 ★ · Top 10% Mundial)\n⚡ Energía 24/7 (Inversor y batería 5 kW - sin cortes)\n🚗 Parqueo Privado Asignado #1 y Balcón Privado\n📍 El Dorado II, Santiago\nMíralo aquí: ${url}`;
+      }
+      return `🌴 Residencial Mijoca · Boutique 2BR/2BA Stay in Santiago, DR\n⭐ Airbnb Guest Favorite (5.0 ★ · Top 10% of Homes)\n⚡ 24/7 Power (5 kW battery backup - zero outages)\n🚗 Free Reserved Parking Spot #1 & Private Balcony\n📍 El Dorado II, Santiago\nCheck it out: ${url}`;
+    },
+
+    get whatsAppShareUrl() {
+      return `https://api.whatsapp.com/send?text=${encodeURIComponent(this.getShareText())}`;
+    },
+
+    shareWithCrew() {
+      const url = window.location.origin + window.location.pathname;
+      if (navigator.share && /mobile|android|iphone|ipad/i.test(navigator.userAgent)) {
+        navigator.share({
+          title: 'Residencial Mijoca · Santiago, DR',
+          text: this.getShareText(),
+          url: url
+        }).catch((err) => {
+          if (err.name !== 'AbortError') {
+            this.isShareModalOpen = true;
+          }
+        });
+      } else {
+        this.isShareModalOpen = true;
+      }
+      this.$nextTick(() => this.renderIcons());
+    },
+
+    closeShareModal() {
+      this.isShareModalOpen = false;
+    },
+
+    copyShareInvite() {
+      this.copyToClipboard(this.getShareText(), this.t('share.copiedToast'));
+      this.isShareModalOpen = false;
+    },
+
+    copyShareLink() {
+      const url = window.location.origin + window.location.pathname;
+      this.copyToClipboard(url, this.t('share.linkCopiedToast'));
+      this.isShareModalOpen = false;
+    },
+
+    // PWA Installation helpers
+    installPwa() {
+      if (this.deferredPrompt) {
+        this.deferredPrompt.prompt();
+        this.deferredPrompt.userChoice.then((choiceResult) => {
+          if (choiceResult.outcome === 'accepted') {
+            this.isAppInstalled = true;
+          }
+          this.deferredPrompt = null;
+        });
+      } else {
+        this.isPwaModalOpen = true;
+        this.$nextTick(() => this.renderIcons());
+      }
+    },
+
+    closePwaModal() {
+      this.isPwaModalOpen = false;
     }
   }));
 });

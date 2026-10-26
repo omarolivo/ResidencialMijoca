@@ -1,0 +1,30 @@
+{
+  "name": "Residencial Mijoca - Santiago Guide & Stay",
+  "short_name": "Mijoca Guide",
+  "description": "Boutique 2BR/2BA apartment in Santiago, DR. 24/7 power backup, fast Wi-Fi, private parking spot #1, and curated digital guest guidebook.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#111111",
+  "theme_color": "#111111",
+  "categories": ["travel", "lifestyle"],
+  "icons": [
+    {
+      "src": "Images/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "Images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "Images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

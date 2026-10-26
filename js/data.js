@@ -184,6 +184,29 @@ const MIJOCA_DATA = {
         faq4Q: "Is there an elevator in the building?",
         faq4A: "Residencial Mijoca is an exclusive 3-unit boutique building with no elevator. The apartment is located on the 3rd floor accessible via wide, comfortable stairs."
       },
+      share: {
+        btnText: "Share with Travel Crew",
+        modalTitle: "Share Residencial Mijoca with Your Travel Crew",
+        modalSubtitle: "Planning a trip with friends, family, or your partner? Send the direct stay link with photos, 5.0★ rating, and key perks straight to your group chat.",
+        btnWhatsApp: "Share on WhatsApp",
+        btnCopyInvite: "Copy Group Message",
+        btnCopyLink: "Copy Link Only",
+        copiedToast: "Trip invite copied! Paste it in your chat.",
+        linkCopiedToast: "Link copied to clipboard!"
+      },
+      pwa: {
+        badge: "PWA · Offline Ready",
+        title: "Save Santiago Guide to Your Phone",
+        subtitle: "Install this digital guidebook directly to your phone's home screen for instant 1-tap access during your stay—even offline!",
+        btnInstall: "Save Guide to Phone",
+        btnInstalled: "Guide Saved to Phone",
+        iosModalTitle: "Save Guide to Your iPhone (Safari)",
+        iosStep1: "1. Tap the Share button at the bottom of Safari (square with arrow ↑).",
+        iosStep2: "2. Scroll down and tap 'Add to Home Screen' (+).",
+        iosStep3: "3. Tap 'Add' in the top right corner. The Mijoca icon will appear on your phone!",
+        desktopTip: "On Chrome or Edge, click the install icon in the address bar or bookmark this page.",
+        gotIt: "Got It"
+      },
       footer: {
         rights: "All rights reserved. Residencial Mijoca · El Dorado II, Santiago, Dominican Republic.",
         airbnbDirect: "Official Airbnb Listing #1758998339922997720",
@@ -337,6 +360,29 @@ const MIJOCA_DATA = {
         faq3A: "Residencial Mijoca está en El Dorado II: a 5 minutos del Supermercado Nacional, a 10–12 minutos del Monumento de Santiago y centro histórico, y a 20–25 minutos del Aeropuerto Internacional del Cibao (STI).",
         faq4Q: "¿El edificio cuenta con ascensor?",
         faq4A: "Residencial Mijoca es un exclusivo edificio boutique de solo 3 unidades y no cuenta con ascensor. El apartamento está en el 3er nivel accesible mediante escaleras cómodas y amplias."
+      },
+      share: {
+        btnText: "Compartir con Grupo de Viaje",
+        modalTitle: "Comparte Residencial Mijoca con tu Grupo",
+        modalSubtitle: "¿Planeando un viaje con amigos, familia o pareja? Envía los detalles de la estadía con fotos, calificación 5.0★ y comodidades directo a tu chat grupal.",
+        btnWhatsApp: "Compartir por WhatsApp",
+        btnCopyInvite: "Copiar Invitación para el Grupo",
+        btnCopyLink: "Copiar Solo el Enlace",
+        copiedToast: "¡Invitación copiada! Pégala en tu chat de viaje.",
+        linkCopiedToast: "¡Enlace copiado al portapapeles!"
+      },
+      pwa: {
+        badge: "PWA · Funciona Sin Conexión",
+        title: "Guarda la Guía de Santiago en tu Celular",
+        subtitle: "Instala esta guía digital directo en la pantalla de inicio de tu celular para tener acceso rápido en 1 toque durante tu viaje, ¡incluso sin internet!",
+        btnInstall: "Guardar Guía en el Celular",
+        btnInstalled: "Guía Guardada en el Celular",
+        iosModalTitle: "Cómo Guardar en tu iPhone (Safari)",
+        iosStep1: "1. Toca el botón Compartir en la parte inferior de Safari (icono de cuadrado con flecha ↑).",
+        iosStep2: "2. Desliza hacia abajo y selecciona 'Agregar al inicio' (+).",
+        iosStep3: "3. Toca 'Agregar' en la esquina superior derecha. ¡El icono de Mijoca aparecerá en tu pantalla!",
+        desktopTip: "En Chrome o Edge, haz clic en el icono de instalar en la barra de direcciones o añade a favoritos.",
+        gotIt: "Entendido"
       },
       footer: {
         rights: "Todos los derechos reservados. Residencial Mijoca · El Dorado II, Santiago, República Dominicana.",
