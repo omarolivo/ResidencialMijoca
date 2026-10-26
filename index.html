@@ -134,6 +134,20 @@
                     class="px-2.5 py-1 rounded-full transition-all">ES</button>
           </div>
 
+          <!-- Instagram Profile Link -->
+          <a :href="data.property.instagramUrl" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-gradient-to-tr hover:from-amber-500 hover:via-pink-500 hover:to-purple-600 text-white border border-white/15 transition-all shadow-sm group" 
+             title="Follow @resmijoca on Instagram"
+             aria-label="Instagram @resmijoca">
+            <svg class="w-4 h-4 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+            </svg>
+          </a>
+
           <!-- Primary Airbnb CTA -->
           <a :href="data.property.airbnbUrl" 
              target="_blank" 
@@ -174,6 +188,14 @@
         </a>
         <a href="#local-guide" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-lg font-medium text-white/90 hover:text-white hover:bg-white/10 transition-colors" x-text="t('nav.vipGuide')"></a>
         <a href="#faq" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-lg font-medium text-white/90 hover:text-white hover:bg-white/10 transition-colors" x-text="t('nav.rulesFaq')"></a>
+        <a :href="data.property.instagramUrl" target="_blank" rel="noopener noreferrer" class="block px-3 py-2 rounded-lg font-medium text-white/90 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2.5">
+          <svg class="w-4 h-4 text-pink-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+          </svg>
+          <span>Instagram (@resmijoca)</span>
+        </a>
         <div class="pt-3 border-t border-white/15 flex flex-col gap-2">
           <a :href="data.property.airbnbUrl" target="_blank" class="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-bold rounded-lg bg-[#C87D4B] text-white hover:bg-white hover:text-[#111111] transition-all">
             <i data-lucide="calendar-check" class="w-4 h-4"></i>
@@ -793,6 +815,19 @@
               <span x-text="t('host.messageHost')"></span>
             </a>
 
+            <!-- Instagram Button -->
+            <a :href="data.property.instagramUrl" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white border border-[#E5E7EB] text-[#111111] text-xs font-bold hover:border-[#111111] hover:bg-neutral-50 transition-all shadow-sm group">
+              <svg class="w-4 h-4 text-pink-600 group-hover:scale-110 transition-transform shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+              </svg>
+              <span x-text="t('host.followInstagram')"></span>
+            </a>
+
             <div class="text-xs text-[#5A625E] flex items-center gap-1.5 font-medium">
               <i data-lucide="shield" class="w-4 h-4 text-emerald-600"></i>
               <span>Fluent in English & Spanish</span>
@@ -1197,6 +1232,14 @@
             <i data-lucide="external-link" class="w-3.5 h-3.5 text-amber-400"></i>
             <span x-text="t('footer.airbnbDirect')"></span>
           </a>
+          <a :href="data.property.instagramUrl" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600 via-pink-600 to-amber-600 text-white hover:opacity-90 transition-opacity flex items-center gap-2 shadow-sm">
+            <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+            </svg>
+            <span>Instagram (@resmijoca)</span>
+          </a>
           <a :href="whatsAppInquiryUrl" target="_blank" class="px-4 py-2 rounded-xl bg-[#25D366] text-white hover:bg-[#1EBE5D] transition-colors flex items-center gap-2">
             <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
             <span>WhatsApp (+1 646 209 0270)</span>
@@ -1207,7 +1250,7 @@
       <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/60 gap-4">
         <p x-text="t('footer.rights')"></p>
         <div class="flex items-center gap-4">
-          <a href="#power-tech" class="hover:text-white transition-colors" x-text="t('nav.powerTech')"></a>
+          <a href="#spaces" class="hover:text-white transition-colors" x-text="t('nav.apartment')"></a>
           <span>·</span>
           <a href="#reviews" class="hover:text-white transition-colors" x-text="t('nav.reviews')"></a>
           <span>·</span>

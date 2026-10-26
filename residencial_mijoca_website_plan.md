@@ -6,7 +6,7 @@
 
 Ranked in the **Top 10% of Airbnb homes ("Guest Favorite")** with a **5.0-star rating across 10 reviews** and a **100% 5-star location score** on [Airbnb Listing #1758998339922997720](https://www.airbnb.com/rooms/1758998339922997720), the website must serve two primary goals:
 
-1. **High-Converting Direct & Airbnb Booking Showcase:** Convert prospective business travelers, remote workers, diaspora visitors, and couples/small families by highlighting uninterrupted 24/7 power (5 kW battery backup), blazing-fast Wi-Fi, boutique 3-unit privacy, free gated parking, and verified 5-star guest reviews.
+1. **High-Converting Direct & Airbnb Booking Showcase:** Convert prospective business travelers, remote workers, diaspora visitors, and couples/small families by highlighting uninterrupted 24/7 power (5 kW battery backup), blazing-fast Wi-Fi, boutique 3-unit privacy, dedicated private parking, and verified 5-star guest reviews.
 2. **Interactive Digital Guest Guidebook & VIP Concierge:** Provide checked-in guests with instant access to arrival logistics, house rules, Omar's curated local recommendations in Santiago, and exclusive **Host VIP Perks** (such as direct local boat rates to [Cayo Arena / Paradise Island](https://maps.app.goo.gl/zZyd4qDQr6HY1ZvB9)).
 3. **Zero-Compilation Static Deployment:** Built strictly with **static HTML5, CSS3, and CDN-hosted JavaScript libraries** so the entire folder can be uploaded directly to any standard HTML web server (cPanel, Apache, Nginx, shared hosting, S3, or GitHub Pages) with **zero Node.js, npm, or build/compilation steps required**.
 
@@ -45,13 +45,13 @@ A warm, tropical-modern architectural palette that feels upscale, sunlit, trustw
 * **Center Links:** `The Apartment` · `24/7 Power & Tech` · `Guest Reviews (5.0★)` · `Santiago VIP Guide` · `House Rules & FAQ`.
 * **Right Controls:**
   * `EN | ES` Language Toggle (updates all page copy dynamically without reloading).
-  * `Guest Check-In Portal` button (opens modal/drawer with Wi-Fi & arrival instructions).
-  * Primary CTA Button: **Book Direct / Airbnb** (scrolls to booking widget or opens [Airbnb Listing](https://www.airbnb.com/rooms/1758998339922997720)).
+  * Instagram Profile Link (`https://www.instagram.com/resmijoca`) with gradient hover effect.
+  * Primary CTA Button: **Book Direct / Airbnb** (opens [Airbnb Listing](https://www.airbnb.com/rooms/1758998339922997720)).
 
 ### Section 2: Hero Section & Trust Bar
 
 * **Headline:** *Your Modern, Uninterrupted Boutique Retreat in Santiago de los Caballeros*
-* **Subheadline:** *Brand-new 2BR/2BA apartment in a quiet 3-unit building in El Dorado II. Engineered with 24/7 battery backup power, blazing-fast Wi-Fi, private balcony, and reserved gated parking.*
+* **Subheadline:** *Brand-new 2BR/2BA apartment in a quiet 3-unit building in El Dorado II. Engineered with 24/7 battery backup power, blazing-fast Wi-Fi, private balcony, and reserved parking.*
 * **Floating Trust Badges (Grounded in Airbnb Data):**
   * **★ 5.0 Rating (10 Verified Reviews)**
   * **Airbnb Guest Favorite** — *Top 10% of Homes*
@@ -70,7 +70,7 @@ Travelers to the Dominican Republic care deeply about power reliability, interne
 | **Card 1 (Large)** | **Automatic 5 kW 24/7 Battery Backup** | If the municipal power grid drops, your apartment switches automatically with **zero interruption**. Keeps **Wi-Fi, lights, 3 Smart TVs, refrigerator, and wall outlets** running continuously. *(Transparent Note: Individual bedroom inverter A/C units operate on the main municipal grid line only).* |
 | **Card 2** | **IT-Curated High-Speed Wi-Fi** | Designed by a host with an IT background specifically for remote work, video calls, and 4K streaming across **3 Smart TVs** (living room + both bedrooms). |
 | **Card 3** | **Boutique 3-Unit Privacy & 3rd Floor Light** | Located on the 3rd floor of a brand-new building with **only 3 private apartments** on a quiet dead-end street. Filled with natural light and cool cross-breezes (no elevator). |
-| **Card 4** | **Reserved Parking & Smart Security** | Includes **Parking Spot #1** inside the gated property. Protected by **6 exterior security cameras** (front entrance, parking, backyard perimeter—strictly zero indoor cameras) plus **Smart Water Leak Sensors** by the washer and water heater. |
+| **Card 4** | **Reserved Parking & Smart Security** | Includes **Parking Spot #1** on the property. Protected by **6 exterior security cameras** (front entrance, parking, backyard perimeter—strictly zero indoor cameras) plus **Smart Water Leak Sensors** by the washer and water heater. |
 
 ### Section 4: Space Breakdown & Amenities Matrix
 
@@ -114,6 +114,7 @@ Include a category highlight bar (`All Reviews (10)` · `Hospitality` · `Busine
   * **Host:** Omar (Born in the 80s, IT Professional, fluent in English & Spanish; profile picture: `Images/Omar.jpg`)
   * **Stats:** `5.0 ★ Rating` · `100% Response Rate` · `Responds Within 1 Hour`
   * **Bio Copy:** *"Hi, I'm Omar! I work in tech and take pride in curating clean, modern, and stress-free spaces for travelers. With an IT background, I focus on the essentials that make every visit effortless: blazing-fast Wi-Fi, comfortable workspaces, reliable power, and smooth self-check-in. Whether you are traveling for remote work, a vacation, or an extended stay, you will find a secure, well-appointed home base. I value prompt communication and look forward to welcoming you to a 5-star experience!"*
+  * **Social & Contact CTAs:** WhatsApp direct messaging (`+1 646 209-0270`) and verified Instagram link (`https://www.instagram.com/resmijoca`).
 
 ### Section 7: Interactive Santiago Local Guide & Exclusive VIP Guest Perks
 

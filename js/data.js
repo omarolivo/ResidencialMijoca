@@ -16,6 +16,8 @@ const MIJOCA_DATA = {
     phoneRaw: "16462090270",
     hostName: "Omar",
     hostPhoto: "Images/Omar.jpg",
+    instagramUrl: "https://www.instagram.com/resmijoca",
+    instagramHandle: "@resmijoca",
     youtubeUrl: "https://youtu.be/8Lw9ZF0jpzo",
     youtubeEmbedUrl: "https://www.youtube.com/embed/8Lw9ZF0jpzo?autoplay=1&rel=0&modestbranding=1",
     youtubeId: "8Lw9ZF0jpzo",
@@ -53,12 +55,12 @@ const MIJOCA_DATA = {
         badgeLocation: "100% 5-Star Location",
         badgePower: "24/7 5 kW Battery Backup",
         title: "Your Modern, Uninterrupted Boutique Retreat in Santiago",
-        subtitle: "Brand-new 2BR/2BA apartment in an exclusive 3-unit building in El Dorado II. Engineered with continuous 24/7 battery backup, blazing-fast Wi-Fi, private balcony, and reserved gated parking.",
+        subtitle: "Brand-new 2BR/2BA apartment in an exclusive 3-unit building in El Dorado II. Engineered with continuous 24/7 battery backup, blazing-fast Wi-Fi, private balcony, and reserved parking.",
         ctaAirbnb: "Check Availability on Airbnb",
         ctaWhatsApp: "Inquire Direct via WhatsApp",
         viewAllPhotos: "View All Photos (35+)",
         watchVideo: "Watch Video Tour",
-        quickSpecs: "4 Guests Max · 2 Bedrooms · 2 Queen Beds · 2 Full Baths · Private Balcony · Spot #1 Gated Parking"
+        quickSpecs: "4 Guests Max · 2 Bedrooms · 2 Queen Beds · 2 Full Baths · Private Balcony · Spot #1 Reserved Parking"
       },
       powerTech: {
         tag: "ENGINEERED FOR WORK & PEACE OF MIND",
@@ -71,8 +73,8 @@ const MIJOCA_DATA = {
         card2Desc: "Configured by an IT specialist for seamless Zoom calls, remote work VPNs, and lag-free 4K streaming simultaneously across 3 Smart TVs.",
         card3Title: "Boutique 3-Unit Privacy & 3rd Floor Light",
         card3Desc: "Only 3 private apartments in the entire building on a quiet residential dead-end street. Filled with natural light and cool evening cross-breezes.",
-        card4Title: "Reserved Gated Parking & Smart Security",
-        card4Desc: "Includes dedicated parking spot (Spot #1) inside the gated lot. Protected by 6 exterior perimeter security cameras and smart water leak sensors."
+        card4Title: "Reserved Parking & Smart Security",
+        card4Desc: "Includes dedicated parking spot (Spot #1) on the property. Protected by 6 exterior perimeter security cameras and smart water leak sensors."
       },
       space: {
         tag: "THOUGHTFULLY DESIGNED",
@@ -100,7 +102,7 @@ const MIJOCA_DATA = {
         kitchenPoint: "Full Kitchen & Coffee Bar",
         powerPoint: "SunGoldPower 24/7 Power",
         bedroomsPoint: "2 Queen Inverter A/C Bedrooms",
-        parkingPoint: "Gated Spot #1 Parking"
+        parkingPoint: "Reserved Spot #1 Parking"
       },
       reviews: {
         tag: "AUTHENTIC GUEST TESTIMONIALS",
@@ -124,7 +126,8 @@ const MIJOCA_DATA = {
         badgeResponse: "100% Response Rate",
         badgeTime: "Responds in < 1 Hour",
         bio: "Hi, I'm Omar! I work in tech and take pride in curating clean, modern, and stress-free spaces for travelers. With an IT background, I focus on the essentials that make every visit effortless: blazing-fast Wi-Fi, comfortable workspaces, reliable power, and smooth self-check-in. Whether you are traveling for remote work, a family visit, or an extended stay, you will find a secure, well-appointed home base. I look forward to welcoming you to Santiago!",
-        messageHost: "Message Omar on WhatsApp"
+        messageHost: "Message Omar on WhatsApp",
+        followInstagram: "Follow @resmijoca"
       },
       guide: {
         tag: "CURATED BY HOST OMAR",
@@ -147,7 +150,7 @@ const MIJOCA_DATA = {
         subtitle: "Everything you need to know for a smooth and comfortable stay at Residencial Mijoca.",
         addressTitle: "Property Address",
         parkingTitle: "Your Reserved Parking",
-        parkingDesc: "Park in spot labeled #1 inside the gated area.",
+        parkingDesc: "Park in spot labeled #1 on the property.",
         checkInTitle: "Check-In & Check-Out",
         rulesTitle: "3 Essential House Rules",
         rule1: "Quiet Hours (10:00 PM – 8:00 AM): Quiet residential cul-de-sac. Please respect our neighbors.",
@@ -175,7 +178,7 @@ const MIJOCA_DATA = {
         faq1Q: "How does the 24/7 backup power work during outages?",
         faq1A: "The property has a 5 kW SunGoldPower inverter paired with a 5.12 kWh ION Lithium battery. If the municipal grid drops, the apartment switches over automatically in milliseconds. Wi-Fi, refrigerator, lights, 3 Smart TVs, and all outlets stay on. Note that bedroom A/C units run on the municipal line only.",
         faq2Q: "Is there dedicated parking?",
-        faq2A: "Yes! You have a guaranteed, reserved spot (Spot #1) inside the private gated parking area at no extra charge.",
+        faq2A: "Yes! You have a guaranteed, reserved spot (Spot #1) directly on the property at no extra charge.",
         faq3Q: "How far is the apartment from Santiago attractions and the airport?",
         faq3A: "Residencial Mijoca is located in El Dorado II, just 5 minutes from Supermercados Nacional, 10–12 minutes from Monumento a los Héroes de la Restauración and downtown Santiago, and approximately 20–25 minutes from Cibao International Airport (STI).",
         faq4Q: "Is there an elevator in the building?",
@@ -206,12 +209,12 @@ const MIJOCA_DATA = {
         badgeLocation: "100% Ubicación 5 Estrellas",
         badgePower: "Inversor y Batería 5 kW 24/7",
         title: "Tu Refugio Moderno e Ininterrumpido en Santiago",
-        subtitle: "Apartamento nuevo de 2 hab / 2 baños en un exclusivo edificio de solo 3 unidades en El Dorado II. Equipado con respaldo de energía 24/7, Wi-Fi ultrarrápido, balcón privado y parqueo cerrado reservado.",
+        subtitle: "Apartamento nuevo de 2 hab / 2 baños en un exclusivo edificio de solo 3 unidades en El Dorado II. Equipado con respaldo de energía 24/7, Wi-Fi ultrarrápido, balcón privado y parqueo reservado.",
         ctaAirbnb: "Ver Disponibilidad en Airbnb",
         ctaWhatsApp: "Consultar Tarifa Directa por WhatsApp",
         viewAllPhotos: "Ver Todas las Fotos (35+)",
         watchVideo: "Ver Video Tour",
-        quickSpecs: "Máx 4 Huéspedes · 2 Habitaciones · 2 Camas Queen · 2 Baños Completos · Balcón Privado · Parqueo #1 Techado/Cerrado"
+        quickSpecs: "Máx 4 Huéspedes · 2 Habitaciones · 2 Camas Queen · 2 Baños Completos · Balcón Privado · Parqueo Asignado #1"
       },
       powerTech: {
         tag: "DISEÑADO PARA TRABAJO Y TRANQUILIDAD",
@@ -224,8 +227,8 @@ const MIJOCA_DATA = {
         card2Desc: "Configurado por un especialista en tecnología para videollamadas fluidas por Zoom, VPNs corporativas y streaming 4K simultáneo en los 3 televisores inteligentes.",
         card3Title: "Privacidad Exclusiva (Solo 3 Apartamentos) y Luz en 3er Piso",
         card3Desc: "Solo 3 apartamentos privados en todo el edificio ubicado en una calle residencial sin salida. Espacio luminoso con brisa fresca del Cibao.",
-        card4Title: "Parqueo Cerrado Reservado y Seguridad Inteligente",
-        card4Desc: "Incluye espacio de parqueo asignado (#1) dentro de la propiedad cerrada con portón. Protegido por 6 cámaras de seguridad perimetrales y sensores inteligentes de fuga de agua."
+        card4Title: "Parqueo Reservado y Seguridad Inteligente",
+        card4Desc: "Incluye espacio de parqueo asignado (#1) dentro de la propiedad. Protegido por 6 cámaras de seguridad perimetrales y sensores inteligentes de fuga de agua."
       },
       space: {
         tag: "CUIDADOSAMENTE EQUIPADO",
@@ -253,7 +256,7 @@ const MIJOCA_DATA = {
         kitchenPoint: "Cocina Equipada y Estación de Café",
         powerPoint: "Respaldo Eléctrico 24/7",
         bedroomsPoint: "2 Habitaciones Queen con A/C",
-        parkingPoint: "Parqueo Cerrado Asignado #1"
+        parkingPoint: "Parqueo Asignado #1"
       },
       reviews: {
         tag: "TESTIMONIOS REALES Y VERIFICADOS",
@@ -277,7 +280,8 @@ const MIJOCA_DATA = {
         badgeResponse: "100% Tasa de Respuesta",
         badgeTime: "Responde en menos de 1 hora",
         bio: "¡Hola, soy Omar! Trabajo en tecnología y me apasiona ofrecer espacios impecables, modernos y libres de estrés para viajeros. Con mi experiencia en TI, me enfoco en los detalles esenciales: Wi-Fi ultra veloz, áreas de trabajo cómodas, energía confiable 24/7 y llegada autónoma fácil. Ya sea que visites Santiago por trabajo remoto, vacaciones o estadías prolongadas, encontrarás un hogar seguro y confortable. ¡Espero darte la bienvenida a Residencial Mijoca!",
-        messageHost: "Escribir a Omar por WhatsApp"
+        messageHost: "Escribir a Omar por WhatsApp",
+        followInstagram: "Seguir en Instagram @resmijoca"
       },
       guide: {
         tag: "RECOMENDACIONES DE OMAR",
@@ -300,7 +304,7 @@ const MIJOCA_DATA = {
         subtitle: "Todo lo que necesitas saber para una estadía perfecta y tranquila en Residencial Mijoca.",
         addressTitle: "Dirección de la Propiedad",
         parkingTitle: "Tu Parqueo Asignado",
-        parkingDesc: "Estaciónate en el espacio marcado con el #1 dentro del portón.",
+        parkingDesc: "Estaciónate en el espacio asignado marcado con el #1.",
         checkInTitle: "Horarios de Entrada y Salida",
         rulesTitle: "3 Reglas Fundamentales",
         rule1: "Horas de Silencio (10:00 PM – 8:00 AM): Es una calle residencial tranquila sin salida. Por favor respeta a los vecinos.",
@@ -328,7 +332,7 @@ const MIJOCA_DATA = {
         faq1Q: "¿Cómo funciona el respaldo de energía 24/7 si se va la luz?",
         faq1A: "El apartamento cuenta con un inversor SunGoldPower de 5 kW y una batería de Litio ION de 5.12 kWh. Si la red municipal falla, el sistema conmuta automáticamente en milisegundos. El Wi-Fi, la nevera, las luces, los 3 Smart TVs y todos los tomacorrientes permanecen encendidos. Los aires acondicionados operan solo con la red eléctrica municipal.",
         faq2Q: "¿Tienen parqueo privado y seguro?",
-        faq2A: "¡Sí! Tienes un espacio garantizado y reservado (Espacio #1) dentro del estacionamiento privado con portón cerrado sin costo adicional.",
+        faq2A: "¡Sí! Tienes un espacio garantizado y reservado (Espacio #1) dentro de la propiedad sin costo adicional.",
         faq3Q: "¿A qué distancia está el apartamento de atracciones y del aeropuerto?",
         faq3A: "Residencial Mijoca está en El Dorado II: a 5 minutos del Supermercado Nacional, a 10–12 minutos del Monumento de Santiago y centro histórico, y a 20–25 minutos del Aeropuerto Internacional del Cibao (STI).",
         faq4Q: "¿El edificio cuenta con ascensor?",
@@ -636,8 +640,8 @@ const MIJOCA_DATA = {
       category: "building",
       titleEn: "Residencial Mijoca Boutique Exterior",
       titleEs: "Fachada Boutique de Residencial Mijoca",
-      descEn: "Brand-new 3-story private building with gated parking and glass balconies in El Dorado II.",
-      descEs: "Edificio nuevo de 3 niveles con portón cerrado, parqueo y balcones en vidrio en El Dorado II."
+      descEn: "Brand-new 3-story private building with dedicated parking and glass balconies in El Dorado II.",
+      descEs: "Edificio nuevo de 3 niveles con parqueo asignado y balcones en vidrio en El Dorado II."
     },
     {
       src: "Images/7Z6A7584 (Custom).JPG",
