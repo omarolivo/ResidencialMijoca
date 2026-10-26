@@ -9,7 +9,7 @@ const MIJOCA_DATA = {
     name: "Residencial Mijoca",
     tagline: "El Dorado II · Santiago de los Caballeros, RD",
     address: "Calle 4 #27, El Dorado II, Santiago, Dominican Republic",
-    googleMapsUrl: "https://maps.app.goo.gl/VXybdS25Wzy4YWSM8", // nearby landmark / address
+    googleMapsUrl: "https://maps.app.goo.gl/RccSAfZbDusgQYFw5", // unit address
     airbnbUrl: "https://www.airbnb.com/rooms/1758998339922997720",
     airbnbListingId: "1758998339922997720",
     phoneDisplay: "+1 (646) 209-0270",
@@ -19,10 +19,10 @@ const MIJOCA_DATA = {
     youtubeUrl: "https://youtu.be/8Lw9ZF0jpzo",
     youtubeEmbedUrl: "https://www.youtube.com/embed/8Lw9ZF0jpzo?autoplay=1&rel=0&modestbranding=1",
     youtubeId: "8Lw9ZF0jpzo",
-    checkInTime: "3:00 PM",
+    checkInTime: "4:00 PM",
     checkOutTime: "11:00 AM",
-    parkingSpot: "Spot #2 (Middle)",
-    floor: "3rd Floor Walk-Up (Luggage assistance available)",
+    parkingSpot: "Spot #1",
+    floor: "3rd Floor Walk-Up",
     specs: {
       guests: 4,
       bedrooms: 2,
@@ -58,7 +58,7 @@ const MIJOCA_DATA = {
         ctaWhatsApp: "Inquire Direct via WhatsApp",
         viewAllPhotos: "View All Photos (35+)",
         watchVideo: "Watch Video Tour",
-        quickSpecs: "4 Guests Max · 2 Bedrooms · 2 Queen Beds · 2 Full Baths · Private Balcony · Spot #2 Gated Parking"
+        quickSpecs: "4 Guests Max · 2 Bedrooms · 2 Queen Beds · 2 Full Baths · Private Balcony · Spot #1 Gated Parking"
       },
       powerTech: {
         tag: "ENGINEERED FOR WORK & PEACE OF MIND",
@@ -71,9 +71,8 @@ const MIJOCA_DATA = {
         card2Desc: "Configured by an IT specialist for seamless Zoom calls, remote work VPNs, and lag-free 4K streaming simultaneously across 3 Smart TVs.",
         card3Title: "Boutique 3-Unit Privacy & 3rd Floor Light",
         card3Desc: "Only 3 private apartments in the entire building on a quiet residential dead-end street. Filled with natural light and cool evening cross-breezes.",
-        card3Luggage: "Luggage carry assistance is complimentary upon request for check-in and check-out (no elevator).",
         card4Title: "Reserved Gated Parking & Smart Security",
-        card4Desc: "Includes dedicated middle parking spot (Spot #2) inside the gated lot. Protected by 6 exterior perimeter security cameras and smart water leak sensors."
+        card4Desc: "Includes dedicated parking spot (Spot #1) inside the gated lot. Protected by 6 exterior perimeter security cameras and smart water leak sensors."
       },
       space: {
         tag: "THOUGHTFULLY DESIGNED",
@@ -101,7 +100,7 @@ const MIJOCA_DATA = {
         kitchenPoint: "Full Kitchen & Coffee Bar",
         powerPoint: "SunGoldPower 24/7 Power",
         bedroomsPoint: "2 Queen Inverter A/C Bedrooms",
-        parkingPoint: "Gated Spot #2 Parking"
+        parkingPoint: "Gated Spot #1 Parking"
       },
       reviews: {
         tag: "AUTHENTIC GUEST TESTIMONIALS",
@@ -131,7 +130,7 @@ const MIJOCA_DATA = {
         tag: "CURATED BY HOST OMAR",
         title: "Santiago Local VIP Guide & Insider Perks",
         subtitle: "Explore Omar's hand-picked favorite spots in Santiago, from the best chicharrón and third-wave coffee to exclusive nightlife VIP perks and day excursions.",
-        filterAll: "All Spots (13)",
+        filterAll: "All Spots (14)",
         filterVip: "👑 VIP Perks & Insider",
         filterGroceries: "Supermarkets",
         filterCoffee: "Coffee & Breakfast",
@@ -148,13 +147,13 @@ const MIJOCA_DATA = {
         subtitle: "Everything you need to know for a smooth and comfortable stay at Residencial Mijoca.",
         addressTitle: "Property Address",
         parkingTitle: "Your Reserved Parking",
-        parkingDesc: "Park in middle spot labeled #2 inside the gated area.",
+        parkingDesc: "Park in spot labeled #1 inside the gated area.",
         checkInTitle: "Check-In & Check-Out",
         rulesTitle: "4 Essential House Rules",
         rule1: "Quiet Hours (10:00 PM – 8:00 AM): Quiet residential cul-de-sac. Please respect our neighbors.",
         rule2: "Strictly No Smoking: Inside the apartment or on the balcony.",
         rule3: "Strict 4-Guest Maximum: Only registered reservation guests permitted. No parties or events.",
-        rule4: "3rd Floor Concierge: Luggage assistance available on arrival & departure upon request.",
+        rule4: "Keyless Self Check-In: Smart digital lock for seamless arrival anytime after 4:00 PM.",
         etiquetteTitle: "Eco & Safety Etiquette",
         etiquette1: "Please turn off bedroom A/C units when heading out to explore Santiago.",
         etiquette2: "Dispose of tied garbage bags in the main exterior bin near the front gate.",
@@ -177,11 +176,11 @@ const MIJOCA_DATA = {
         faq1Q: "How does the 24/7 backup power work during outages?",
         faq1A: "The property has a 5 kW SunGoldPower inverter paired with a 5.12 kWh ION Lithium battery. If the municipal grid drops, the apartment switches over automatically in milliseconds. Wi-Fi, refrigerator, lights, 3 Smart TVs, and all outlets stay on. Note that bedroom A/C units run on the municipal line only.",
         faq2Q: "Is there dedicated parking?",
-        faq2A: "Yes! You have a guaranteed, reserved spot (Spot #2, middle) inside the private gated parking area at no extra charge.",
+        faq2A: "Yes! You have a guaranteed, reserved spot (Spot #1) inside the private gated parking area at no extra charge.",
         faq3Q: "How far is the apartment from Santiago attractions and the airport?",
         faq3A: "Residencial Mijoca is located in El Dorado II, just 5 minutes from Supermercados Nacional, 10–12 minutes from Monumento a los Héroes de la Restauración and downtown Santiago, and approximately 20–25 minutes from Cibao International Airport (STI).",
-        faq4Q: "Can you assist with carrying luggage to the 3rd floor?",
-        faq4A: "Absolutely! The building has no elevator, but host Omar and our team are delighted to provide complimentary luggage assistance upon arrival and departure. Just send us a message on WhatsApp before arriving."
+        faq4Q: "Is there an elevator in the building?",
+        faq4A: "Residencial Mijoca is an exclusive 3-unit boutique building with no elevator. The apartment is located on the 3rd floor accessible via wide, comfortable stairs."
       },
       footer: {
         rights: "All rights reserved. Residencial Mijoca · El Dorado II, Santiago, Dominican Republic.",
@@ -213,7 +212,7 @@ const MIJOCA_DATA = {
         ctaWhatsApp: "Consultar Tarifa Directa por WhatsApp",
         viewAllPhotos: "Ver Todas las Fotos (35+)",
         watchVideo: "Ver Video Tour",
-        quickSpecs: "Máx 4 Huéspedes · 2 Habitaciones · 2 Camas Queen · 2 Baños Completos · Balcón Privado · Parqueo #2 Techado/Cerrado"
+        quickSpecs: "Máx 4 Huéspedes · 2 Habitaciones · 2 Camas Queen · 2 Baños Completos · Balcón Privado · Parqueo #1 Techado/Cerrado"
       },
       powerTech: {
         tag: "DISEÑADO PARA TRABAJO Y TRANQUILIDAD",
@@ -226,9 +225,8 @@ const MIJOCA_DATA = {
         card2Desc: "Configurado por un especialista en tecnología para videollamadas fluidas por Zoom, VPNs corporativas y streaming 4K simultáneo en los 3 televisores inteligentes.",
         card3Title: "Privacidad Exclusiva (Solo 3 Apartamentos) y Luz en 3er Piso",
         card3Desc: "Solo 3 apartamentos privados en todo el edificio ubicado en una calle residencial sin salida. Espacio luminoso con brisa fresca del Cibao.",
-        card3Luggage: "Asistencia para subir equipaje disponible sin costo a la llegada y salida (edificio sin ascensor).",
         card4Title: "Parqueo Cerrado Reservado y Seguridad Inteligente",
-        card4Desc: "Incluye espacio de parqueo central asignado (#2) dentro de la propiedad cerrada con portón. Protegido por 6 cámaras de seguridad perimetrales y sensores inteligentes de fuga de agua."
+        card4Desc: "Incluye espacio de parqueo asignado (#1) dentro de la propiedad cerrada con portón. Protegido por 6 cámaras de seguridad perimetrales y sensores inteligentes de fuga de agua."
       },
       space: {
         tag: "CUIDADOSAMENTE EQUIPADO",
@@ -256,7 +254,7 @@ const MIJOCA_DATA = {
         kitchenPoint: "Cocina Equipada y Estación de Café",
         powerPoint: "Respaldo Eléctrico 24/7",
         bedroomsPoint: "2 Habitaciones Queen con A/C",
-        parkingPoint: "Parqueo Cerrado Asignado #2"
+        parkingPoint: "Parqueo Cerrado Asignado #1"
       },
       reviews: {
         tag: "TESTIMONIOS REALES Y VERIFICADOS",
@@ -286,7 +284,7 @@ const MIJOCA_DATA = {
         tag: "RECOMENDACIONES DE OMAR",
         title: "Guía Local VIP de Santiago y Beneficios Exclusivos",
         subtitle: "Descubre los lugares favoritos de Omar en Santiago: desde el mejor chicharrón y café de especialidad hasta beneficios VIP en vida nocturna y excursiones ecológicas.",
-        filterAll: "Todos (13)",
+        filterAll: "Todos (14)",
         filterVip: "👑 Beneficios VIP",
         filterGroceries: "Supermercados",
         filterCoffee: "Café y Desayuno",
@@ -303,13 +301,13 @@ const MIJOCA_DATA = {
         subtitle: "Todo lo que necesitas saber para una estadía perfecta y tranquila en Residencial Mijoca.",
         addressTitle: "Dirección de la Propiedad",
         parkingTitle: "Tu Parqueo Asignado",
-        parkingDesc: "Estaciónate en el espacio central marcado con el #2 dentro del portón.",
+        parkingDesc: "Estaciónate en el espacio marcado con el #1 dentro del portón.",
         checkInTitle: "Horarios de Entrada y Salida",
         rulesTitle: "4 Reglas Fundamentales",
         rule1: "Horas de Silencio (10:00 PM – 8:00 AM): Es una calle residencial tranquila sin salida. Por favor respeta a los vecinos.",
         rule2: "Estrictamente Prohibido Fumar: Ni dentro del apartamento ni en el balcón.",
         rule3: "Máximo 4 Huéspedes Estricto: Solo huéspedes registrados en la reserva. Cero fiestas o eventos.",
-        rule4: "Asistencia de Equipaje: Con gusto te ayudamos con las maletas al llegar y al salir (sin ascensor).",
+        rule4: "Llegada Autónoma: Cerradura digital inteligente para un acceso cómodo y seguro a partir de las 4:00 PM.",
         etiquetteTitle: "Buenas Prácticas de Energía y Cuidado",
         etiquette1: "Por favor apaga los aires acondicionados al salir a recorrer Santiago.",
         etiquette2: "Deposita la basura en bolsas cerradas en el contenedor principal exterior frente a la entrada.",
@@ -332,11 +330,11 @@ const MIJOCA_DATA = {
         faq1Q: "¿Cómo funciona el respaldo de energía 24/7 si se va la luz?",
         faq1A: "El apartamento cuenta con un inversor SunGoldPower de 5 kW y una batería de Litio ION de 5.12 kWh. Si la red municipal falla, el sistema conmuta automáticamente en milisegundos. El Wi-Fi, la nevera, las luces, los 3 Smart TVs y todos los tomacorrientes permanecen encendidos. Los aires acondicionados operan solo con la red eléctrica municipal.",
         faq2Q: "¿Tienen parqueo privado y seguro?",
-        faq2A: "¡Sí! Tienes un espacio garantizado y reservado (Espacio #2, en el centro) dentro del estacionamiento privado con portón cerrado sin costo adicional.",
+        faq2A: "¡Sí! Tienes un espacio garantizado y reservado (Espacio #1) dentro del estacionamiento privado con portón cerrado sin costo adicional.",
         faq3Q: "¿A qué distancia está el apartamento de atracciones y del aeropuerto?",
         faq3A: "Residencial Mijoca está en El Dorado II: a 5 minutos del Supermercado Nacional, a 10–12 minutos del Monumento de Santiago y centro histórico, y a 20–25 minutos del Aeropuerto Internacional del Cibao (STI).",
-        faq4Q: "¿Pueden ayudarme con las maletas hacia el tercer piso?",
-        faq4A: "¡Claro que sí! Aunque el edificio no tiene ascensor, Omar y nuestro equipo te asistirán con gusto para subir y bajar tus maletas. Solo escríbenos por WhatsApp con anticipación."
+        faq4Q: "¿El edificio cuenta con ascensor?",
+        faq4A: "Residencial Mijoca es un exclusivo edificio boutique de solo 3 unidades y no cuenta con ascensor. El apartamento está en el 3er nivel accesible mediante escaleras cómodas y amplias."
       },
       footer: {
         rights: "Todos los derechos reservados. Residencial Mijoca · El Dorado II, Santiago, República Dominicana.",
@@ -488,16 +486,28 @@ const MIJOCA_DATA = {
       mapsUrl: "https://maps.app.goo.gl/SWR9N9pBGsPJ5wuX9"
     },
     {
+      id: 14,
+      category: "dining",
+      name: "El Sazón del Pato",
+      distance: "2-Min Drive",
+      descEn: "Home to iconic Dominican Puerco Asado (slow-roasted pork). A Santiago institution celebrated for its extraordinarily flavorful roasted pork with golden, crispy crackling skin.",
+      descEs: "El hogar del icónico puerco asado dominicano. Una institución en Santiago famosa por su lechón asado jugoso y cuerito dorado super crujiente.",
+      badgeEn: "Home to Iconic Puerco Asado",
+      badgeEs: "El Hogar del Icónico Puerco Asado",
+      isVip: false,
+      mapsUrl: "https://maps.app.goo.gl/r9S6ieQjP82Us1fo6"
+    },
+    {
       id: 3,
       category: "nightlife",
-      name: "Lovera Discotec",
+      name: "Lovera Bar Restaurant",
       distance: "10-Min Drive",
-      descEn: "Santiago's premier high-energy nightlife venue featuring top Dominican performers, VIP bottle service, and an electric party atmosphere.",
-      descEs: "La discoteca emblemática de Santiago con artistas en vivo, servicio de botellas VIP y el ambiente de fiesta más vibrante de la ciudad.",
-      badgeEn: "👑 VIP TIP: Ask for Alfredo as your server (recommended by Omar)",
-      badgeEs: "👑 TIP VIP: Pide a Alfredo como tu camarero (recomendado por Omar)",
-      isVip: true,
-      mapsUrl: "https://maps.app.goo.gl/EyGRp3denXvACPBV8"
+      descEn: "Santiago's premier high-energy bar and restaurant destination featuring delicious dining, cocktails, live music, and a vibrant social atmosphere.",
+      descEs: "El reconocido bar y restaurante de Santiago con excelente gastronomía, cócteles, música en vivo y un ambiente social vibrante.",
+      badgeEn: "Bar, Dining & Live Music",
+      badgeEs: "Bar, Gastronomía y Música en Vivo",
+      isVip: false,
+      mapsUrl: "https://maps.app.goo.gl/wwvwBPC72fLAEAVQ9"
     },
     {
       id: 4,
@@ -788,8 +798,8 @@ const MIJOCA_DATA = {
       category: "building",
       titleEn: "Solid Wood Pivot Door & Keyless Entry",
       titleEs: "Puerta Principal Pivotante y Cerradura Digital",
-      descEn: "Secure smart digital lock for seamless self check-in anytime after 3:00 PM.",
-      descEs: "Cerradura digital inteligente para un check-in autónomo y seguro a cualquier hora tras las 3:00 PM."
+      descEn: "Secure smart digital lock for seamless self check-in anytime after 4:00 PM.",
+      descEs: "Cerradura digital inteligente para un check-in autónomo y seguro a cualquier hora tras las 4:00 PM."
     },
     {
       src: "Images/7Z6A7633 (Custom).JPG",

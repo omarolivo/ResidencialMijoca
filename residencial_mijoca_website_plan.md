@@ -7,7 +7,7 @@
 Ranked in the **Top 10% of Airbnb homes ("Guest Favorite")** with a **5.0-star rating across 10 reviews** and a **100% 5-star location score** on [Airbnb Listing #1758998339922997720](https://www.airbnb.com/rooms/1758998339922997720), the website must serve two primary goals:
 
 1. **High-Converting Direct & Airbnb Booking Showcase:** Convert prospective business travelers, remote workers, diaspora visitors, and couples/small families by highlighting uninterrupted 24/7 power (5 kW battery backup), blazing-fast Wi-Fi, boutique 3-unit privacy, free gated parking, and verified 5-star guest reviews.
-2. **Interactive Digital Guest Guidebook & VIP Concierge:** Provide checked-in guests with instant access to arrival logistics, house rules, Omar's curated local recommendations in Santiago, and exclusive **Host VIP Perks** (such as VIP service with Alfredo at [Lovera Discotec](https://maps.app.goo.gl/EyGRp3denXvACPBV8) and direct local boat rates to [Cayo Arena / Paradise Island](https://maps.app.goo.gl/zZyd4qDQr6HY1ZvB9)).
+2. **Interactive Digital Guest Guidebook & VIP Concierge:** Provide checked-in guests with instant access to arrival logistics, house rules, Omar's curated local recommendations in Santiago, and exclusive **Host VIP Perks** (such as direct local boat rates to [Cayo Arena / Paradise Island](https://maps.app.goo.gl/zZyd4qDQr6HY1ZvB9)).
 3. **Zero-Compilation Static Deployment:** Built strictly with **static HTML5, CSS3, and CDN-hosted JavaScript libraries** so the entire folder can be uploaded directly to any standard HTML web server (cPanel, Apache, Nginx, shared hosting, S3, or GitHub Pages) with **zero Node.js, npm, or build/compilation steps required**.
 
 ## 2. Target Audience Personas & Value Propositions
@@ -15,8 +15,8 @@ Ranked in the **Top 10% of Airbnb homes ("Guest Favorite")** with a **5.0-star r
 | Persona | Primary Needs | Key Website Messaging & Proof Points |
 | :--- | :--- | :--- |
 | **Remote Workers & Business Travelers** | Zero power/internet drops, quiet environment, fast host response, workspace | Curated by an IT pro; automatic **5 kW battery backup** keeps Wi-Fi, lights, outlets, fridge, and 3 Smart TVs running 24/7; repeat business traveler praise (e.g., Wilson's review). |
-| **US/DR Diaspora & Visiting Families** | Safe neighborhood, dedicated parking, modern comforts, proximity to downtown | Dead-end residential street in El Dorado II; reserved **Parking Spot #2 (Middle)**; 6 exterior security cameras; easy access to downtown Santiago (e.g., Luisa E. from Boston & Katherine from NJ). |
-| **Culture & Leisure Explorers** | Local dining, nightlife, eco-excursions, authentic Cibao hospitality | Interactive Santiago Local Guide with Google Maps links and exclusive **Residencial Mijoca VIP Perks** (Lovera Discotec VIP server contact and Cayo Arena private boat rate). |
+| **US/DR Diaspora & Visiting Families** | Safe neighborhood, dedicated parking, modern comforts, proximity to downtown | Dead-end residential street in El Dorado II; reserved **Parking Spot #1**; 6 exterior security cameras; easy access to downtown Santiago (e.g., Luisa E. from Boston & Katherine from NJ). |
+| **Culture & Leisure Explorers** | Local dining, nightlife, eco-excursions, authentic Cibao hospitality | Interactive Santiago Local Guide with Google Maps links and exclusive **Residencial Mijoca VIP Perks** (Lovera Bar Restaurant and Cayo Arena private boat rate). |
 
 ## 3. Design System & Visual Identity for Antigravity IDE
 
@@ -69,8 +69,8 @@ Travelers to the Dominican Republic care deeply about power reliability, interne
 | :--- | :--- | :--- |
 | **Card 1 (Large)** | **Automatic 5 kW 24/7 Battery Backup** | If the municipal power grid drops, your apartment switches automatically with **zero interruption**. Keeps **Wi-Fi, lights, 3 Smart TVs, refrigerator, and wall outlets** running continuously. *(Transparent Note: Individual bedroom inverter A/C units operate on the main municipal grid line only).* |
 | **Card 2** | **IT-Curated High-Speed Wi-Fi** | Designed by a host with an IT background specifically for remote work, video calls, and 4K streaming across **3 Smart TVs** (living room + both bedrooms). |
-| **Card 3** | **Boutique 3-Unit Privacy & 3rd Floor Light** | Located on the 3rd floor of a brand-new building with **only 3 private apartments** on a quiet dead-end street. No elevator—**complimentary luggage carry assistance** is arranged upon request for check-in and check-out. |
-| **Card 4** | **Reserved Parking & Smart Security** | Includes **Parking Spot #2 (Middle)** inside the gated property. Protected by **6 exterior security cameras** (front entrance, parking, backyard perimeter—strictly zero indoor cameras) plus **Smart Water Leak Sensors** by the washer and water heater. |
+| **Card 3** | **Boutique 3-Unit Privacy & 3rd Floor Light** | Located on the 3rd floor of a brand-new building with **only 3 private apartments** on a quiet dead-end street. Filled with natural light and cool cross-breezes (no elevator). |
+| **Card 4** | **Reserved Parking & Smart Security** | Includes **Parking Spot #1** inside the gated property. Protected by **6 exterior security cameras** (front entrance, parking, backyard perimeter—strictly zero indoor cameras) plus **Smart Water Leak Sensors** by the washer and water heater. |
 
 ### Section 4: Space Breakdown & Amenities Matrix
 
@@ -87,7 +87,7 @@ Travelers to the Dominican Republic care deeply about power reliability, interne
 
 * **Cinematic Video Player:** Full 16:9 embedded player with ambient obsidian glow and zero-lag streaming from YouTube NoCookie (`https://www.youtube-nocookie.com/embed/8Lw9ZF0jpzo`).
 * **Trigger Points:** Accessible via desktop navigation (`Video Tour`), mobile drawer, hero CTA buttons (`Watch Video Tour`), and the floating hero mosaic overlay.
-* **Feature Highlights:** Highlights living room & 55" TV, private breezy balcony, full kitchen & coffee bar, 24/7 backup power, 2 queen bedrooms, and spot #2 parking.
+* **Feature Highlights:** Highlights living room & 55" TV, private breezy balcony, full kitchen & coffee bar, 24/7 backup power, 2 queen bedrooms, and spot #1 parking.
 
 ### Section 5: Verified Guest Reviews & Social Proof ("5.0 ★ Guest Favorite")
 
@@ -126,10 +126,11 @@ Build a filterable interactive card directory with category pills (`All`, `VIP P
 | **Coffee & Breakfast** | **El Café de la Abuela** | Stylish, bohemian coffee house tucked behind Clínica Unión Médica serving single-origin Jarabacoa roasts. | `Artisan Single-Origin` | [Open in Maps](https://maps.app.goo.gl/SC4am3xcSWkX7BtEA) |
 | **Coffee & Breakfast** | **Starbucks (Ágora Santiago Center)** | First level of Santiago Center mall featuring localized artwork, outdoor seating, and 100% Dominican single-origin coffee. | `Work-Friendly Café` | [Open in Maps](https://maps.app.goo.gl/roXGAM9Q1po3wiobA) |
 | **Dining & Casual Eats** | **Pork & Beer Culture** | Famous for slow-baked boneless pork belly (*Filete de Chicharrón Horneado*), custom mofongos, and house craft beer in an open-air setting. | `Craft Beer & Chicharrón` | [Open in Maps](https://maps.app.goo.gl/SWR9N9pBGsPJ5wuX9) |
+| **Dining & Casual Eats** | **El Sazón del Pato** | Santiago institution and home to iconic Dominican *Puerco Asado* (roast pig) with crispy golden crackling skin. | `2-Min Drive` · `Iconic Puerco Asado` | [Open in Maps](https://maps.app.goo.gl/r9S6ieQjP82Us1fo6) |
 | **Fine Dining** | **Saga Restaurant & Cigar Club** | Premier fine dining featuring high-end steaks, seafood, and a luxury Dominican cigar lounge. | `Steaks & Cigar Lounge` | [Open in Maps](https://maps.app.goo.gl/wE1ybFcbd4abiF9j8) |
 | **Fine Dining** | **Camp David Ranch Restaurant** | Perched high on the mountain with panoramic views of the entire city of Santiago. | `Panoramic Mountain View` | [Open in Maps](https://maps.app.goo.gl/yz44LxYMyWhYUBby8) |
 | **Fine Dining** | **Restaurante Campuno** | A staple for traditional Dominican dishes in a warm, welcoming setting. | `Authentic Cibao Cuisine` | [Open in Maps](https://maps.app.goo.gl/9FnyoXeE4Y1deooH6) |
-| **Nightlife** | **Lovera Discotec** | Santiago's premier nightlife destination. | `👑 VIP TIP: Ask for Alfredo as your server (recommended by Omar)` | [Open in Maps](https://maps.app.goo.gl/EyGRp3denXvACPBV8) |
+| **Nightlife** | **Lovera Bar Restaurant** | Santiago's premier high-energy bar and restaurant destination. | `Bar, Dining & Live Music` | [Open in Maps](https://maps.app.goo.gl/wwvwBPC72fLAEAVQ9) |
 | **Nightlife** | **Cielo Rooftop** | High-end rooftop lounge on Calle del Sol offering panoramic downtown views, craft cocktails, upscale bites, and live DJ sets. | `Rooftop Lounge & DJs` | [Open in Maps](https://maps.app.goo.gl/V8mYGPjvtnxJ3NSTA) |
 | **Nightlife** | **Casa Bader** | Legendary historic spot on El Culebro / Calle del Sol! World-famous for the coldest beers in Santiago (*cenizas*), *quipes*, *pasteles en hoja*, music, and dancing. | `Historic Local Icon` | [Open in Maps](https://maps.app.goo.gl/Mwhog29dgnDahPZv7) |
 | **Day Trips** | **Río Sonador (Yásica, Puerto Plata)** | Crystal-clear river in the lush jungle near Yásica with natural pools, small waterfalls, eco-hiking, and freshwater swims. | `Eco-Tourism & Waterfalls` | [Open in Maps](https://maps.app.goo.gl/u9vkSgrQSNHbiMiV6) |
@@ -140,8 +141,8 @@ Build a filterable interactive card directory with category pills (`All`, `VIP P
 Provide a dedicated **"Current Guest Check-In Guide"** section/modal so checked-in guests can use the website as their mobile handbook during their stay:
 
 * **Property Address:** `Calle 4 #27, Dorado II, Santiago, Dominican Republic`
-* **Check-In / Check-Out:** Check-In at **3:00 PM** · Check-Out at **11:00 AM**
-* **Reserved Parking:** **Spot #2 (Middle)** inside the property
+* **Check-In / Check-Out:** Check-In at **4:00 PM** · Check-Out at **11:00 AM**
+* **Reserved Parking:** **Spot #1** inside the property
 * **Wi-Fi Quick-Copy Card:**
   * **Network Name (SSID):** `ResMijocaGuest`
   * **Password:** `ResMijoca!` *(Include a one-click `navigator.clipboard.writeText('ResMijoca!')` button with a "Copied!" toast notification).*
@@ -153,13 +154,13 @@ Provide a dedicated **"Current Guest Check-In Guide"** section/modal so checked-
   1. **Quiet Hours (10:00 PM – 8:00 AM):** Located on a quiet residential dead-end street; please respect neighbors.
   2. **No Smoking:** Strictly prohibited inside the apartment and on the balcony.
   3. **Strict 4-Guest Maximum & No Parties:** Only registered reservation guests are permitted on the property unless pre-approved by the host.
-  4. **3rd Floor Walk-Up Concierge:** Building has no elevator; message Omar via WhatsApp in advance for complimentary luggage assistance upon arrival or checkout.
+  4. **Keyless Self Check-In:** Digital smart lock for seamless keyless arrival anytime after 4:00 PM.
 
 ### Section 9: Direct Booking / Inquiry Footer & Contact Hub
 
 * **Dual Booking Path:**
   * **Book Instantly via Airbnb:** Embedded button/card linking to [Airbnb Listing #1758998339922997720](https://www.airbnb.com/rooms/1758998339922997720)
-  * **Direct Inquiry / Extended Stay Form:** HTML date inputs (`Check-In`, `Check-Out`), Guest Count selector (`1–4 Guests`), Luggage Assistance Checkbox (`Yes, please arrange help carrying bags to the 3rd floor`), and a **Send via WhatsApp** button that dynamically builds a `https://wa.me/16462090270?text=...` URL and opens WhatsApp directly.
+  * **Direct Inquiry / Extended Stay Form:** HTML date inputs (`Check-In`, `Check-Out`), Guest Count selector (`1–4 Guests`), and a **Send via WhatsApp** button that dynamically builds a `https://wa.me/16462090270?text=...` URL and opens WhatsApp directly.
 
 ## 5. Zero-Build Static Tech Stack & File Structure for Antigravity IDE
 
@@ -261,7 +262,7 @@ Copy the prompt block below and give it directly to **Antigravity IDE** along wi
 > **Required Content & Features (from the attached Residencial Mijoca Website Plan):**
 > 1. **Hero & Social Proof:** Showcase the title *"New Modern 2BR/2BA Apt · Fast Wi-Fi & Balcony"*, the **5.0 ★ rating across 10 reviews**, the **Airbnb Guest Favorite (Top 10% of Homes)** badge, **100% 5-star location rating**, and dual CTAs linking to `https://www.airbnb.com/rooms/1758998339922997720` and WhatsApp `https://wa.me/16462090270`.
 > 2. **24/7 Power & Tech Spotlight:** Create a visual 4-card bento grid explaining the **automatic 5 kW battery backup system** (powers Wi-Fi, lights, 3 Smart TVs, refrigerator, and outlets seamlessly during outages, while clearly noting that the bedroom inverter A/C units run on the main grid line).
-> 3. **Boutique Privacy & Concierge:** Highlight the brand-new 3-apartment building, 3rd-floor natural light, complimentary luggage assistance (no elevator), **Reserved Parking Spot #2 (Middle)**, smart water leak sensors, and 6 exterior security cameras.
+> 3. **Boutique Privacy & Concierge:** Highlight the brand-new 3-apartment building, 3rd-floor natural light, peaceful residential setting (no elevator), **Reserved Parking Spot #1**, smart water leak sensors, and 6 exterior security cameras.
 > 4. **Verified Guest Reviews Filterable Grid:** Store all 10 real Airbnb reviews (Huascar, Wilson, Mercedes, Luisa E., Omaira, Katherine, Nestor, Yenifer, Frederick, and Carlos) in `js/data.js` and render them dynamically with traveler filter pills and a "Show All 10 Reviews" toggle.
-> 5. **Interactive Santiago Local Guide & VIP Perks:** Store all 13 recommended Santiago venues and their exact Google Maps URLs (`https://maps.app.goo.gl/...`) in `js/data.js`. Build a category-filterable card grid highlighting the exclusive **Residencial Mijoca VIP Perks** (asking for server Alfredo at Lovera Discotec, and direct local boat booking for Cayo Arena / Paradise Island).
-> 6. **Guest Check-In Portal Modal & WhatsApp Inquiry Form:** Include a dedicated "Current Guest Mode" modal with one-click clipboard copy for Wi-Fi (`ResMijocaGuest` / `ResMijoca!`), Check-In (3:00 PM) / Check-Out (11:00 AM), Parking Spot #2 instructions, the 4 house rules, and an interactive WhatsApp inquiry form in the footer that pre-fills check-in dates, guest count (max 4), and 3rd-floor luggage assistance requests to `+1 (646) 209-0270`.
+> 5. **Interactive Santiago Local Guide & VIP Perks:** Store all 14 recommended Santiago venues and their exact Google Maps URLs (`https://maps.app.goo.gl/...`) in `js/data.js`. Build a category-filterable card grid highlighting exclusive **Residencial Mijoca VIP Perks** (direct local boat booking for Cayo Arena / Paradise Island).
+> 6. **Guest Check-In Portal Modal & WhatsApp Inquiry Form:** Include a dedicated "Current Guest Mode" modal with one-click clipboard copy for Wi-Fi (`ResMijocaGuest` / `ResMijoca!`), Check-In (4:00 PM) / Check-Out (11:00 AM), Parking Spot #1 instructions, the house rules, and an interactive WhatsApp inquiry form in the footer that pre-fills check-in dates and guest count (max 4) to `+1 (646) 209-0270`.

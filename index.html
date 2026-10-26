@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Residencial Mijoca | Boutique 2BR/2BA Apartment in Santiago, DR · 24/7 Power</title>
-  <meta name="description" content="Brand-new boutique 2BR/2BA apartment in El Dorado II, Santiago de los Caballeros, Dominican Republic. 24/7 5 kW battery backup power, fast Wi-Fi, private balcony, reserved parking spot #2, and verified 5.0-star Airbnb reviews." />
+  <meta name="description" content="Brand-new boutique 2BR/2BA apartment in El Dorado II, Santiago de los Caballeros, Dominican Republic. 24/7 5 kW battery backup power, fast Wi-Fi, private balcony, reserved parking spot #1, and verified 5.0-star Airbnb reviews." />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   
   <!-- Favicon icon -->
@@ -98,52 +98,47 @@
         <!-- Brand Wordmark -->
         <a href="#" class="flex flex-col group">
           <div class="flex items-center gap-2">
-            <span class="font-display font-bold text-2xl sm:text-3xl tracking-tight text-[#111111] group-hover:text-[#C87D4B] transition-colors">Residencial Mijoca</span>
+            <span class="font-display font-bold text-2xl sm:text-3xl tracking-tight text-white group-hover:text-[#C87D4B] transition-colors">Residencial Mijoca</span>
           </div>
-          <div class="flex items-center gap-1.5 text-xs font-medium text-[#5A625E]">
+          <div class="flex items-center gap-1.5 text-xs font-medium text-white/70">
             <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#C87D4B]"></span>
             <span>El Dorado II · Santiago, RD</span>
           </div>
         </a>
 
         <!-- Desktop Navigation Links -->
-        <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-[#111111]">
-          <a href="#spaces" class="hover:text-[#C87D4B] transition-colors py-1" x-text="t('nav.apartment')"></a>
-          <a href="#power-tech" class="hover:text-[#C87D4B] transition-colors py-1 flex items-center gap-1.5">
-            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span x-text="t('nav.powerTech')"></span>
-          </a>
-          <a href="#video-tour" class="hover:text-[#C87D4B] transition-colors py-1 flex items-center gap-1.5">
-            <i data-lucide="play-circle" class="w-4 h-4 text-red-500"></i>
+        <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-white/90">
+          <a href="#spaces" class="text-white/80 hover:text-[#C87D4B] transition-colors py-1" x-text="t('nav.apartment')"></a>
+          <a href="#video-tour" class="text-white/80 hover:text-[#C87D4B] transition-colors py-1 flex items-center gap-1.5">
+            <i data-lucide="play-circle" class="w-4 h-4 text-red-400"></i>
             <span x-text="t('nav.videoTour')"></span>
           </a>
-          <a href="#reviews" class="hover:text-[#C87D4B] transition-colors py-1 flex items-center gap-1">
+          <a href="#reviews" class="text-white/80 hover:text-[#C87D4B] transition-colors py-1 flex items-center gap-1.5">
             <span x-text="t('nav.reviews')"></span>
-            <span class="text-xs bg-amber-100 text-amber-900 px-1.5 py-0.5 rounded-full font-bold">5.0★</span>
+            <span class="text-xs bg-amber-400/20 text-amber-300 border border-amber-400/30 px-1.5 py-0.5 rounded-full font-bold">5.0★</span>
           </a>
-          <a href="#local-guide" class="hover:text-[#C87D4B] transition-colors py-1" x-text="t('nav.vipGuide')"></a>
-          <a href="#faq" class="hover:text-[#C87D4B] transition-colors py-1" x-text="t('nav.rulesFaq')"></a>
+          <a href="#local-guide" class="text-white/80 hover:text-[#C87D4B] transition-colors py-1" x-text="t('nav.vipGuide')"></a>
+          <a href="#faq" class="text-white/80 hover:text-[#C87D4B] transition-colors py-1" x-text="t('nav.rulesFaq')"></a>
         </nav>
 
         <!-- Right Controls & CTAs -->
         <div class="hidden md:flex items-center gap-3">
           
           <!-- Bilingual Language Switcher -->
-          <div class="flex items-center bg-[#EAE4D9]/60 p-1 rounded-full border border-[#D9D0C3] text-xs font-bold">
+          <div class="flex items-center bg-white/10 p-1 rounded-full border border-white/15 text-xs font-bold">
             <button @click="setLanguage('en')" 
-                    :class="lang === 'en' ? 'bg-[#111111] text-white shadow-sm' : 'text-[#5A625E] hover:text-[#111111]'" 
+                    :class="lang === 'en' ? 'bg-white text-[#111111] shadow-sm' : 'text-white/70 hover:text-white'" 
                     class="px-2.5 py-1 rounded-full transition-all">EN</button>
             <button @click="setLanguage('es')" 
-                    :class="lang === 'es' ? 'bg-[#111111] text-white shadow-sm' : 'text-[#5A625E] hover:text-[#111111]'" 
+                    :class="lang === 'es' ? 'bg-white text-[#111111] shadow-sm' : 'text-white/70 hover:text-white'" 
                     class="px-2.5 py-1 rounded-full transition-all">ES</button>
           </div>
-
 
           <!-- Primary Airbnb CTA -->
           <a :href="data.property.airbnbUrl" 
              target="_blank" 
              rel="noopener noreferrer"
-             class="flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-lg bg-[#111111] text-white hover:bg-[#C87D4B] transition-all shadow-md">
+             class="flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-lg bg-[#C87D4B] text-white hover:bg-white hover:text-[#111111] transition-all shadow-md">
             <i data-lucide="calendar-check" class="w-3.5 h-3.5"></i>
             <span x-text="t('nav.bookAirbnb')"></span>
           </a>
@@ -151,12 +146,12 @@
 
         <!-- Mobile Menu & Language Button -->
         <div class="flex items-center gap-2 md:hidden">
-          <div class="flex items-center bg-[#EAE4D9]/60 p-0.5 rounded-full border border-[#D9D0C3] text-xs font-bold">
-            <button @click="setLanguage('en')" :class="lang === 'en' ? 'bg-[#111111] text-white' : 'text-[#5A625E]'" class="px-2 py-0.5 rounded-full">EN</button>
-            <button @click="setLanguage('es')" :class="lang === 'es' ? 'bg-[#111111] text-white' : 'text-[#5A625E]'" class="px-2 py-0.5 rounded-full">ES</button>
+          <div class="flex items-center bg-white/10 p-0.5 rounded-full border border-white/15 text-xs font-bold">
+            <button @click="setLanguage('en')" :class="lang === 'en' ? 'bg-white text-[#111111]' : 'text-white/70'" class="px-2 py-0.5 rounded-full">EN</button>
+            <button @click="setLanguage('es')" :class="lang === 'es' ? 'bg-white text-[#111111]' : 'text-white/70'" class="px-2 py-0.5 rounded-full">ES</button>
           </div>
 
-          <button @click="mobileMenuOpen = !mobileMenuOpen" class="p-2 text-[#111111] rounded-lg hover:bg-black/5" aria-label="Toggle Navigation Menu">
+          <button @click="mobileMenuOpen = !mobileMenuOpen" class="p-2 text-white rounded-lg hover:bg-white/10 transition-colors" aria-label="Toggle Navigation Menu">
             <i data-lucide="menu" class="w-6 h-6"></i>
           </button>
         </div>
@@ -167,18 +162,20 @@
       <div x-show="mobileMenuOpen" 
            x-cloak 
            @click.away="mobileMenuOpen = false"
-           class="md:hidden py-4 border-t border-[#111111]/10 space-y-3">
-        <a href="#spaces" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-lg font-medium hover:bg-black/5" x-text="t('nav.apartment')"></a>
-        <a href="#power-tech" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-lg font-medium hover:bg-black/5" x-text="t('nav.powerTech')"></a>
-        <a href="#video-tour" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-lg font-medium hover:bg-black/5 flex items-center gap-2">
-          <i data-lucide="play-circle" class="w-4 h-4 text-red-500"></i>
+           class="md:hidden py-4 border-t border-white/15 space-y-3">
+        <a href="#spaces" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-lg font-medium text-white/90 hover:text-white hover:bg-white/10 transition-colors" x-text="t('nav.apartment')"></a>
+        <a href="#video-tour" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-lg font-medium text-white/90 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2">
+          <i data-lucide="play-circle" class="w-4 h-4 text-red-400"></i>
           <span x-text="t('nav.videoTour')"></span>
         </a>
-        <a href="#reviews" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-lg font-medium hover:bg-black/5" x-text="t('nav.reviews')"></a>
-        <a href="#local-guide" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-lg font-medium hover:bg-black/5" x-text="t('nav.vipGuide')"></a>
-        <a href="#faq" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-lg font-medium hover:bg-black/5" x-text="t('nav.rulesFaq')"></a>
-        <div class="pt-3 border-t border-[#111111]/10 flex flex-col gap-2">
-          <a :href="data.property.airbnbUrl" target="_blank" class="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-bold rounded-lg bg-[#111111] text-white">
+        <a href="#reviews" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-lg font-medium text-white/90 hover:text-white hover:bg-white/10 transition-colors flex items-center justify-between">
+          <span x-text="t('nav.reviews')"></span>
+          <span class="text-xs bg-amber-400/20 text-amber-300 border border-amber-400/30 px-1.5 py-0.5 rounded-full font-bold">5.0★</span>
+        </a>
+        <a href="#local-guide" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-lg font-medium text-white/90 hover:text-white hover:bg-white/10 transition-colors" x-text="t('nav.vipGuide')"></a>
+        <a href="#faq" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-lg font-medium text-white/90 hover:text-white hover:bg-white/10 transition-colors" x-text="t('nav.rulesFaq')"></a>
+        <div class="pt-3 border-t border-white/15 flex flex-col gap-2">
+          <a :href="data.property.airbnbUrl" target="_blank" class="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-bold rounded-lg bg-[#C87D4B] text-white hover:bg-white hover:text-[#111111] transition-all">
             <i data-lucide="calendar-check" class="w-4 h-4"></i>
             <span x-text="t('nav.bookAirbnb')"></span>
           </a>
@@ -276,7 +273,7 @@
             <div class="absolute bottom-4 left-4 right-4 text-white">
               <span class="inline-block px-2.5 py-1 rounded bg-[#111111]/90 backdrop-blur text-[11px] font-bold tracking-wide uppercase text-amber-200 mb-1.5">3-Unit Boutique Property</span>
               <h3 class="font-display text-xl sm:text-2xl font-bold">Residencial Mijoca · El Dorado II</h3>
-              <p class="text-xs text-white/80">3rd-Floor Private Apartment with Glass Balcony & Spot #2 Parking</p>
+              <p class="text-xs text-white/80">3rd-Floor Private Apartment with Glass Balcony & Spot #1 Parking</p>
             </div>
           </div>
 
@@ -419,11 +416,6 @@
             </div>
             <h3 class="font-display text-xl font-bold text-[#111111]" x-text="t('powerTech.card3Title')"></h3>
             <p class="mt-3 text-sm text-[#5A625E] leading-relaxed" x-text="t('powerTech.card3Desc')"></p>
-            
-            <div class="mt-4 p-3 rounded-xl bg-amber-50/80 border border-amber-200 text-xs text-amber-900 leading-normal flex items-start gap-2">
-              <i data-lucide="baggage-claim" class="w-4 h-4 text-[#C87D4B] shrink-0 mt-0.5"></i>
-              <span x-text="t('powerTech.card3Luggage')"></span>
-            </div>
           </div>
 
           <div class="mt-6 pt-5 border-t border-[#E5E7EB] flex items-center justify-between text-xs font-semibold text-[#111111]">
@@ -447,7 +439,7 @@
 
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs font-bold">
               <i data-lucide="car" class="w-3.5 h-3.5 text-emerald-600"></i>
-              <span>Spot #2 Guaranteed</span>
+              <span>Spot #1 Guaranteed</span>
             </div>
           </div>
 
@@ -945,7 +937,7 @@
             </div>
             <h3 class="font-display text-lg font-bold text-[#111111]" x-text="t('guestPortal.addressTitle')"></h3>
             <p class="mt-2 text-xs sm:text-sm text-[#1C1E1D] font-medium leading-relaxed" x-text="data.property.address"></p>
-            <p class="mt-2 text-xs text-[#5A625E]">Dead-end street in El Dorado II. Gated 3-unit building.</p>
+            <p class="mt-2 text-xs text-[#5A625E]">Dead-end street in El Dorado II.</p>
           </div>
 
           <div class="mt-6 flex flex-col gap-2">
@@ -962,7 +954,7 @@
           </div>
         </div>
 
-        <!-- Parking Spot #2 Card -->
+        <!-- Parking Spot #1 Card -->
         <div class="p-6 rounded-2xl bg-[#FAF7F2] border border-[#E6E0D6] flex flex-col justify-between">
           <div>
             <div class="w-10 h-10 rounded-xl bg-[#111111] text-white flex items-center justify-center mb-4">
@@ -1172,11 +1164,11 @@
               </div>
             </div>
 
-            <!-- FAQ 4: Luggage Help -->
+            <!-- FAQ 4: Elevator & 3rd Floor -->
             <div class="glass-card rounded-2xl p-6 shadow-sm border border-[#E5E7EB]">
               <div class="flex items-start gap-3">
                 <div class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center shrink-0 mt-0.5">
-                  <i data-lucide="baggage-claim" class="w-4 h-4"></i>
+                  <i data-lucide="layers" class="w-4 h-4"></i>
                 </div>
                 <div>
                   <h3 class="font-display text-lg font-bold text-[#111111]" x-text="t('booking.faq4Q')"></h3>
