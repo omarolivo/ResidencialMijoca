@@ -42,7 +42,7 @@ A warm, tropical-modern architectural palette that feels upscale, sunlit, trustw
 ### Section 1: Sticky Navigation Bar
 
 * **Left:** Brand wordmark **Residencial Mijoca** with subtitle badge `El Dorado II · Santiago, RD`.
-* **Center Links:** `The Apartment` · `24/7 Power & Tech` · `Guest Reviews (5.0★)` · `Santiago VIP Guide` · `House Rules & FAQ`.
+* **Center Links:** `The Apartment` · `Guest Reviews (5.0★)` · `Guide` · `House Rules & FAQ`.
 * **Right Controls:**
   * `EN | ES` Language Toggle (updates all page copy dynamically without reloading).
   * Instagram Profile Link (`https://www.instagram.com/resmijoca`) with gradient hover effect.

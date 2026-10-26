@@ -44,7 +44,7 @@ const MIJOCA_DATA = {
         gallery: "Photo Gallery",
         videoTour: "Video Tour",
         reviews: "Guest Reviews",
-        vipGuide: "Santiago VIP Guide",
+        vipGuide: "Guide",
         rulesFaq: "House Rules & FAQ",
         bookAirbnb: "Book on Airbnb",
         inquireDirect: "Inquire via WhatsApp"
@@ -198,7 +198,7 @@ const MIJOCA_DATA = {
         gallery: "Galería de Fotos",
         videoTour: "Video Tour",
         reviews: "Reseñas (5.0★)",
-        vipGuide: "Guía VIP Santiago",
+        vipGuide: "Guía",
         rulesFaq: "Reglas y Preguntas",
         bookAirbnb: "Reservar en Airbnb",
         inquireDirect: "Consultar por WhatsApp"
