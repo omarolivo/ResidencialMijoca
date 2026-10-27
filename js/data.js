@@ -101,7 +101,7 @@ const MIJOCA_DATA = {
         balconyPoint: "Private Breezy Balcony",
         kitchenPoint: "Full Kitchen & Coffee Bar",
         powerPoint: "SunGoldPower 24/7 Power",
-        bedroomsPoint: "2 Queen Inverter A/C Bedrooms",
+        bedroomsPoint: "2 Queen Bedrooms with A/C",
         parkingPoint: "Reserved Spot #1 Parking"
       },
       reviews: {
