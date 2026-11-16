@@ -52,7 +52,7 @@ function parseIcalBookedRanges(icsText) {
 
 async function main() {
   const res = await fetch(icalUrl, {
-    headers: { 'User-Agent': 'ResidencialMijoca-CalendarSync/1.0' }
+    headers: { 'User-Agent': 'Google-Calendar-Importer/1.0' }
   });
 
   if (!res.ok) {

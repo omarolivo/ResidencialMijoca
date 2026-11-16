@@ -48,7 +48,7 @@ const MIJOCA_DATA = {
         vipGuide: "Guide",
         rulesFaq: "House Rules & FAQ",
         bookAirbnb: "Book on Airbnb",
-        inquireDirect: "Inquire via WhatsApp"
+        inquireDirect: "Ask Omar on WhatsApp"
       },
       hero: {
         badgeGuestFavorite: "Airbnb Guest Favorite · Top 5% of Homes",
@@ -58,7 +58,7 @@ const MIJOCA_DATA = {
         title: "Your Modern, Uninterrupted Boutique Retreat in Santiago",
         subtitle: "Brand-new 2BR/2BA apartment in an exclusive 3-unit building in El Dorado II. Engineered with continuous 24/7 battery backup, blazing-fast Wi-Fi, private balcony, and reserved parking.",
         ctaAirbnb: "Check Availability on Airbnb",
-        ctaWhatsApp: "Inquire Direct via WhatsApp",
+        ctaWhatsApp: "Ask a Question on WhatsApp",
         viewAllPhotos: "View All Photos (35+)",
         watchVideo: "Watch Video Tour",
         quickSpecs: "4 Guests Max · 2 Bedrooms · 2 Queen Beds · 2 Full Baths · Private Balcony · Spot #1 Reserved Parking"
@@ -119,7 +119,7 @@ const MIJOCA_DATA = {
         verifiedBadge: "Verified Airbnb Stay",
         googleReviewCta: "Leave a Google Review",
         googleMapsProfile: "View on Google Maps",
-        googleGroupNote: "Stayed with a group or booked directly? Everyone in your travel crew can share their experience on our Google Business Profile!",
+        googleGroupNote: "Stayed with a group or family? Everyone in your travel crew can share their experience on our Google Business Profile!",
         maintenanceGuarantee: "Host Maintenance Guarantee: Inverter A/C units are tested and serviced routinely prior to guest check-in."
       },
       host: {
@@ -171,11 +171,11 @@ const MIJOCA_DATA = {
         openGoogleBusiness: "Open Google Business Profile"
       },
       booking: {
-        tag: "DIRECT BOOKING & INQUIRIES",
-        title: "Reserve Your Stay at Residencial Mijoca",
-        subtitle: "Book instantly through Airbnb for verified protection, or contact Omar directly on WhatsApp for direct rates and extended stays.",
+        tag: "AVAILABILITY & HOST CONCIERGE",
+        title: "Plan Your Stay at Residencial Mijoca",
+        subtitle: "Check live calendar availability below. Reserve instantly on Airbnb, or message Omar on WhatsApp with any questions about your trip or extended stays.",
         calendarTitle: "Live Availability Calendar",
-        syncedBadge: "Synced with Airbnb",
+        syncedBadge: "Updated Live",
         calendarHint: "Tap available dates to select Check-In and Check-Out",
         legendAvailable: "Available",
         legendBooked: "Reserved",
@@ -186,10 +186,10 @@ const MIJOCA_DATA = {
         checkInLabel: "Check-In Date",
         checkOutLabel: "Check-Out Date",
         guestsLabel: "Number of Guests (Max 4)",
-        notesLabel: "Special Requests or Questions (Optional)",
+        notesLabel: "Questions or Special Requests (Optional)",
         notesPlaceholder: "e.g., traveling for remote work, arriving late evening...",
         nightsCount: "Nights:",
-        sendWhatsApp: "Send Inquiry via WhatsApp",
+        sendWhatsApp: "Ask Omar on WhatsApp",
         orBookAirbnb: "Book Instantly on Airbnb",
         faqTitle: "Frequently Asked Questions",
         faq1Q: "How does the 24/7 backup power work during outages?",
@@ -242,7 +242,7 @@ const MIJOCA_DATA = {
         vipGuide: "Guía",
         rulesFaq: "Reglas y Preguntas",
         bookAirbnb: "Reservar en Airbnb",
-        inquireDirect: "Consultar por WhatsApp"
+        inquireDirect: "Preguntar por WhatsApp"
       },
       hero: {
         badgeGuestFavorite: "Favorito de Huéspedes Airbnb · Top 5% Mundial",
@@ -252,7 +252,7 @@ const MIJOCA_DATA = {
         title: "Tu Refugio Moderno e Ininterrumpido en Santiago",
         subtitle: "Apartamento nuevo de 2 hab / 2 baños en un exclusivo edificio de solo 3 unidades en El Dorado II. Equipado con respaldo de energía 24/7, Wi-Fi ultrarrápido, balcón privado y parqueo reservado.",
         ctaAirbnb: "Ver Disponibilidad en Airbnb",
-        ctaWhatsApp: "Consultar Tarifa Directa por WhatsApp",
+        ctaWhatsApp: "Preguntar a Omar por WhatsApp",
         viewAllPhotos: "Ver Todas las Fotos (35+)",
         watchVideo: "Ver Video Tour",
         quickSpecs: "Máx 4 Huéspedes · 2 Habitaciones · 2 Camas Queen · 2 Baños Completos · Balcón Privado · Parqueo Asignado #1"
@@ -313,7 +313,7 @@ const MIJOCA_DATA = {
         verifiedBadge: "Estadía Verificada en Airbnb",
         googleReviewCta: "Dejar Reseña en Google",
         googleMapsProfile: "Ver en Google Maps",
-        googleGroupNote: "¿Viajaste en grupo o reservaste directo? ¡Todos los integrantes de tu grupo pueden dejar su reseña en nuestro perfil de Google!",
+        googleGroupNote: "¿Viajaste en grupo o en familia? ¡Todos los integrantes de tu grupo pueden dejar su reseña en nuestro perfil de Google!",
         maintenanceGuarantee: "Garantía de Mantenimiento: Ambos aires acondicionados inverter son revisados y puestos a punto de forma rutinaria antes de cada llegada."
       },
       host: {
@@ -365,11 +365,11 @@ const MIJOCA_DATA = {
         openGoogleBusiness: "Abrir Perfil en Google Maps"
       },
       booking: {
-        tag: "RESERVAS E INFORMACIÓN",
-        title: "Reserva Tu Estadía en Residencial Mijoca",
-        subtitle: "Reserva al instante por Airbnb con protección garantizada, o comunícate directamente con Omar por WhatsApp para tarifas directas y estadías largas.",
+        tag: "DISPONIBILIDAD Y ATENCIÓN AL HUÉSPED",
+        title: "Planifica Tu Estadía en Residencial Mijoca",
+        subtitle: "Consulta la disponibilidad en tiempo real. Reserva al instante por Airbnb, o escríbele a Omar por WhatsApp si tienes dudas sobre tu viaje o estadías largas.",
         calendarTitle: "Calendario de Disponibilidad en Vivo",
-        syncedBadge: "Sincronizado con Airbnb",
+        syncedBadge: "En Tiempo Real",
         calendarHint: "Toca las fechas disponibles para elegir llegada y salida",
         legendAvailable: "Disponible",
         legendBooked: "Reservado",
@@ -380,10 +380,10 @@ const MIJOCA_DATA = {
         checkInLabel: "Fecha de Llegada",
         checkOutLabel: "Fecha de Salida",
         guestsLabel: "Huéspedes (Máx 4)",
-        notesLabel: "Peticiones Especiales o Dudas (Opcional)",
+        notesLabel: "Preguntas o Peticiones Especiales (Opcional)",
         notesPlaceholder: "Ej: viajo por trabajo remoto, llegaré de noche...",
         nightsCount: "Noches:",
-        sendWhatsApp: "Enviar Consulta por WhatsApp",
+        sendWhatsApp: "Preguntar a Omar por WhatsApp",
         orBookAirbnb: "Reservar al Instante en Airbnb",
         faqTitle: "Preguntas Frecuentes",
         faq1Q: "¿Cómo funciona el respaldo de energía 24/7 si se va la luz?",
