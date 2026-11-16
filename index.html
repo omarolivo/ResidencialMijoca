@@ -116,8 +116,8 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Master Data & Controller Scripts -->
-  <script src="js/data.js?v=3"></script>
-  <script src="js/app.js?v=3"></script>
+  <script src="js/data.js?v=4"></script>
+  <script src="js/app.js?v=4"></script>
 
   <!-- Alpine.js v3 CDN -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
@@ -1260,15 +1260,99 @@
 
           <!-- Interactive Form Inputs -->
           <div class="mt-6 space-y-4">
+
+            <!-- LIVE AIRBNB AVAILABILITY CALENDAR -->
+            <div class="p-4 rounded-2xl bg-[#FAF7F2] border border-[#E6E0D6]">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <div class="flex items-center gap-1.5">
+                  <i data-lucide="calendar-days" class="w-4 h-4 text-[#C87D4B]"></i>
+                  <span class="text-xs font-bold text-[#111111]" x-text="t('booking.calendarTitle')"></span>
+                </div>
+                <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  <span x-text="t('booking.syncedBadge')"></span>
+                </span>
+              </div>
+
+              <p class="text-[11px] text-[#5A625E] mb-3" x-text="selectingCheckOut ? t('booking.statusSelectOut') : t('booking.calendarHint')"></p>
+
+              <!-- Month Navigation Header -->
+              <div class="flex items-center justify-between mb-2 bg-white px-3 py-1.5 rounded-xl border border-[#E6E0D6]">
+                <button type="button" @click="prevMonth()" class="p-1 rounded-lg hover:bg-[#FAF7F2] text-[#111111] transition-colors" aria-label="Previous Month">
+                  <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                </button>
+                <span class="text-xs font-bold text-[#111111]" x-text="calendarMonthLabel"></span>
+                <button type="button" @click="nextMonth()" class="p-1 rounded-lg hover:bg-[#FAF7F2] text-[#111111] transition-colors" aria-label="Next Month">
+                  <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                </button>
+              </div>
+
+              <!-- Weekday Headers -->
+              <div class="grid grid-cols-7 gap-1 text-center text-[10px] font-bold text-[#5A625E] mb-1">
+                <template x-for="wd in calendarWeekdays" :key="wd">
+                  <div class="py-1" x-text="wd"></div>
+                </template>
+              </div>
+
+              <!-- Calendar Days Grid -->
+              <div class="grid grid-cols-7 gap-1 text-center text-xs">
+                <template x-for="cell in calendarDays" :key="cell.key">
+                  <div>
+                    <template x-if="cell.empty">
+                      <div class="h-8"></div>
+                    </template>
+                    <template x-if="!cell.empty">
+                      <button type="button"
+                              @click="selectCalendarDate(cell)"
+                              :disabled="cell.isPast || (cell.isBooked && !selectingCheckOut)"
+                              :class="{
+                                'bg-[#111111] text-white font-bold shadow-sm': cell.isCheckIn || cell.isCheckOut,
+                                'bg-[#C87D4B]/20 text-[#111111] font-semibold': cell.isInRange && !cell.isBooked,
+                                'bg-red-100/80 text-red-400 line-through cursor-not-allowed': cell.isBooked && !cell.isCheckOut,
+                                'text-neutral-300 cursor-not-allowed': cell.isPast && !cell.isBooked,
+                                'bg-white hover:border-[#C87D4B] text-[#111111] border border-[#E6E0D6]': !cell.isPast && !cell.isBooked && !cell.isCheckIn && !cell.isCheckOut && !cell.isInRange
+                              }"
+                              class="w-full h-8 rounded-lg flex items-center justify-center text-[11px] transition-all"
+                              x-text="cell.day">
+                      </button>
+                    </template>
+                  </div>
+                </template>
+              </div>
+
+              <!-- Legend -->
+              <div class="mt-3 pt-2.5 border-t border-[#E6E0D6] flex items-center justify-between text-[10px] font-medium text-[#5A625E]">
+                <div class="flex items-center gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded bg-white border border-[#D9D0C3] inline-block"></span>
+                  <span x-text="t('booking.legendAvailable')"></span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded bg-red-100 border border-red-200 inline-block"></span>
+                  <span x-text="t('booking.legendBooked')"></span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded bg-[#111111] inline-block"></span>
+                  <span x-text="t('booking.legendSelected')"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Live Availability Status Banner -->
+            <div :class="hasDateConflict ? 'bg-red-50 border-red-200 text-red-900' : 'bg-emerald-50 border-emerald-200 text-emerald-900'"
+                 class="px-3.5 py-2.5 rounded-xl border text-xs font-semibold flex items-center gap-2">
+              <span x-show="!hasDateConflict" class="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
+              <span x-show="hasDateConflict" class="w-2 h-2 rounded-full bg-red-500 shrink-0"></span>
+              <span x-text="hasDateConflict ? t('booking.statusConflict') : t('booking.statusAvailable')"></span>
+            </div>
             
             <div class="grid grid-cols-2 gap-3">
               <div>
                 <label class="block text-xs font-bold text-[#111111] mb-1" x-text="t('booking.checkInLabel')"></label>
-                <input type="date" x-model="bookingForm.checkIn" class="w-full text-xs font-medium px-3 py-2.5 rounded-xl border border-[#D9D0C3] bg-white focus:outline-none focus:ring-2 focus:ring-[#111111]" />
+                <input type="date" x-model="bookingForm.checkIn" @change="selectingCheckOut = false" class="w-full text-xs font-medium px-3 py-2.5 rounded-xl border border-[#D9D0C3] bg-white focus:outline-none focus:ring-2 focus:ring-[#111111]" />
               </div>
               <div>
                 <label class="block text-xs font-bold text-[#111111] mb-1" x-text="t('booking.checkOutLabel')"></label>
-                <input type="date" x-model="bookingForm.checkOut" class="w-full text-xs font-medium px-3 py-2.5 rounded-xl border border-[#D9D0C3] bg-white focus:outline-none focus:ring-2 focus:ring-[#111111]" />
+                <input type="date" x-model="bookingForm.checkOut" @change="selectingCheckOut = false" class="w-full text-xs font-medium px-3 py-2.5 rounded-xl border border-[#D9D0C3] bg-white focus:outline-none focus:ring-2 focus:ring-[#111111]" />
               </div>
             </div>
 

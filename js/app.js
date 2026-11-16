@@ -35,6 +35,20 @@ document.addEventListener('alpine:init', () => {
       notes: ''
     },
 
+    // Live Airbnb Availability Calendar State
+    calYear: new Date().getFullYear(),
+    calMonth: new Date().getMonth(),
+    selectingCheckOut: false,
+    bookedRanges: [
+      { start: '2026-11-14', end: '2026-11-16' },
+      { start: '2026-11-27', end: '2026-11-29' },
+      { start: '2026-12-01', end: '2026-12-03' },
+      { start: '2026-12-04', end: '2026-12-06' },
+      { start: '2027-01-10', end: '2027-01-12' },
+      { start: '2027-01-30', end: '2027-02-06' },
+      { start: '2027-08-13', end: '2027-11-17' }
+    ],
+
     init() {
       // Detect iOS device
       this.isIos = /iphone|ipad|ipod/.test(window.navigator.userAgent.toLowerCase());
@@ -67,15 +81,9 @@ document.addEventListener('alpine:init', () => {
         this.triggerToast(this.lang === 'es' ? '¡Guía guardada en tu pantalla de inicio!' : 'Guide saved to your home screen!');
       });
 
-      // Set default dates (tomorrow and 3 days later)
-      const today = new Date();
-      const checkInDate = new Date(today);
-      checkInDate.setDate(today.getDate() + 1);
-      const checkOutDate = new Date(today);
-      checkOutDate.setDate(today.getDate() + 4);
-
-      this.bookingForm.checkIn = this.formatDateForInput(checkInDate);
-      this.bookingForm.checkOut = this.formatDateForInput(checkOutDate);
+      // Set default available 3-night window and fetch live availability JSON
+      this.setNextAvailableWindow();
+      this.loadAvailability();
 
       // Listen for Escape key to close modals
       window.addEventListener('keydown', (e) => {
@@ -130,6 +138,171 @@ document.addEventListener('alpine:init', () => {
       const m = String(date.getMonth() + 1).padStart(2, '0');
       const d = String(date.getDate()).padStart(2, '0');
       return `${y}-${m}-${d}`;
+    },
+
+    // Load sanitized Airbnb availability JSON
+    async loadAvailability() {
+      try {
+        const res = await fetch(`./js/availability.json?t=${Date.now()}`);
+        if (res.ok) {
+          const payload = await res.json();
+          if (Array.isArray(payload.bookedRanges)) {
+            this.bookedRanges = payload.bookedRanges;
+            if (this.hasDateConflict) {
+              this.setNextAvailableWindow();
+            }
+          }
+        }
+      } catch (err) {
+        console.log('Using fallback availability ranges:', err);
+      }
+    },
+
+    // Check if a specific night (YYYY-MM-DD) is booked on Airbnb
+    isNightBooked(dateStr) {
+      return this.bookedRanges.some(r => dateStr >= r.start && dateStr < r.end);
+    },
+
+    // Check if any night in [startStr, endStr) is booked
+    isRangeBooked(startStr, endStr) {
+      if (!startStr || !endStr || endStr <= startStr) return false;
+      return this.bookedRanges.some(r => startStr < r.end && endStr > r.start);
+    },
+
+    get hasDateConflict() {
+      if (!this.bookingForm.checkIn || !this.bookingForm.checkOut) return false;
+      if (this.bookingForm.checkOut <= this.bookingForm.checkIn) return true;
+      return this.isRangeBooked(this.bookingForm.checkIn, this.bookingForm.checkOut);
+    },
+
+    // Find next open 3-night window starting tomorrow
+    setNextAvailableWindow() {
+      const base = new Date();
+      base.setHours(12, 0, 0, 0);
+      for (let offset = 1; offset <= 120; offset++) {
+        const dIn = new Date(base);
+        dIn.setDate(base.getDate() + offset);
+        const dOut = new Date(dIn);
+        dOut.setDate(dIn.getDate() + 3);
+        const inStr = this.formatDateForInput(dIn);
+        const outStr = this.formatDateForInput(dOut);
+        if (!this.isRangeBooked(inStr, outStr)) {
+          this.bookingForm.checkIn = inStr;
+          this.bookingForm.checkOut = outStr;
+          this.calYear = dIn.getFullYear();
+          this.calMonth = dIn.getMonth();
+          return;
+        }
+      }
+    },
+
+    // Calendar navigation & rendering helpers
+    get calendarMonthLabel() {
+      const d = new Date(this.calYear, this.calMonth, 1);
+      const locale = this.lang === 'es' ? 'es-DO' : 'en-US';
+      const label = d.toLocaleDateString(locale, { month: 'long', year: 'numeric' });
+      return label.charAt(0).toUpperCase() + label.slice(1);
+    },
+
+    get calendarWeekdays() {
+      return this.lang === 'es'
+        ? ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sá']
+        : ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+    },
+
+    get calendarDays() {
+      const firstDayOfWeek = new Date(this.calYear, this.calMonth, 1).getDay();
+      const daysInMonth = new Date(this.calYear, this.calMonth + 1, 0).getDate();
+      const todayStr = this.formatDateForInput(new Date());
+      const cells = [];
+
+      // Leading empty slots
+      for (let i = 0; i < firstDayOfWeek; i++) {
+        cells.push({ empty: true, key: `empty-${i}` });
+      }
+
+      for (let day = 1; day <= daysInMonth; day++) {
+        const d = new Date(this.calYear, this.calMonth, day);
+        const dateStr = this.formatDateForInput(d);
+        const isPast = dateStr < todayStr;
+        const isBooked = this.isNightBooked(dateStr);
+        const isCheckIn = this.bookingForm.checkIn === dateStr;
+        const isCheckOut = this.bookingForm.checkOut === dateStr;
+        const isInRange =
+          this.bookingForm.checkIn &&
+          this.bookingForm.checkOut &&
+          dateStr > this.bookingForm.checkIn &&
+          dateStr < this.bookingForm.checkOut;
+
+        cells.push({
+          empty: false,
+          key: dateStr,
+          day,
+          dateStr,
+          isPast,
+          isBooked,
+          isCheckIn,
+          isCheckOut,
+          isInRange
+        });
+      }
+
+      return cells;
+    },
+
+    prevMonth() {
+      if (this.calMonth === 0) {
+        this.calMonth = 11;
+        this.calYear--;
+      } else {
+        this.calMonth--;
+      }
+    },
+
+    nextMonth() {
+      if (this.calMonth === 11) {
+        this.calMonth = 0;
+        this.calYear++;
+      } else {
+        this.calMonth++;
+      }
+    },
+
+    selectCalendarDate(cell) {
+      if (cell.empty || cell.isPast) return;
+
+      // If starting a new selection or clicked date is on/before current check-in
+      if (!this.selectingCheckOut || !this.bookingForm.checkIn || cell.dateStr <= this.bookingForm.checkIn) {
+        if (cell.isBooked) return; // Can't check in on a booked night
+        this.bookingForm.checkIn = cell.dateStr;
+        // Default tentative check-out to 1 night later if open, or clear checkOut until second click
+        const nextDay = new Date(cell.dateStr + 'T12:00:00');
+        nextDay.setDate(nextDay.getDate() + 2);
+        const tentativeOut = this.formatDateForInput(nextDay);
+        if (!this.isRangeBooked(cell.dateStr, tentativeOut)) {
+          this.bookingForm.checkOut = tentativeOut;
+        } else {
+          const oneNight = new Date(cell.dateStr + 'T12:00:00');
+          oneNight.setDate(oneNight.getDate() + 1);
+          this.bookingForm.checkOut = this.formatDateForInput(oneNight);
+        }
+        this.selectingCheckOut = true;
+      } else {
+        // Picking check-out date: check if range crosses any booked night
+        if (this.isRangeBooked(this.bookingForm.checkIn, cell.dateStr)) {
+          // If the clicked date itself is available as a new check-in, start over from there
+          if (!cell.isBooked) {
+            this.bookingForm.checkIn = cell.dateStr;
+            const oneNight = new Date(cell.dateStr + 'T12:00:00');
+            oneNight.setDate(oneNight.getDate() + 1);
+            this.bookingForm.checkOut = this.formatDateForInput(oneNight);
+            this.selectingCheckOut = true;
+          }
+          return;
+        }
+        this.bookingForm.checkOut = cell.dateStr;
+        this.selectingCheckOut = false;
+      }
     },
 
     // Filtered gallery items
