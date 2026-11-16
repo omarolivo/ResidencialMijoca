@@ -9,7 +9,8 @@ const MIJOCA_DATA = {
     name: "Residencial Mijoca",
     tagline: "El Dorado II · Santiago de los Caballeros, RD",
     address: "Calle 4 #27, El Dorado II, Santiago, Dominican Republic",
-    googleMapsUrl: "https://maps.app.goo.gl/RccSAfZbDusgQYFw5", // unit address
+    googleMapsUrl: "https://maps.app.goo.gl/3a2gY8GLsb2pSSUt8", // Official Google Business Profile
+    googleBusinessUrl: "https://maps.app.goo.gl/3a2gY8GLsb2pSSUt8",
     airbnbUrl: "https://www.airbnb.com/rooms/1758998339922997720",
     airbnbListingId: "1758998339922997720",
     phoneDisplay: "+1 (646) 209-0270",
@@ -50,8 +51,8 @@ const MIJOCA_DATA = {
         inquireDirect: "Inquire via WhatsApp"
       },
       hero: {
-        badgeGuestFavorite: "Airbnb Guest Favorite · Top 10% of Homes",
-        badgeRating: "5.0 ★ (10 Verified Reviews)",
+        badgeGuestFavorite: "Airbnb Guest Favorite · Top 5% of Homes",
+        badgeRating: "5.0 ★ (14 Verified Reviews)",
         badgeLocation: "100% 5-Star Location",
         badgePower: "24/7 5 kW Battery Backup",
         title: "Your Modern, Uninterrupted Boutique Retreat in Santiago",
@@ -107,15 +108,18 @@ const MIJOCA_DATA = {
       reviews: {
         tag: "AUTHENTIC GUEST TESTIMONIALS",
         title: "100% 5-Star Social Proof",
-        subtitle: "Residencial Mijoca is recognized in the Top 10% of Airbnb homes globally based on ratings, reviews, and reliability.",
-        filterAll: "All Reviews (10)",
+        subtitle: "Residencial Mijoca is recognized in the Top 5% of Airbnb homes globally based on ratings, reviews, and reliability.",
+        filterAll: "All Reviews (14)",
         filterBusiness: "Business & Remote Work",
         filterHospitality: "Hospitality & Host",
         filterLocation: "Location & Diaspora",
         filterAmenities: "Comfort & Amenities",
-        showMore: "Show All 10 Verified Airbnb Reviews",
+        showMore: "Show All 14 Verified Airbnb Reviews",
         showLess: "Show Featured Reviews",
         verifiedBadge: "Verified Airbnb Stay",
+        googleReviewCta: "Leave a Google Review",
+        googleMapsProfile: "View on Google Maps",
+        googleGroupNote: "Stayed with a group or booked directly? Everyone in your travel crew can share their experience on our Google Business Profile!",
         maintenanceGuarantee: "Host Maintenance Guarantee: Inverter A/C units are tested and serviced routinely prior to guest check-in."
       },
       host: {
@@ -160,7 +164,11 @@ const MIJOCA_DATA = {
         etiquette1: "Please turn off bedroom A/C units when heading out to explore Santiago.",
         etiquette2: "Dispose of tied garbage bags in the main exterior bin near the front gate.",
         etiquette3: "Lock the balcony sliding door and front entrance whenever leaving the property.",
-        printGuide: "Print / Save PDF Guide"
+        printGuide: "Print / Save PDF Guide",
+        googleBusinessBadge: "Official Google Business Profile · Directions & Reviews",
+        mapTitle: "Interactive Neighborhood Map · El Dorado II, Santiago",
+        mapSubtitle: "Quiet residential cul-de-sac just 5 minutes from Supermercados Nacional and 10–12 minutes from Monumento a los Héroes de la Restauración.",
+        openGoogleBusiness: "Open Google Business Profile"
       },
       booking: {
         tag: "DIRECT BOOKING & INQUIRIES",
@@ -210,6 +218,7 @@ const MIJOCA_DATA = {
       footer: {
         rights: "All rights reserved. Residencial Mijoca · El Dorado II, Santiago, Dominican Republic.",
         airbnbDirect: "Official Airbnb Listing #1758998339922997720",
+        googleMapsBtn: "Google Maps & Reviews",
         curatedBy: "Managed with care by Omar"
       }
     },
@@ -227,8 +236,8 @@ const MIJOCA_DATA = {
         inquireDirect: "Consultar por WhatsApp"
       },
       hero: {
-        badgeGuestFavorite: "Favorito de Huéspedes Airbnb · Top 10% Mundial",
-        badgeRating: "5.0 ★ (10 Reseñas Verificadas)",
+        badgeGuestFavorite: "Favorito de Huéspedes Airbnb · Top 5% Mundial",
+        badgeRating: "5.0 ★ (14 Reseñas Verificadas)",
         badgeLocation: "100% Ubicación 5 Estrellas",
         badgePower: "Inversor y Batería 5 kW 24/7",
         title: "Tu Refugio Moderno e Ininterrumpido en Santiago",
@@ -284,15 +293,18 @@ const MIJOCA_DATA = {
       reviews: {
         tag: "TESTIMONIOS REALES Y VERIFICADOS",
         title: "Prueba Social 100% 5 Estrellas",
-        subtitle: "Residencial Mijoca se ubica en el 10% superior de alojamientos en Airbnb a nivel global por sus altas calificaciones y confiabilidad.",
-        filterAll: "Todas las Reseñas (10)",
+        subtitle: "Residencial Mijoca se ubica en el 5% superior de alojamientos en Airbnb a nivel global por sus altas calificaciones y confiabilidad.",
+        filterAll: "Todas las Reseñas (14)",
         filterBusiness: "Negocios y Trabajo Remoto",
         filterHospitality: "Hospitalidad y Anfitrión",
         filterLocation: "Ubicación y Diáspora",
         filterAmenities: "Comodidad y Servicios",
-        showMore: "Ver las 10 Reseñas Verificadas de Airbnb",
+        showMore: "Ver las 14 Reseñas Verificadas de Airbnb",
         showLess: "Mostrar Reseñas Principales",
         verifiedBadge: "Estadía Verificada en Airbnb",
+        googleReviewCta: "Dejar Reseña en Google",
+        googleMapsProfile: "Ver en Google Maps",
+        googleGroupNote: "¿Viajaste en grupo o reservaste directo? ¡Todos los integrantes de tu grupo pueden dejar su reseña en nuestro perfil de Google!",
         maintenanceGuarantee: "Garantía de Mantenimiento: Ambos aires acondicionados inverter son revisados y puestos a punto de forma rutinaria antes de cada llegada."
       },
       host: {
@@ -337,7 +349,11 @@ const MIJOCA_DATA = {
         etiquette1: "Por favor apaga los aires acondicionados al salir a recorrer Santiago.",
         etiquette2: "Deposita la basura en bolsas cerradas en el contenedor principal exterior frente a la entrada.",
         etiquette3: "Asegúrate de cerrar la puerta corrediza del balcón y la puerta principal al salir.",
-        printGuide: "Imprimir / Guardar en PDF"
+        printGuide: "Imprimir / Guardar en PDF",
+        googleBusinessBadge: "Perfil Oficial en Google · Cómo Llegar y Reseñas",
+        mapTitle: "Mapa Interactivo del Sector · El Dorado II, Santiago",
+        mapSubtitle: "Calle residencial sin salida a solo 5 minutos del Supermercado Nacional y 10–12 minutos del Monumento de Santiago.",
+        openGoogleBusiness: "Abrir Perfil en Google Maps"
       },
       booking: {
         tag: "RESERVAS E INFORMACIÓN",
@@ -387,15 +403,49 @@ const MIJOCA_DATA = {
       footer: {
         rights: "Todos los derechos reservados. Residencial Mijoca · El Dorado II, Santiago, República Dominicana.",
         airbnbDirect: "Alojamiento Oficial en Airbnb #1758998339922997720",
+        googleMapsBtn: "Google Maps y Reseñas",
         curatedBy: "Gestionado con dedicación por Omar"
       }
     }
   },
 
-  // 10 Real Verified Airbnb Reviews
+  // 14 Real Verified Airbnb Reviews
   reviews: [
     {
       id: 1,
+      guestName: "Marie",
+      tenure: "4 years on Airbnb",
+      tenureEs: "4 años en Airbnb",
+      rating: 5,
+      category: "amenities",
+      featured: true,
+      quote: "An exceptional experience! One of the best experiences I've had on Airbnb. The house was simply perfect: brand new, beautifully furnished, with high-quality amenities and facilities. Everything was impeccable, and the cleanliness was flawless. It feels good from the very first moment, as the space is welcoming, comfortable and carefully maintained. This place was my absolute favorite in Santiago, and I wouldn't hesitate to stay there again on my next trip. I would like to sincerely thank the host, Omar, for this wonderful experience and for the attention paid to every detail. I also encourage future guests to take good care of this wonderful property, to respect its facilities and to preserve its infrastructure. It is thanks to everyone's respect and responsibility that we will be able to continue to enjoy such exceptional places. A place that I would recommend without hesitation! ❤️",
+      quoteEs: "¡Una experiencia excepcional! Una de las mejores experiencias que he tenido en Airbnb. La casa estaba simplemente perfecta: completamente nueva, bellamente amueblada, con comodidades e instalaciones de gran calidad. Todo estaba impecable y la limpieza era intachable. Te sientes bien desde el primer momento, ya que el espacio es acogedor, cómodo y cuidadosamente mantenido. Este alojamiento fue mi favorito absoluto en Santiago y no dudaría en volver a hospedarme aquí en mi próximo viaje. Quiero agradecer sinceramente al anfitrión, Omar, por esta maravillosa experiencia y por la atención prestada a cada detalle. También invito a los futuros huéspedes a cuidar mucho esta hermosa propiedad, respetar sus instalaciones y preservar su infraestructura. Es gracias al respeto y la responsabilidad de todos que podremos seguir disfrutando de lugares tan excepcionales. ¡Un lugar que recomiendo sin la menor duda! ❤️"
+    },
+    {
+      id: 2,
+      guestName: "Jose",
+      tenure: "5 years on Airbnb",
+      tenureEs: "5 años en Airbnb",
+      rating: 5,
+      category: "location",
+      featured: true,
+      quote: "This is a really nice apartment, clean modern and a great location. It was my first time visiting Santiago and every where I wanted to go was minutes away. Great communication from Omar. I highly recommend it to anyone who wants to explore Santiago.",
+      quoteEs: "Este es un apartamento realmente lindo, limpio, moderno y con una excelente ubicación. Fue mi primera vez visitando Santiago y todos los lugares a los que quería ir estaban a pocos minutos. Excelente comunicación de parte de Omar. Lo recomiendo ampliamente a cualquiera que quiera explorar Santiago."
+    },
+    {
+      id: 3,
+      guestName: "Mia",
+      tenure: "Santo Domingo, DR",
+      tenureEs: "Santo Domingo, RD",
+      rating: 5,
+      category: "amenities",
+      featured: true,
+      quote: "My friends and I loved staying here. We'll definitely stay here every time we come for more than one night. ❤️",
+      quoteEs: "A mí y a mis amigas nos encantó hospedarnos aquí. Definitivamente nos quedaremos aquí cada vez que vengamos por más de una noche. ❤️"
+    },
+    {
+      id: 4,
       guestName: "Huascar",
       tenure: "5 years on Airbnb",
       tenureEs: "5 años en Airbnb",
@@ -406,7 +456,7 @@ const MIJOCA_DATA = {
       quoteEs: "¡Tuve una experiencia increíble! Todo fue excelente de principio a fin. El servicio fue excelente, el personal amable y acogedor, y el ambiente general fue maravilloso. Realmente se nota que se preocupan por hacer felices a sus huéspedes. Recomiendo encarecidamente este lugar a cualquiera que busque una gran experiencia. ¡Definitivamente volveré!"
     },
     {
-      id: 2,
+      id: 5,
       guestName: "Wilson",
       tenure: "Dominican Republic",
       tenureEs: "República Dominicana",
@@ -417,7 +467,7 @@ const MIJOCA_DATA = {
       quoteEs: "¡¡Tuve una excelente estadía en este hermoso apartamento!! El servicio del anfitrión fue excelente e inmediato. ¡Es un lugar tranquilo, espacioso, moderno y cómodo! ¡Estoy esperando que se confirme mi próximo viaje de negocios para poder quedarme de nuevo en este apartamento!"
     },
     {
-      id: 3,
+      id: 6,
       guestName: "Mercedes",
       tenure: "Santo Domingo, DR",
       tenureEs: "Santo Domingo, RD",
@@ -428,40 +478,51 @@ const MIJOCA_DATA = {
       quoteEs: "El lugar es nuevo e increíble, con todas las atenciones, café, té y agua. Ambas habitaciones con aire acondicionado. 3 televisores inteligentes. El anfitrión fue muy amable y comprensivo con el error que cometí al reservar el día equivocado. ¡¡El mejor lugar de Santiago!!"
     },
     {
-      id: 4,
+      id: 7,
       guestName: "Luisa E.",
       tenure: "Boston, Massachusetts",
       tenureEs: "Boston, Massachusetts",
       rating: 5,
       category: "location",
-      featured: true,
+      featured: false,
       quote: "Excellent place to stay in the city of Santiago. It's comfortable and cozy, and the hosts are very helpful people. I loved it and felt like I was at home. I've already found the perfect place to come back to, with easy access to downtown.",
       quoteEs: "Excelente lugar para hospedarse en la ciudad de Santiago. Es cómodo y acogedor, y los anfitriones son personas muy serviciales. Me encantó y me sentí como en mi casa. Ya encontré el lugar perfecto para regresar, con fácil acceso al centro."
     },
     {
-      id: 5,
+      id: 8,
       guestName: "Omaira",
       tenure: "7 years on Airbnb",
       tenureEs: "7 años en Airbnb",
       rating: 5,
       category: "hospitality",
-      featured: true,
+      featured: false,
       quote: "Excellent accommodation. Everything was very nice and in perfect condition. Our host, Omar, is very helpful and was quick to respond to our concerns.",
       quoteEs: "Excelente alojamiento. Todo muy lindo y en perfectas condiciones. Nuestro anfitrión Omar muy servicial y rápido al responder a nuestras inquietudes."
     },
     {
-      id: 6,
+      id: 9,
       guestName: "Katherine",
       tenure: "West New York, NJ",
       tenureEs: "West New York, NJ",
       rating: 5,
       category: "hospitality",
-      featured: true,
+      featured: false,
       quote: "The apartment is super nice, and the host's communication is excellent.",
       quoteEs: "El apartamento súper lindo, y la comunicación del anfitrión excelente."
     },
     {
-      id: 7,
+      id: 10,
+      guestName: "Lucia",
+      tenure: "1 month on Airbnb",
+      tenureEs: "1 mes en Airbnb",
+      rating: 5,
+      category: "hospitality",
+      featured: false,
+      quote: "I give this place and the host a five star review.",
+      quoteEs: "Le doy a este lugar y al anfitrión una reseña de cinco estrellas."
+    },
+    {
+      id: 11,
       guestName: "Nestor",
       tenure: "Dominican Republic",
       tenureEs: "República Dominicana",
@@ -472,7 +533,7 @@ const MIJOCA_DATA = {
       quoteEs: "Hermoso apartamento en un área muy tranquila. Se convirtió en uno de mis lugares favoritos para hospedarme."
     },
     {
-      id: 8,
+      id: 12,
       guestName: "Yenifer",
       tenure: "Dominican Republic",
       tenureEs: "República Dominicana",
@@ -483,7 +544,7 @@ const MIJOCA_DATA = {
       quoteEs: "Excelente. Nos gustó mucho el apartamento. Estaba tranquilo y limpio, y la ubicación era buena."
     },
     {
-      id: 9,
+      id: 13,
       guestName: "Frederick",
       tenure: "10 years on Airbnb",
       tenureEs: "10 años en Airbnb",
@@ -494,7 +555,7 @@ const MIJOCA_DATA = {
       quoteEs: "Buena estadía, buena comunicación con el anfitrión."
     },
     {
-      id: 10,
+      id: 14,
       guestName: "Carlos",
       tenure: "2 years on Airbnb",
       tenureEs: "2 años en Airbnb",

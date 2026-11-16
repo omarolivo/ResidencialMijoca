@@ -1,11 +1,11 @@
 // Service Worker for Residencial Mijoca PWA (Zero-Build Static Architecture)
-const CACHE_NAME = 'mijoca-cache-v1';
+const CACHE_NAME = 'mijoca-cache-v4';
 const STATIC_ASSETS = [
   './',
   './index.html',
   './css/styles.css',
-  './js/app.js',
-  './js/data.js',
+  './js/app.js?v=3',
+  './js/data.js?v=3',
   './manifest.json',
   './Images/icon.svg',
   './Images/icon-192.png',

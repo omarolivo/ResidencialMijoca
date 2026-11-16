@@ -27,6 +27,38 @@
   <meta property="og:type" content="website" />
   <meta property="og:image" content="Images/Building.png" />
 
+  <!-- Local SEO & Google Business Profile Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Residencial Mijoca",
+    "description": "Brand-new boutique 2BR/2BA apartment in El Dorado II, Santiago de los Caballeros, Dominican Republic. 24/7 5 kW battery backup power, fast Wi-Fi, private balcony, and reserved parking.",
+    "image": "Images/Building.png",
+    "telephone": "+1-646-209-0270",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Calle 4 #27, El Dorado II",
+      "addressLocality": "Santiago de los Caballeros",
+      "addressRegion": "Santiago",
+      "addressCountry": "DO"
+    },
+    "hasMap": "https://maps.app.goo.gl/3a2gY8GLsb2pSSUt8",
+    "sameAs": [
+      "https://maps.app.goo.gl/3a2gY8GLsb2pSSUt8",
+      "https://www.airbnb.com/rooms/1758998339922997720",
+      "https://www.instagram.com/resmijoca",
+      "https://youtu.be/8Lw9ZF0jpzo"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "bestRating": "5",
+      "reviewCount": "14"
+    }
+  }
+  </script>
+
   <!-- Progressive Web App (PWA) -->
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#111111" />
@@ -84,8 +116,8 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Master Data & Controller Scripts -->
-  <script src="js/data.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/data.js?v=3"></script>
+  <script src="js/app.js?v=3"></script>
 
   <!-- Alpine.js v3 CDN -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
@@ -237,11 +269,12 @@
           <span x-text="t('hero.badgeRating')"></span>
         </a>
 
-        <!-- 100% Location Badge -->
-        <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs font-semibold">
+        <!-- 100% Location Badge (Links to Official Google Business Profile) -->
+        <a :href="data.property.googleMapsUrl" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs font-semibold hover:bg-emerald-100 transition-colors" title="View Residencial Mijoca on Google Maps">
           <i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-600"></i>
           <span x-text="t('hero.badgeLocation')"></span>
-        </div>
+          <i data-lucide="external-link" class="w-3 h-3 text-emerald-600/80"></i>
+        </a>
 
         <!-- 24/7 Power Badge -->
         <a href="#power-tech" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-sky-50 border border-sky-200 text-sky-900 text-xs font-semibold hover:bg-sky-100 transition-colors">
@@ -689,25 +722,43 @@
         <div>
           <div class="flex items-center gap-2 mb-2">
             <span class="inline-block text-xs font-bold tracking-widest text-[#C87D4B] uppercase" x-text="t('reviews.tag')"></span>
-            <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-bold">Top 10% on Airbnb</span>
+            <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-bold">Top 5% on Airbnb</span>
           </div>
           <h2 class="font-display text-3xl sm:text-4xl font-bold text-[#111111]" x-text="t('reviews.title')"></h2>
           <p class="mt-2 text-[#5A625E] text-base max-w-2xl" x-text="t('reviews.subtitle')"></p>
         </div>
 
-        <!-- Rating Highlight Score Card -->
-        <div class="flex items-center gap-4 p-4 rounded-2xl bg-[#FAF7F2] border border-[#E6E0D6]">
-          <div class="text-3xl font-display font-bold text-[#111111]">5.0</div>
-          <div class="flex flex-col">
-            <div class="flex items-center gap-0.5 text-amber-500">
-              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+        <!-- Rating Highlight Score Card & Google Business Link -->
+        <div class="flex flex-wrap items-center gap-3">
+          <div class="flex items-center gap-4 p-4 rounded-2xl bg-[#FAF7F2] border border-[#E6E0D6]">
+            <div class="text-3xl font-display font-bold text-[#111111]">5.0</div>
+            <div class="flex flex-col">
+              <div class="flex items-center gap-0.5 text-amber-500">
+                <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+              </div>
+              <span class="text-xs font-semibold text-[#5A625E]">14 Verified Airbnb Reviews</span>
             </div>
-            <span class="text-xs font-semibold text-[#5A625E]">10 Verified Airbnb Reviews</span>
           </div>
+
+          <a :href="data.property.googleMapsUrl" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="flex items-center gap-3 p-4 rounded-2xl bg-white hover:bg-[#FAF7F2] border border-[#E6E0D6] hover:border-[#C87D4B] transition-all shadow-sm group">
+            <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+              <i data-lucide="map-pin" class="w-5 h-5 text-emerald-600"></i>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-xs font-bold text-[#111111] flex items-center gap-1 group-hover:text-[#C87D4B] transition-colors">
+                <span x-text="t('reviews.googleReviewCta')"></span>
+                <i data-lucide="external-link" class="w-3 h-3"></i>
+              </span>
+              <span class="text-[11px] font-medium text-[#5A625E]" x-text="t('reviews.googleMapsProfile')"></span>
+            </div>
+          </a>
         </div>
       </div>
 
@@ -776,13 +827,31 @@
         </template>
       </div>
 
-      <!-- Expand/Collapse Button for 10 Reviews -->
+      <!-- Expand/Collapse Button for 14 Reviews -->
       <div class="mt-10 text-center" x-show="reviewFilter === 'all'">
         <button @click="showAllReviews = !showAllReviews; $nextTick(() => renderIcons())" 
                 class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-[#111111] text-xs font-bold text-[#111111] hover:bg-[#111111] hover:text-white transition-all shadow-sm">
           <i :data-lucide="showAllReviews ? 'chevron-up' : 'chevron-down'" class="w-4 h-4"></i>
           <span x-text="showAllReviews ? t('reviews.showLess') : t('reviews.showMore')"></span>
         </button>
+      </div>
+
+      <!-- Google Business Review Callout Banner for Travel Groups & Direct Guests -->
+      <div class="mt-8 p-5 sm:p-6 rounded-2xl bg-[#FAF7F2] border border-[#E6E0D6] flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3.5 text-center sm:text-left flex-col sm:flex-row">
+          <div class="w-10 h-10 rounded-xl bg-[#111111] text-white flex items-center justify-center shrink-0">
+            <i data-lucide="message-square-heart" class="w-5 h-5 text-[#C87D4B]"></i>
+          </div>
+          <p class="text-xs sm:text-sm text-[#1C1E1D] font-medium" x-text="t('reviews.googleGroupNote')"></p>
+        </div>
+        <a :href="data.property.googleMapsUrl" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition-all shadow-sm">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+          <span x-text="t('reviews.googleReviewCta')"></span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </a>
       </div>
 
     </div>
@@ -1098,6 +1167,40 @@
 
       </div>
 
+      <!-- Interactive Google Map & Google Business Profile Card -->
+      <div class="mt-8 rounded-3xl overflow-hidden bg-[#FAF7F2] border border-[#E6E0D6] shadow-sm">
+        <div class="p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[#E6E0D6]">
+          <div>
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-bold mb-2">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-600"></i>
+              <span x-text="t('guestPortal.googleBusinessBadge')"></span>
+            </div>
+            <h3 class="font-display text-xl sm:text-2xl font-bold text-[#111111]" x-text="t('guestPortal.mapTitle')"></h3>
+            <p class="mt-1 text-xs sm:text-sm text-[#5A625E]" x-text="t('guestPortal.mapSubtitle')"></p>
+          </div>
+          <a :href="data.property.googleMapsUrl" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition-all shadow-md shrink-0">
+            <i data-lucide="navigation" class="w-4 h-4"></i>
+            <span x-text="t('guestPortal.openGoogleBusiness')"></span>
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+        <div class="w-full h-72 sm:h-80 bg-neutral-200 relative">
+          <iframe 
+            src="https://www.google.com/maps?q=Residencial+Mijoca,+Calle+4+27,+El+Dorado+II,+Santiago+de+los+Caballeros,+Dominican+Republic&output=embed"
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Residencial Mijoca Google Maps Location">
+          </iframe>
+        </div>
+      </div>
+
       <!-- 3 Essential House Rules Banner -->
       <div class="mt-10 p-8 rounded-3xl bg-[#FAF7F2] border border-[#E6E0D6]">
         <div class="flex items-center gap-2 mb-6">
@@ -1293,9 +1396,13 @@
         </div>
 
         <div class="flex flex-wrap items-center gap-4 text-xs font-semibold">
-          <a :href="data.property.airbnbUrl" target="_blank" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 transition-colors flex items-center gap-2">
+          <a :href="data.property.airbnbUrl" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 transition-colors flex items-center gap-2">
             <i data-lucide="external-link" class="w-3.5 h-3.5 text-amber-400"></i>
             <span x-text="t('footer.airbnbDirect')"></span>
+          </a>
+          <a :href="data.property.googleMapsUrl" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/30 text-emerald-300 transition-colors flex items-center gap-2">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-400"></i>
+            <span x-text="t('footer.googleMapsBtn')"></span>
           </a>
           <a :href="data.property.instagramUrl" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600 via-pink-600 to-amber-600 text-white hover:opacity-90 transition-opacity flex items-center gap-2 shadow-sm">
             <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

@@ -301,10 +301,11 @@ document.addEventListener('alpine:init', () => {
     // Share with Travel Crew helpers
     getShareText() {
       const url = window.location.origin + window.location.pathname;
+      const gmaps = this.data.property.googleMapsUrl;
       if (this.lang === 'es') {
-        return `🌴 Residencial Mijoca · Apartamento Boutique en Santiago, RD\n⭐ Favorito de Huéspedes Airbnb (5.0 ★ · Top 10% Mundial)\n⚡ Energía 24/7 (Inversor y batería 5 kW - sin cortes)\n🚗 Parqueo Privado Asignado #1 y Balcón Privado\n📍 El Dorado II, Santiago\nMíralo aquí: ${url}`;
+        return `🌴 Residencial Mijoca · Apartamento Boutique en Santiago, RD\n⭐ Favorito de Huéspedes Airbnb (5.0 ★ · Top 5% Mundial)\n⚡ Energía 24/7 (Inversor y batería 5 kW - sin cortes)\n🚗 Parqueo Privado Asignado #1 y Balcón Privado\n📍 Google Maps (El Dorado II): ${gmaps}\n🌐 Web y Guía VIP: ${url}`;
       }
-      return `🌴 Residencial Mijoca · Boutique 2BR/2BA Stay in Santiago, DR\n⭐ Airbnb Guest Favorite (5.0 ★ · Top 10% of Homes)\n⚡ 24/7 Power (5 kW battery backup - zero outages)\n🚗 Free Reserved Parking Spot #1 & Private Balcony\n📍 El Dorado II, Santiago\nCheck it out: ${url}`;
+      return `🌴 Residencial Mijoca · Boutique 2BR/2BA Stay in Santiago, DR\n⭐ Airbnb Guest Favorite (5.0 ★ · Top 5% of Homes)\n⚡ 24/7 Power (5 kW battery backup - zero outages)\n🚗 Free Reserved Parking Spot #1 & Private Balcony\n📍 Google Maps (El Dorado II): ${gmaps}\n🌐 Website & VIP Guide: ${url}`;
     },
 
     get whatsAppShareUrl() {
