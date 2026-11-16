@@ -116,8 +116,8 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Master Data & Controller Scripts -->
-  <script src="js/data.js?v=5"></script>
-  <script src="js/app.js?v=5"></script>
+  <script src="js/data.js?v=6"></script>
+  <script src="js/app.js?v=6"></script>
 
   <!-- Alpine.js v3 CDN -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
@@ -164,8 +164,12 @@
             <span x-text="t('nav.reviews')"></span>
             <span class="text-xs bg-amber-400/20 text-amber-300 border border-amber-400/30 px-1.5 py-0.5 rounded-full font-bold">5.0★</span>
           </a>
+          <a href="#availability" class="text-white/80 hover:text-[#C87D4B] transition-colors py-1 flex items-center gap-1.5 whitespace-nowrap">
+            <i data-lucide="calendar-days" class="w-3.5 h-3.5 text-[#C87D4B]"></i>
+            <span x-text="t('nav.availability')"></span>
+          </a>
           <a href="#local-guide" class="text-white/80 hover:text-[#C87D4B] transition-colors py-1 whitespace-nowrap" x-text="t('nav.vipGuide')"></a>
-          <a href="#faq" class="text-white/80 hover:text-[#C87D4B] transition-colors py-1 whitespace-nowrap" x-text="t('nav.rulesFaq')"></a>
+          <a href="#house-rules" class="text-white/80 hover:text-[#C87D4B] transition-colors py-1 whitespace-nowrap" x-text="t('nav.rulesFaq')"></a>
         </nav>
 
         <!-- Right Controls & CTAs -->
@@ -229,8 +233,12 @@
           <span x-text="t('nav.reviews')"></span>
           <span class="text-xs bg-amber-400/20 text-amber-300 border border-amber-400/30 px-1.5 py-0.5 rounded-full font-bold">5.0★</span>
         </a>
+        <a href="#availability" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-lg font-medium text-white/90 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2">
+          <i data-lucide="calendar-days" class="w-4 h-4 text-[#C87D4B]"></i>
+          <span x-text="t('nav.availability')"></span>
+        </a>
         <a href="#local-guide" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-lg font-medium text-white/90 hover:text-white hover:bg-white/10 transition-colors" x-text="t('nav.vipGuide')"></a>
-        <a href="#faq" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-lg font-medium text-white/90 hover:text-white hover:bg-white/10 transition-colors" x-text="t('nav.rulesFaq')"></a>
+        <a href="#house-rules" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-lg font-medium text-white/90 hover:text-white hover:bg-white/10 transition-colors" x-text="t('nav.rulesFaq')"></a>
         <a :href="data.property.instagramUrl" target="_blank" rel="noopener noreferrer" class="block px-3 py-2 rounded-lg font-medium text-white/90 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2.5">
           <svg class="w-4 h-4 text-pink-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
@@ -304,6 +312,12 @@
            class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#111111] text-white font-semibold text-sm hover:bg-[#C87D4B] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
           <i data-lucide="calendar" class="w-4 h-4 text-[#C87D4B]"></i>
           <span x-text="t('hero.ctaAirbnb')"></span>
+        </a>
+
+        <a href="#availability"
+           class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-white text-[#111111] border border-[#111111] font-semibold text-sm hover:bg-[#111111] hover:text-white transition-all shadow-sm">
+          <i data-lucide="calendar-days" class="w-4 h-4 text-[#C87D4B]"></i>
+          <span x-text="t('hero.ctaCalendar')"></span>
         </a>
 
         <a :href="whatsAppInquiryUrl" 
@@ -927,6 +941,231 @@
     </div>
   </section>
 
+  <!-- SECTION: LIVE AVAILABILITY CALENDAR & FAQ HUB -->
+  <section id="availability" class="py-20 bg-white border-b border-[#E6E0D6]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Left: Live Calendar & Host Concierge Card (5 Columns) -->
+        <div class="lg:col-span-5 glass-card rounded-3xl p-8 sm:p-9 shadow-xl border border-[#E5E7EB] sticky top-28">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+            <span class="text-xs font-bold uppercase tracking-wider text-[#C87D4B]" x-text="t('booking.tag')"></span>
+          </div>
+          <h2 class="font-display text-2xl sm:text-3xl font-bold text-[#111111]" x-text="t('booking.title')"></h2>
+          <p class="mt-2 text-xs sm:text-sm text-[#5A625E]" x-text="t('booking.subtitle')"></p>
+
+          <!-- Interactive Form Inputs -->
+          <div class="mt-6 space-y-4">
+
+            <!-- LIVE AIRBNB AVAILABILITY CALENDAR -->
+            <div class="p-4 rounded-2xl bg-[#FAF7F2] border border-[#E6E0D6]">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <div class="flex items-center gap-1.5">
+                  <i data-lucide="calendar-days" class="w-4 h-4 text-[#C87D4B]"></i>
+                  <span class="text-xs font-bold text-[#111111]" x-text="t('booking.calendarTitle')"></span>
+                </div>
+                <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  <span x-text="t('booking.syncedBadge')"></span>
+                </span>
+              </div>
+
+              <p class="text-[11px] text-[#5A625E] mb-3" x-text="selectingCheckOut ? t('booking.statusSelectOut') : t('booking.calendarHint')"></p>
+
+              <!-- Month Navigation Header -->
+              <div class="flex items-center justify-between mb-2 bg-white px-3 py-1.5 rounded-xl border border-[#E6E0D6]">
+                <button type="button" @click="prevMonth()" class="p-1 rounded-lg hover:bg-[#FAF7F2] text-[#111111] transition-colors" aria-label="Previous Month">
+                  <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                </button>
+                <span class="text-xs font-bold text-[#111111]" x-text="calendarMonthLabel"></span>
+                <button type="button" @click="nextMonth()" class="p-1 rounded-lg hover:bg-[#FAF7F2] text-[#111111] transition-colors" aria-label="Next Month">
+                  <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                </button>
+              </div>
+
+              <!-- Weekday Headers -->
+              <div class="grid grid-cols-7 gap-1 text-center text-[10px] font-bold text-[#5A625E] mb-1">
+                <template x-for="wd in calendarWeekdays" :key="wd">
+                  <div class="py-1" x-text="wd"></div>
+                </template>
+              </div>
+
+              <!-- Calendar Days Grid -->
+              <div class="grid grid-cols-7 gap-1 text-center text-xs">
+                <template x-for="cell in calendarDays" :key="cell.key">
+                  <div>
+                    <template x-if="cell.empty">
+                      <div class="h-8"></div>
+                    </template>
+                    <template x-if="!cell.empty">
+                      <button type="button"
+                              @click="selectCalendarDate(cell)"
+                              :disabled="cell.isPast || (cell.isBooked && !selectingCheckOut)"
+                              :class="{
+                                'bg-[#111111] text-white font-bold shadow-sm': cell.isCheckIn || cell.isCheckOut,
+                                'bg-[#C87D4B]/20 text-[#111111] font-semibold': cell.isInRange && !cell.isBooked,
+                                'bg-red-100/80 text-red-400 line-through cursor-not-allowed': cell.isBooked && !cell.isCheckOut,
+                                'text-neutral-300 cursor-not-allowed': cell.isPast && !cell.isBooked,
+                                'bg-white hover:border-[#C87D4B] text-[#111111] border border-[#E6E0D6]': !cell.isPast && !cell.isBooked && !cell.isCheckIn && !cell.isCheckOut && !cell.isInRange
+                              }"
+                              class="w-full h-8 rounded-lg flex items-center justify-center text-[11px] transition-all"
+                              x-text="cell.day">
+                      </button>
+                    </template>
+                  </div>
+                </template>
+              </div>
+
+              <!-- Legend -->
+              <div class="mt-3 pt-2.5 border-t border-[#E6E0D6] flex items-center justify-between text-[10px] font-medium text-[#5A625E]">
+                <div class="flex items-center gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded bg-white border border-[#D9D0C3] inline-block"></span>
+                  <span x-text="t('booking.legendAvailable')"></span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded bg-red-100 border border-red-200 inline-block"></span>
+                  <span x-text="t('booking.legendBooked')"></span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded bg-[#111111] inline-block"></span>
+                  <span x-text="t('booking.legendSelected')"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Live Availability Status Banner -->
+            <div :class="hasDateConflict ? 'bg-red-50 border-red-200 text-red-900' : 'bg-emerald-50 border-emerald-200 text-emerald-900'"
+                 class="px-3.5 py-2.5 rounded-xl border text-xs font-semibold flex items-center gap-2">
+              <span x-show="!hasDateConflict" class="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
+              <span x-show="hasDateConflict" class="w-2 h-2 rounded-full bg-red-500 shrink-0"></span>
+              <span x-text="hasDateConflict ? t('booking.statusConflict') : t('booking.statusAvailable')"></span>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs font-bold text-[#111111] mb-1" x-text="t('booking.checkInLabel')"></label>
+                <input type="date" x-model="bookingForm.checkIn" @change="selectingCheckOut = false" class="w-full text-xs font-medium px-3 py-2.5 rounded-xl border border-[#D9D0C3] bg-white focus:outline-none focus:ring-2 focus:ring-[#111111]" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-[#111111] mb-1" x-text="t('booking.checkOutLabel')"></label>
+                <input type="date" x-model="bookingForm.checkOut" @change="selectingCheckOut = false" class="w-full text-xs font-medium px-3 py-2.5 rounded-xl border border-[#D9D0C3] bg-white focus:outline-none focus:ring-2 focus:ring-[#111111]" />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-[#111111] mb-1" x-text="t('booking.guestsLabel')"></label>
+              <select x-model.number="bookingForm.guests" class="w-full text-xs font-medium px-3 py-2.5 rounded-xl border border-[#D9D0C3] bg-white focus:outline-none focus:ring-2 focus:ring-[#111111]">
+                <option value="1">1 Guest</option>
+                <option value="2">2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests (Max Capacity)</option>
+              </select>
+            </div>
+
+            <!-- Notes -->
+            <div>
+              <label class="block text-xs font-bold text-[#111111] mb-1" x-text="t('booking.notesLabel')"></label>
+              <textarea x-model="bookingForm.notes" rows="2" :placeholder="t('booking.notesPlaceholder')" class="w-full text-xs font-medium px-3 py-2 rounded-xl border border-[#D9D0C3] bg-white focus:outline-none focus:ring-2 focus:ring-[#111111]"></textarea>
+            </div>
+
+            <!-- Nights preview calculation -->
+            <div class="flex items-center justify-between text-xs font-semibold px-2 py-1 text-[#5A625E]">
+              <span x-text="t('booking.nightsCount')"></span>
+              <span class="font-bold text-[#111111] text-sm" x-text="calculatedNights + ' night' + (calculatedNights === 1 ? '' : 's')"></span>
+            </div>
+
+            <!-- Primary Airbnb Button -->
+            <a :href="airbnbBookingUrl" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="w-full flex items-center justify-center gap-2.5 py-3.5 rounded-xl bg-[#111111] text-white font-bold text-sm hover:bg-[#C87D4B] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+              <i data-lucide="calendar" class="w-4 h-4 text-[#C87D4B]"></i>
+              <span x-text="t('booking.orBookAirbnb')"></span>
+            </a>
+
+            <!-- Ask Omar on WhatsApp Button -->
+            <a :href="whatsAppInquiryUrl" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="w-full flex items-center justify-center gap-2.5 py-3 rounded-xl bg-[#25D366] text-white font-bold text-xs hover:bg-[#1EBE5D] transition-all shadow-md">
+              <i data-lucide="message-circle" class="w-4 h-4 text-white"></i>
+              <span x-text="t('booking.sendWhatsApp')"></span>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Right: FAQ Accordion / Cards (7 Columns) -->
+        <div id="faq" class="lg:col-span-7">
+          <div class="mb-8">
+            <span class="inline-block text-xs font-bold tracking-widest text-[#C87D4B] uppercase">ANSWERS & ASSURANCES</span>
+            <h2 class="mt-1 font-display text-2xl sm:text-3xl font-bold text-[#111111]" x-text="t('booking.faqTitle')"></h2>
+          </div>
+
+          <div class="space-y-4">
+            
+            <!-- FAQ 1: Power Backup -->
+            <div class="glass-card rounded-2xl p-6 shadow-sm border border-[#E5E7EB]">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5">
+                  <i data-lucide="zap" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h3 class="font-display text-lg font-bold text-[#111111]" x-text="t('booking.faq1Q')"></h3>
+                  <p class="mt-2 text-sm text-[#5A625E] leading-relaxed" x-text="t('booking.faq1A')"></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 2: Parking -->
+            <div class="glass-card rounded-2xl p-6 shadow-sm border border-[#E5E7EB]">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center shrink-0 mt-0.5">
+                  <i data-lucide="car" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h3 class="font-display text-lg font-bold text-[#111111]" x-text="t('booking.faq2Q')"></h3>
+                  <p class="mt-2 text-sm text-[#5A625E] leading-relaxed" x-text="t('booking.faq2A')"></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 3: Distance & STI Airport -->
+            <div class="glass-card rounded-2xl p-6 shadow-sm border border-[#E5E7EB]">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg bg-sky-100 text-sky-800 flex items-center justify-center shrink-0 mt-0.5">
+                  <i data-lucide="plane" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h3 class="font-display text-lg font-bold text-[#111111]" x-text="t('booking.faq3Q')"></h3>
+                  <p class="mt-2 text-sm text-[#5A625E] leading-relaxed" x-text="t('booking.faq3A')"></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 4: Elevator & 3rd Floor -->
+            <div class="glass-card rounded-2xl p-6 shadow-sm border border-[#E5E7EB]">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center shrink-0 mt-0.5">
+                  <i data-lucide="layers" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h3 class="font-display text-lg font-bold text-[#111111]" x-text="t('booking.faq4Q')"></h3>
+                  <p class="mt-2 text-sm text-[#5A625E] leading-relaxed" x-text="t('booking.faq4A')"></p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
   <!-- SECTION: SANTIAGO LOCAL VIP GUIDE & EXCLUSIVE PERKS -->
   <section id="local-guide" class="py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1085,7 +1324,7 @@
   </section>
 
   <!-- SECTION: DIGITAL GUEST GUIDEBOOK & HOUSE RULES ("GUEST MODE") -->
-  <section class="py-20 bg-white border-y border-[#E6E0D6]">
+  <section id="house-rules" class="py-20 bg-white border-y border-[#E6E0D6]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Title -->
@@ -1238,231 +1477,6 @@
             <span x-text="t('guestPortal.etiquette3')"></span>
           </div>
         </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SECTION: DIRECT BOOKING INQUIRY WIDGET & FAQ HUB -->
-  <section id="faq" class="py-20 bg-[#F4F5F7]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-        
-        <!-- Left: Direct WhatsApp Inquiry Card (5 Columns) -->
-        <div class="lg:col-span-5 glass-card rounded-3xl p-8 sm:p-9 shadow-xl border border-[#E5E7EB] sticky top-28">
-          <div class="flex items-center gap-2 mb-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
-            <span class="text-xs font-bold uppercase tracking-wider text-[#C87D4B]" x-text="t('booking.tag')"></span>
-          </div>
-          <h2 class="font-display text-2xl sm:text-3xl font-bold text-[#111111]" x-text="t('booking.title')"></h2>
-          <p class="mt-2 text-xs sm:text-sm text-[#5A625E]" x-text="t('booking.subtitle')"></p>
-
-          <!-- Interactive Form Inputs -->
-          <div class="mt-6 space-y-4">
-
-            <!-- LIVE AIRBNB AVAILABILITY CALENDAR -->
-            <div class="p-4 rounded-2xl bg-[#FAF7F2] border border-[#E6E0D6]">
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <div class="flex items-center gap-1.5">
-                  <i data-lucide="calendar-days" class="w-4 h-4 text-[#C87D4B]"></i>
-                  <span class="text-xs font-bold text-[#111111]" x-text="t('booking.calendarTitle')"></span>
-                </div>
-                <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                  <span x-text="t('booking.syncedBadge')"></span>
-                </span>
-              </div>
-
-              <p class="text-[11px] text-[#5A625E] mb-3" x-text="selectingCheckOut ? t('booking.statusSelectOut') : t('booking.calendarHint')"></p>
-
-              <!-- Month Navigation Header -->
-              <div class="flex items-center justify-between mb-2 bg-white px-3 py-1.5 rounded-xl border border-[#E6E0D6]">
-                <button type="button" @click="prevMonth()" class="p-1 rounded-lg hover:bg-[#FAF7F2] text-[#111111] transition-colors" aria-label="Previous Month">
-                  <i data-lucide="chevron-left" class="w-4 h-4"></i>
-                </button>
-                <span class="text-xs font-bold text-[#111111]" x-text="calendarMonthLabel"></span>
-                <button type="button" @click="nextMonth()" class="p-1 rounded-lg hover:bg-[#FAF7F2] text-[#111111] transition-colors" aria-label="Next Month">
-                  <i data-lucide="chevron-right" class="w-4 h-4"></i>
-                </button>
-              </div>
-
-              <!-- Weekday Headers -->
-              <div class="grid grid-cols-7 gap-1 text-center text-[10px] font-bold text-[#5A625E] mb-1">
-                <template x-for="wd in calendarWeekdays" :key="wd">
-                  <div class="py-1" x-text="wd"></div>
-                </template>
-              </div>
-
-              <!-- Calendar Days Grid -->
-              <div class="grid grid-cols-7 gap-1 text-center text-xs">
-                <template x-for="cell in calendarDays" :key="cell.key">
-                  <div>
-                    <template x-if="cell.empty">
-                      <div class="h-8"></div>
-                    </template>
-                    <template x-if="!cell.empty">
-                      <button type="button"
-                              @click="selectCalendarDate(cell)"
-                              :disabled="cell.isPast || (cell.isBooked && !selectingCheckOut)"
-                              :class="{
-                                'bg-[#111111] text-white font-bold shadow-sm': cell.isCheckIn || cell.isCheckOut,
-                                'bg-[#C87D4B]/20 text-[#111111] font-semibold': cell.isInRange && !cell.isBooked,
-                                'bg-red-100/80 text-red-400 line-through cursor-not-allowed': cell.isBooked && !cell.isCheckOut,
-                                'text-neutral-300 cursor-not-allowed': cell.isPast && !cell.isBooked,
-                                'bg-white hover:border-[#C87D4B] text-[#111111] border border-[#E6E0D6]': !cell.isPast && !cell.isBooked && !cell.isCheckIn && !cell.isCheckOut && !cell.isInRange
-                              }"
-                              class="w-full h-8 rounded-lg flex items-center justify-center text-[11px] transition-all"
-                              x-text="cell.day">
-                      </button>
-                    </template>
-                  </div>
-                </template>
-              </div>
-
-              <!-- Legend -->
-              <div class="mt-3 pt-2.5 border-t border-[#E6E0D6] flex items-center justify-between text-[10px] font-medium text-[#5A625E]">
-                <div class="flex items-center gap-1.5">
-                  <span class="w-2.5 h-2.5 rounded bg-white border border-[#D9D0C3] inline-block"></span>
-                  <span x-text="t('booking.legendAvailable')"></span>
-                </div>
-                <div class="flex items-center gap-1.5">
-                  <span class="w-2.5 h-2.5 rounded bg-red-100 border border-red-200 inline-block"></span>
-                  <span x-text="t('booking.legendBooked')"></span>
-                </div>
-                <div class="flex items-center gap-1.5">
-                  <span class="w-2.5 h-2.5 rounded bg-[#111111] inline-block"></span>
-                  <span x-text="t('booking.legendSelected')"></span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Live Availability Status Banner -->
-            <div :class="hasDateConflict ? 'bg-red-50 border-red-200 text-red-900' : 'bg-emerald-50 border-emerald-200 text-emerald-900'"
-                 class="px-3.5 py-2.5 rounded-xl border text-xs font-semibold flex items-center gap-2">
-              <span x-show="!hasDateConflict" class="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
-              <span x-show="hasDateConflict" class="w-2 h-2 rounded-full bg-red-500 shrink-0"></span>
-              <span x-text="hasDateConflict ? t('booking.statusConflict') : t('booking.statusAvailable')"></span>
-            </div>
-            
-            <div class="grid grid-cols-2 gap-3">
-              <div>
-                <label class="block text-xs font-bold text-[#111111] mb-1" x-text="t('booking.checkInLabel')"></label>
-                <input type="date" x-model="bookingForm.checkIn" @change="selectingCheckOut = false" class="w-full text-xs font-medium px-3 py-2.5 rounded-xl border border-[#D9D0C3] bg-white focus:outline-none focus:ring-2 focus:ring-[#111111]" />
-              </div>
-              <div>
-                <label class="block text-xs font-bold text-[#111111] mb-1" x-text="t('booking.checkOutLabel')"></label>
-                <input type="date" x-model="bookingForm.checkOut" @change="selectingCheckOut = false" class="w-full text-xs font-medium px-3 py-2.5 rounded-xl border border-[#D9D0C3] bg-white focus:outline-none focus:ring-2 focus:ring-[#111111]" />
-              </div>
-            </div>
-
-            <div>
-              <label class="block text-xs font-bold text-[#111111] mb-1" x-text="t('booking.guestsLabel')"></label>
-              <select x-model.number="bookingForm.guests" class="w-full text-xs font-medium px-3 py-2.5 rounded-xl border border-[#D9D0C3] bg-white focus:outline-none focus:ring-2 focus:ring-[#111111]">
-                <option value="1">1 Guest</option>
-                <option value="2">2 Guests</option>
-                <option value="3">3 Guests</option>
-                <option value="4">4 Guests (Max Capacity)</option>
-              </select>
-            </div>
-
-            <!-- Notes -->
-            <div>
-              <label class="block text-xs font-bold text-[#111111] mb-1" x-text="t('booking.notesLabel')"></label>
-              <textarea x-model="bookingForm.notes" rows="2" :placeholder="t('booking.notesPlaceholder')" class="w-full text-xs font-medium px-3 py-2 rounded-xl border border-[#D9D0C3] bg-white focus:outline-none focus:ring-2 focus:ring-[#111111]"></textarea>
-            </div>
-
-            <!-- Nights preview calculation -->
-            <div class="flex items-center justify-between text-xs font-semibold px-2 py-1 text-[#5A625E]">
-              <span x-text="t('booking.nightsCount')"></span>
-              <span class="font-bold text-[#111111] text-sm" x-text="calculatedNights + ' night' + (calculatedNights === 1 ? '' : 's')"></span>
-            </div>
-
-            <!-- Primary Airbnb Button -->
-            <a :href="airbnbBookingUrl" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               class="w-full flex items-center justify-center gap-2.5 py-3.5 rounded-xl bg-[#111111] text-white font-bold text-sm hover:bg-[#C87D4B] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
-              <i data-lucide="calendar" class="w-4 h-4 text-[#C87D4B]"></i>
-              <span x-text="t('booking.orBookAirbnb')"></span>
-            </a>
-
-            <!-- Ask Omar on WhatsApp Button -->
-            <a :href="whatsAppInquiryUrl" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               class="w-full flex items-center justify-center gap-2.5 py-3 rounded-xl bg-[#25D366] text-white font-bold text-xs hover:bg-[#1EBE5D] transition-all shadow-md">
-              <i data-lucide="message-circle" class="w-4 h-4 text-white"></i>
-              <span x-text="t('booking.sendWhatsApp')"></span>
-            </a>
-
-          </div>
-        </div>
-
-        <!-- Right: FAQ Accordion / Cards (7 Columns) -->
-        <div class="lg:col-span-7">
-          <div class="mb-8">
-            <span class="inline-block text-xs font-bold tracking-widest text-[#C87D4B] uppercase">ANSWERS & ASSURANCES</span>
-            <h2 class="mt-1 font-display text-2xl sm:text-3xl font-bold text-[#111111]" x-text="t('booking.faqTitle')"></h2>
-          </div>
-
-          <div class="space-y-4">
-            
-            <!-- FAQ 1: Power Backup -->
-            <div class="glass-card rounded-2xl p-6 shadow-sm border border-[#E5E7EB]">
-              <div class="flex items-start gap-3">
-                <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5">
-                  <i data-lucide="zap" class="w-4 h-4"></i>
-                </div>
-                <div>
-                  <h3 class="font-display text-lg font-bold text-[#111111]" x-text="t('booking.faq1Q')"></h3>
-                  <p class="mt-2 text-sm text-[#5A625E] leading-relaxed" x-text="t('booking.faq1A')"></p>
-                </div>
-              </div>
-            </div>
-
-            <!-- FAQ 2: Parking -->
-            <div class="glass-card rounded-2xl p-6 shadow-sm border border-[#E5E7EB]">
-              <div class="flex items-start gap-3">
-                <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center shrink-0 mt-0.5">
-                  <i data-lucide="car" class="w-4 h-4"></i>
-                </div>
-                <div>
-                  <h3 class="font-display text-lg font-bold text-[#111111]" x-text="t('booking.faq2Q')"></h3>
-                  <p class="mt-2 text-sm text-[#5A625E] leading-relaxed" x-text="t('booking.faq2A')"></p>
-                </div>
-              </div>
-            </div>
-
-            <!-- FAQ 3: Distance & STI Airport -->
-            <div class="glass-card rounded-2xl p-6 shadow-sm border border-[#E5E7EB]">
-              <div class="flex items-start gap-3">
-                <div class="w-8 h-8 rounded-lg bg-sky-100 text-sky-800 flex items-center justify-center shrink-0 mt-0.5">
-                  <i data-lucide="plane" class="w-4 h-4"></i>
-                </div>
-                <div>
-                  <h3 class="font-display text-lg font-bold text-[#111111]" x-text="t('booking.faq3Q')"></h3>
-                  <p class="mt-2 text-sm text-[#5A625E] leading-relaxed" x-text="t('booking.faq3A')"></p>
-                </div>
-              </div>
-            </div>
-
-            <!-- FAQ 4: Elevator & 3rd Floor -->
-            <div class="glass-card rounded-2xl p-6 shadow-sm border border-[#E5E7EB]">
-              <div class="flex items-start gap-3">
-                <div class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center shrink-0 mt-0.5">
-                  <i data-lucide="layers" class="w-4 h-4"></i>
-                </div>
-                <div>
-                  <h3 class="font-display text-lg font-bold text-[#111111]" x-text="t('booking.faq4Q')"></h3>
-                  <p class="mt-2 text-sm text-[#5A625E] leading-relaxed" x-text="t('booking.faq4A')"></p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
       </div>
 
     </div>
