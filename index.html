@@ -54,7 +54,7 @@
       "@type": "AggregateRating",
       "ratingValue": "5.0",
       "bestRating": "5",
-      "reviewCount": "14"
+      "reviewCount": "15"
     }
   }
   </script>
@@ -116,8 +116,8 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Master Data & Controller Scripts -->
-  <script src="js/data.js?v=6"></script>
-  <script src="js/app.js?v=6"></script>
+  <script src="js/data.js?v=7"></script>
+  <script src="js/app.js?v=7"></script>
 
   <!-- Alpine.js v3 CDN -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
@@ -754,7 +754,7 @@
                 <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
                 <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
               </div>
-              <span class="text-xs font-semibold text-[#5A625E]">14 Verified Airbnb Reviews</span>
+              <span class="text-xs font-semibold text-[#5A625E]">15 Verified Airbnb Reviews</span>
             </div>
           </div>
 
@@ -841,7 +841,7 @@
         </template>
       </div>
 
-      <!-- Expand/Collapse Button for 14 Reviews -->
+      <!-- Expand/Collapse Button for 15 Reviews -->
       <div class="mt-10 text-center" x-show="reviewFilter === 'all'">
         <button @click="showAllReviews = !showAllReviews; $nextTick(() => renderIcons())" 
                 class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-[#111111] text-xs font-bold text-[#111111] hover:bg-[#111111] hover:text-white transition-all shadow-sm">
